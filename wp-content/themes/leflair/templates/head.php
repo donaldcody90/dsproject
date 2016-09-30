@@ -8,10 +8,9 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-		<!-- Criteo tag -->
-		<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+	<!-- Criteo tag -->
+	<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
 
-		<script async="" src="//static.hotjar.com/c/hotjar-134114.js?sv=5"></script>
-		<link rel="manifest" href="https://www.leflair.vn/aimtell-manifest.json">
+	<script async="" src="//static.hotjar.com/c/hotjar-134114.js?sv=5"></script>
+	<link rel="manifest" href="https://www.leflair.vn/aimtell-manifest.json">
 </head>
-<body>

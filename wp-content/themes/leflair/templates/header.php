@@ -123,7 +123,7 @@
 					<ul class="sidebar-nav ng-scope" ng-if="showHeaderFn()">
 						<li class="sidebar-brand">
 							<a href="" ng-click="closeSidebar('/')">
-								<img src="https://leflair-assets.storage.googleapis.com/img/leflair-black-logo.svg">
+								<img src="<?php echo site_url('wp-content/themes/leflair/assets/img/leflair-black-logo.svg');?>">
 							</a>
 						</li>
 						<li>

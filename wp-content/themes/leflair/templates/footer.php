@@ -4,7 +4,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-2 hidden-xs">
-								<img src="https://leflair-assets.storage.googleapis.com/img/leflair-white-logo.svg">
+								<img src="<?php echo site_url('wp-content/themes/leflair/assets/img/leflair-white-logo.svg');?>">
 							</div>
 
 							<div class="col-md-2 col-sm-4">
@@ -44,22 +44,22 @@
 								<ul class="list-inline">
 									<li>
 										<a href="https://www.facebook.com/LeflairVN" target="_blank">
-											<div class="footer-img footer-img-facebook"></div>
+											<div class="footer-img footer-img-facebook" style="background-image: url(&quot;<?php echo site_url('wp-content/themes/leflair/assets/img/facebook-circle.svg');?>&quot;)"></div>
 										</a>
 									</li>
 									<li>
 										<a href="https://instagram.com/leflairvietnam" target="_blank">
-											<div class="footer-img footer-img-instagram"></div>
+											<div class="footer-img footer-img-instagram" style="background-image: url(&quot;<?php echo site_url('wp-content/themes/leflair/assets/img/instagram-circle.svg');?>&quot;)"></div>
 										</a>
 									</li>
 									<li>
 										<a href="https://www.linkedin.com/company/leflair" target="_blank">
-											<div class="footer-img footer-img-linkedin"></div>
+											<div class="footer-img footer-img-linkedin" style="background-image: url(&quot;<?php echo site_url('wp-content/themes/leflair/assets/img/linkedin-circle.svg');?>&quot;)"></div>
 										</a>
 									</li>
 									<li>
 										<a href="https://plus.google.com/+LeflairVn/posts" target="_blank">
-											<div class="footer-img footer-img-googleplus"></div>
+											<div class="footer-img footer-img-googleplus" style="background-image: url(&quot;<?php echo site_url('wp-content/themes/leflair/assets/img/googleplus-circle.svg');?>&quot;)"></div>
 										</a>
 									</li>
 								</ul>
@@ -76,7 +76,7 @@
 							<br>
 							<br>
 							<a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=19306" target="_blank">
-								<img src="https://leflair-assets.storage.googleapis.com/img/gov.vn.png" class="footer-gov">
+								<img src="<?php echo site_url('wp-content/themes/leflair/assets/img/gov.vn.png');?>" class="footer-gov">
 							</a>
 
 						</div>
