@@ -20,141 +20,141 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $post;
+// global $post;
 
-if ( ! $post->post_excerpt ) {
-	return;
-}
+// if ( ! $post->post_excerpt ) {
+	// return;
+// }
 
 ?>
 <accordion class="product apart ng-isolate-scope" accordion-scroll="accordionList">
-						<div class="panel-group">
-							<div class="panel panel-default ng-isolate-scope" is-open="accordionList[0]">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
-											<span class="ng-scope opened">
-												<i class="leflair pull-right i-leflair-minus"></i>
-												Thông tin sản phẩm
-											</span>
-										</a>
-									</h4>
-								</div>
-								<div class="panel-collapse in" style="height: auto;">
-									<div class="panel-body">
-										<accordion-heading class="ng-scope"></accordion-heading>
-										<description-display contents="product.description.secondary" class="ng-scope ng-isolate-scope">
-										<div class="ui bulleted list">
-										
-											<div class="item ng-scope">
-												<div class="ng-binding ng-scope">
-													Bộ sản phẩn gồm:
-													<div class="ui bulleted dashed list">
-														<div class="item ng-binding ng-scope">1 cọ mút</div>
-														<div class="item ng-binding ng-scope">1 cọ eyeliner</div>
-														<div class="item ng-binding ng-scope">1 cọ kẻ chân mày</div>
-														<div class="item ng-binding ng-scope">1 cọ kem che khuyết điểm</div>
-														<div class="item ng-binding ng-scope">1 cọ phấn nền</div>
-														<div class="item ng-binding ng-scope">1 cọ môi</div>
-													</div>
-												</div>
-											</div>
-											<div class="item ng-scope">
-												
-												<div class="ng-binding ng-scope"> Xuất xứ: Hàn Quốc</div>
-											</div>
-											<div class="item ng-scope">
-												
-												<div class="ng-binding ng-scope"> Nơi sản xuất: Hàn Quốc</div>
-											</div>
-										</div>
-										</description-display>		
-									</div>
+	<div class="panel-group">
+		<div class="panel panel-default ng-isolate-scope" is-open="accordionList[0]">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
+						<span class="ng-scope opened">
+							<i class="leflair pull-right i-leflair-minus"></i>
+							Thông tin sản phẩm
+						</span>
+					</a>
+				</h4>
+			</div>
+			<div class="panel-collapse in" style="height: auto;">
+				<div class="panel-body">
+					<accordion-heading class="ng-scope"></accordion-heading>
+					<description-display contents="product.description.secondary" class="ng-scope ng-isolate-scope">
+					<div class="ui bulleted list">
+					
+						<div class="item ng-scope">
+							<div class="ng-binding ng-scope">
+								Bộ sản phẩn gồm:
+								<div class="ui bulleted dashed list">
+									<div class="item ng-binding ng-scope">1 cọ mút</div>
+									<div class="item ng-binding ng-scope">1 cọ eyeliner</div>
+									<div class="item ng-binding ng-scope">1 cọ kẻ chân mày</div>
+									<div class="item ng-binding ng-scope">1 cọ kem che khuyết điểm</div>
+									<div class="item ng-binding ng-scope">1 cọ phấn nền</div>
+									<div class="item ng-binding ng-scope">1 cọ môi</div>
 								</div>
 							</div>
+						</div>
+						<div class="item ng-scope">
+							
+							<div class="ng-binding ng-scope"> Xuất xứ: Hàn Quốc</div>
+						</div>
+						<div class="item ng-scope">
+							
+							<div class="ng-binding ng-scope"> Nơi sản xuất: Hàn Quốc</div>
+						</div>
+					</div>
+					</description-display>		
+				</div>
+			</div>
+		</div>
 
-							<div class="panel panel-default ng-isolate-scope" is-open="accordionList[1]" ng-show="!!product.materialCare">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="javascript:void(0)" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" accordion-transclude="heading">
-											<span ng-class="{'opened': accordionList[1]}" class="ng-scope">
-												<i class="leflair pull-right i-leflair-plus" ng-class="{'i-leflair-plus': !accordionList[1], 'i-leflair-minus': accordionList[1]}"></i>
-												Chất liệu &amp; Cách bảo quản
-											</span>
-										</a>
-									</h4>
-								</div>
-								<div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
-									<div class="panel-body" ng-transclude="">
-											<accordion-heading class="ng-scope"></accordion-heading>
-											<description-display contents="product.materialCare" ng-if="product.materialCare" class="ng-scope ng-isolate-scope">
-										<div class="ui bulleted list">
-											<div class="item ng-scope">
-												<div class="ng-binding ng-scope">Chất liệu: Sợi tự nhiên</div>
-											</div>
-											<div class="item ng-scope">
-												
-												<div class="ng-binding ng-scope">Bảo quản: Xem hướng dẫn trên tag sản phẩm.</div>
-											</div>
-										</div></description-display>
-									</div>
-								</div>
-							</div>
+		<div class="panel panel-default ng-isolate-scope">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a href="javascript:void(0)" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" accordion-transclude="heading">
+						<span ng-class="{'opened': accordionList[1]}" class="ng-scope">
+							<i class="leflair pull-right i-leflair-plus" ></i>
+							Chất liệu &amp; Cách bảo quản
+						</span>
+					</a>
+				</h4>
+			</div>
+			<div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
+				<div class="panel-body">
+						<accordion-heading class="ng-scope"></accordion-heading>
+						<description-display contents="product.materialCare" class="ng-scope ng-isolate-scope">
+					<div class="ui bulleted list">
+						<div class="item ng-scope">
+							<div class="ng-binding ng-scope">Chất liệu: Sợi tự nhiên</div>
+						</div>
+						<div class="item ng-scope">
+							
+							<div class="ng-binding ng-scope">Bảo quản: Xem hướng dẫn trên tag sản phẩm.</div>
+						</div>
+					</div></description-display>
+				</div>
+			</div>
+		</div>
 
-							<div class="panel panel-default ng-isolate-scope ng-hide">
-							  <div class="panel-heading">
-								<h4 class="panel-title">
-								  <a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
-													<span class="ng-scope">
-														<i class="leflair pull-right i-leflair-plus"></i>
-														Chi Tiết Kích Cỡ
-													</span>
-												</a>
-								</h4>
-							  </div>
-								<div class="panel-collapse collapse" style="height: 0px;">
-									<div class="panel-body">
-									<accordion-heading class="ng-scope"></accordion-heading>
-									<description-display ng-show="!!product.sizeFit" contents="product.sizeFit" class="ng-scope ng-isolate-scope ng-hide">
-									<div class="ui bulleted list">
-										<!-- ngRepeat: content in formattedContents -->
-									</div></description-display>
-										<div class="size-chart ng-scope ng-hide" id="sizeTable">
-											<table class="table">
-												<thead>
-													<tr>
-														<!-- ngRepeat: name in sizeTitle -->
-													</tr>
-												</thead>
+		<div class="panel panel-default ng-isolate-scope ng-hide">
+		  <div class="panel-heading">
+			<h4 class="panel-title">
+			  <a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
+								<span class="ng-scope">
+									<i class="leflair pull-right i-leflair-plus"></i>
+									Chi Tiết Kích Cỡ
+								</span>
+							</a>
+			</h4>
+		  </div>
+			<div class="panel-collapse collapse" style="height: 0px;">
+				<div class="panel-body">
+				<accordion-heading class="ng-scope"></accordion-heading>
+				<description-display contents="product.sizeFit" class="ng-scope ng-isolate-scope ng-hide">
+				<div class="ui bulleted list">
+					<!-- ngRepeat: content in formattedContents -->
+				</div></description-display>
+					<div class="size-chart ng-scope ng-hide" id="sizeTable">
+						<table class="table">
+							<thead>
+								<tr>
+									<!-- ngRepeat: name in sizeTitle -->
+								</tr>
+							</thead>
 
-												<tbody>
-													<!-- ngRepeat: sizeValue in availSizes -->
-												</tbody>
-												
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>				
+							<tbody>
+								<!-- ngRepeat: sizeValue in availSizes -->
+							</tbody>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>				
 
-							<div class="visible-xs panel panel-default ng-isolate-scope">
-								<div class="panel-heading">
-								<h4 class="panel-title">
-									<a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
-										<span class="ng-scope">
-											<i class="leflair pull-right i-leflair-plus"></i>
-											<span>Thông tin thương hiệu</span>
-											<img class="brand-logo ng-isolate-scope ng-hide" src="https://src0.responsive.io/webp/w=398/https://leflair-assets.storage.googleapis.com/57e10ad752b3930f00aefe61.jpg">
-										</span>		
-									</a>
-								</h4>
-								</div>
-								<div class="panel-collapse collapse" style="height: 0px;">
-									<div class="panel-body">
-										<accordion-heading class="ng-scope"></accordion-heading>
-										<h5 class="ng-binding ng-scope">"Dụng cụ trang điểm chuyên nghiệp"</h5>
-										<p class="ng-binding ng-scope">Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
-									</div>
-								</div>
-							</div>
-						</div></accordion>
+		<div class="visible-xs panel panel-default ng-isolate-scope">
+			<div class="panel-heading">
+			<h4 class="panel-title">
+				<a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
+					<span class="ng-scope">
+						<i class="leflair pull-right i-leflair-plus"></i>
+						<span>Thông tin thương hiệu</span>
+						<img class="brand-logo ng-isolate-scope ng-hide" src="https://src0.responsive.io/webp/w=398/https://leflair-assets.storage.googleapis.com/57e10ad752b3930f00aefe61.jpg">
+					</span>		
+				</a>
+			</h4>
+			</div>
+			<div class="panel-collapse collapse" style="height: 0px;">
+				<div class="panel-body">
+					<accordion-heading class="ng-scope"></accordion-heading>
+					<h5 class="ng-binding ng-scope">"Dụng cụ trang điểm chuyên nghiệp"</h5>
+					<p class="ng-binding ng-scope">Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
+				</div>
+			</div>
+		</div>
+	</div></accordion>

@@ -101,70 +101,71 @@
 							<p class="ng-binding">Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
 						</div>
 					</div>
-						<div class="col-sm-5 right-info">
-							<div class="product-info main apart-sm">
-								<div class="product-brand ng-binding">KT Cosmetics</div>
-								<div class="product-title ng-binding">Bộ: 6 Cọ Trang Điểm Mini</div>
-								<div class="product-price">
-									<span class="product-price-discount ng-binding" ng-show="product.retailPrice !== product.salePrice">515,000₫</span> 
-									<span class="product-price-total ng-binding">419,000₫</span>
-								</div>
+					
+					<div class="col-sm-5 right-info">
+						<div class="product-info main apart-sm">
+							<div class="product-brand ng-binding">KT Cosmetics</div>
+							<div class="product-title ng-binding">Bộ: 6 Cọ Trang Điểm Mini</div>
+							<div class="product-price">
+								<span class="product-price-discount ng-binding" >515,000₫</span> 
+								<span class="product-price-total ng-binding">419,000₫</span>
 							</div>
+						</div>
 
-							<div class="apart-lg ng-hide" >
-								Xin lỗi bạn vì sản phẩm này đã hết hàng. Hãy thêm món hàng này vào mục yêu thích để nhận thông báo khi có hàng trở lại.
-							</div>
+						<div class="apart-lg ng-hide" >
+							Xin lỗi bạn vì sản phẩm này đã hết hàng. Hãy thêm món hàng này vào mục yêu thích để nhận thông báo khi có hàng trở lại.
+						</div>
 
-							<div class="apart-lg ng-hide" ng-show="availableQuantity === 0 || getTotalQuantityOfSelectedVariation(selectedVariation) === 0 &amp;&amp; !failedSubmit">
-								<button class="btn btn-default btn-block btn-action product" ng-class="{'btn-success disabled': doneAddToWishlist || isItemAlreadyInWishlist(currentVariations)}" ng-click="addToWishlist()">
-									<span>Thêm vào mục yêu thích</span>
-									<span class="ng-hide">
-										<span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Thành công!</span>
-								</button>
-							</div>
+						<div class="apart-lg ng-hide" >
+							<button class="btn btn-default btn-block btn-action product" >
+								<span>Thêm vào mục yêu thích</span>
+								<span class="ng-hide">
+									<span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Thành công!</span>
+							</button>
+						</div>
 
-							<div class="apart-lg">
-								<button class="btn btn-action btn-primary btn-block product" ng-click="addToCart()">THÊM VÀO GIỎ HÀNG</button>
-							</div>
+						<div class="apart-lg">
+							<button class="btn btn-action btn-primary btn-block product">THÊM VÀO GIỎ HÀNG</button>
+						</div>
 
-							<div class="apart-lg ng-hide">
-								<button class="btn btn-default btn-block btn-action product btn-success disabled ng-hide">Chọn Kích thước để thêm vào Giỏ hàng</button>	
-							</div>
+						<div class="apart-lg ng-hide">
+							<button class="btn btn-default btn-block btn-action product btn-success disabled ng-hide">Chọn Kích thước để thêm vào Giỏ hàng</button>	
+						</div>
 
-							<div class="apart-lg ng-hide">
-								<button class="btn btn-default btn-block btn-action product btn-success disabled ng-hide">Chọn Kích thước để thêm vào Mục yêu thích</button>	
-							</div>
+						<div class="apart-lg ng-hide">
+							<button class="btn btn-default btn-block btn-action product btn-success disabled ng-hide">Chọn Kích thước để thêm vào Mục yêu thích</button>	
+						</div>
 
 
-							<div class="apart-sm">
-								<div class="ui relaxed product list">
-									<div class="item">
-										<i class="leflair i-leflair-genuine big icon"></i>
-										<div class="content">
-											Cam kết 100% chính hãng
-										</div>
-									</div>
-									<div class="item" ng-hide="availableQuantity === 0">
-										<i class="leflair i-leflair-delivery big icon"></i>
-										<div class="content">
-											Giao hàng trong 2-7 ngày
-										</div>
-									</div>
-									<div class="item ng-hide" ng-hide="!product._isReturnable || availableQuantity === 0">
-										<i class="leflair i-leflair-return big icon"></i>
-										<div class="content">
-											Trả hàng trong 30 ngày
-										</div>
-									</div>
-									<div class="item" ng-hide="product._isReturnable || availableQuantity === 0">
-										<i class="leflair i-leflair-return big icon"></i>
-										<div class="content">
-											Sản phẩm này không được đổi trả.
-										</div>
+						<div class="apart-sm">
+							<div class="ui relaxed product list">
+								<div class="item">
+									<i class="leflair i-leflair-genuine big icon"></i>
+									<div class="content">
+										Cam kết 100% chính hãng
 									</div>
 								</div>
+								<div class="item" ng-hide="availableQuantity === 0">
+									<i class="leflair i-leflair-delivery big icon"></i>
+									<div class="content">
+										Giao hàng trong 2-7 ngày
+									</div>
+								</div>
+								<div class="item ng-hide" ng-hide="!product._isReturnable || availableQuantity === 0">
+									<i class="leflair i-leflair-return big icon"></i>
+									<div class="content">
+										Trả hàng trong 30 ngày
+									</div>
+								</div>
+								<div class="item" ng-hide="product._isReturnable || availableQuantity === 0">
+									<i class="leflair i-leflair-return big icon"></i>
+									<div class="content">
+										Sản phẩm này không được đổi trả.
+									</div>
+								</div>
 							</div>
-							<accordion class="product apart ng-isolate-scope" accordion-scroll="accordionList">
+						</div>
+						<accordion class="product apart ng-isolate-scope" accordion-scroll="accordionList">
 						<div class="panel-group">
 							<div class="panel panel-default ng-isolate-scope" is-open="accordionList[0]">
 								<div class="panel-heading">

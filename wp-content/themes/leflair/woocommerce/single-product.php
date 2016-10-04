@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * The Template for displaying all single products
  *
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+//get_header( 'shop' ); ?>
 
 	<?php
 		/**
@@ -53,7 +53,7 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+		//do_action( 'woocommerce_sidebar' );
 	?>
 
-<?php get_footer( 'shop' ); ?>
+<?php //get_footer( 'shop' ); ?>

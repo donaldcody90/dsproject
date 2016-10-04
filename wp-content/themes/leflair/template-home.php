@@ -114,7 +114,7 @@ Template Name: Home Template
 		</item>
 		<div class="col-xs-12 section-item banner ng-scope">
 		<a target="_blank" href="http://bit.ly/2dfv2jx">
-		<img class="fluid ng-isolate-scope" rio="" src="<?php echo site_url('wp-content/themes/leflair/assets/img/57e1fa80213fb40f00ee3f73.jpg'); ?>" data-rio-width="1140" data-rio-img="https://leflair-assets.storage.googleapis.com/57e1fa80213fb40f00ee3f73.jpg">
+		<img class="fluid ng-isolate-scope" rio="" src="<?php echo get_theme_option('home_banner', 'url'); ?>" data-rio-width="1140" data-rio-img="https://leflair-assets.storage.googleapis.com/57e1fa80213fb40f00ee3f73.jpg">
 		</a></div><!-- end ngRepeat: sale in salesList -->
 		<item class="col-md-6 col-xs-12 section-item ng-scope" ng-repeat="sale in salesList" ng-show="($index !== 0) || ($index === 0 &amp;&amp; $breakpoint.availUntil(featuredAvailAt))">
 			<a href="category/sales/" signup-link="">

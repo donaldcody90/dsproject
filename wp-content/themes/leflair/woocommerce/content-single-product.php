@@ -22,11 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
+<section class="ng-scope">
+	<div class="container header-offset ng-scope">
+
 <?php
 	/**
 	 * woocommerce_before_single_product hook.
 	 *
 	 * @hooked wc_print_notices - 10
+	 * @hooked woocommerce_template_breadcrumb - 20
 	 */
 	 do_action( 'woocommerce_before_single_product' );
 
@@ -36,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 
 	<?php
 		/**
@@ -48,19 +52,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
-	<div class="summary entry-summary">
+	<div class="col-sm-5 right-info">
 
 		<?php
 			/**
 			 * woocommerce_single_product_summary hook.
 			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_single_product_info - 5
 			 * @hooked woocommerce_template_single_add_to_cart - 30
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
+			 * @hooked woocommerce_template_single_excerpt - 6
+			 * @hooked woocommerce_template_single_excerpt - 20
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
@@ -75,11 +78,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
-		do_action( 'woocommerce_after_single_product_summary' );
+		//do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
-</div><!-- #product-<?php the_ID(); ?> -->
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+
+	<?php 
+	/**
+	 * woocommerce_after_single_product hook.
+	 *
+	 * @hooked woocommerce_template_recommendation - 10
+	 */
+	//do_action( 'woocommerce_after_single_product' ); ?>
+	
+	</div>
+</section>
