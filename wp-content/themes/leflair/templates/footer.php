@@ -22,10 +22,10 @@
 							<div class="col-md-2 col-sm-4">
 								<ul class="list-unstyled">
 									<li class="list-title">DOANH NGHIỆP</li>
-									<li><a href="/pages/about" target="_blank">VỀ CHÚNG TÔI</a></li>
+									<li><a href="<?php echo site_url('/about');?>" target="_blank">VỀ CHÚNG TÔI</a></li>
 									<li><a href="http://styleguide.leflair.vn/" target="_blank">Style Guide</a></li>
-									<li><a href="/pages/partners" target="_blank">HỢP TÁC VỚI LEFLAIR</a></li>
-									<li><a href="/pages/careers" target="_blank">TUYỂN DỤNG</a></li>
+									<li><a href="<?php echo site_url('/partners');?>" target="_blank">HỢP TÁC VỚI LEFLAIR</a></li>
+									<li><a href="<?php echo site_url('/careers');?>" target="_blank">TUYỂN DỤNG</a></li>
 								</ul>
 							</div>
 

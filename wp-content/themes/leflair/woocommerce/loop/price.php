@@ -19,10 +19,17 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+//get_price_html()
 global $product;
 ?>
 
-<?php if ( $price_html = $product->get_price_html() ) : ?>
-	<span class="price"><?php echo $price_html; ?></span>
-<?php endif; ?>
+<?php if ( $price_html = $product->sale_price ){ ?>
+	<p class="price ng-binding">
+		<span class="original-price ng-binding"><?php echo $product->regular_price.'₫';?></span>
+		<?php echo $product->sale_price.'₫';?>
+	</p>
+<?php } else{ ?>
+	<p class="price ng-binding">
+		<?php echo $product->regular_price.'₫';?>
+	</p>
+<?php } ?>

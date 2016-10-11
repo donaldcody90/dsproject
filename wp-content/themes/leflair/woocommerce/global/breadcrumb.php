@@ -23,16 +23,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! empty( $breadcrumb ) ) {
 
-	echo $wrap_before;
-
+	//echo $wrap_before;
+	echo '<ol class="breadcrumb">';
 	foreach ( $breadcrumb as $key => $crumb ) {
 
 		echo $before;
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
+			echo '<li><a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a></li>';
 		} else {
-			echo esc_html( $crumb[0] );
+			echo '<li class="active ng-binding">' . esc_html( $crumb[0] ) . '</li>';
 		}
 
 		echo $after;
@@ -42,7 +42,7 @@ if ( ! empty( $breadcrumb ) ) {
 		}
 
 	}
-
-	echo $wrap_after;
+	echo '</ol>';
+	//echo $wrap_after;
 
 }

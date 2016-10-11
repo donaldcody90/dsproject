@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * woocommerce_before_single_product hook.
 	 *
 	 * @hooked wc_print_notices - 10
-	 * @hooked woocommerce_template_breadcrumb - 20
+	 * @hooked woocommerce_breadcrumb - 20
 	 */
 	 do_action( 'woocommerce_before_single_product' );
 
@@ -62,8 +62,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * @hooked woocommerce_template_single_add_to_cart - 30
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
-			 * @hooked woocommerce_template_single_excerpt - 6
-			 * @hooked woocommerce_template_single_excerpt - 20
+			 * //@hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_excerpt - 60
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
@@ -82,8 +82,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
-
-
 
 	<?php 
 	/**

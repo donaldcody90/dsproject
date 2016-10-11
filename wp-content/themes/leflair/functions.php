@@ -23,7 +23,6 @@ if ( file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php
 }
 
 
-
 $roots_includes = array(
   'lib/utils.php',           // Utility functions
   'lib/init.php',            // Initial theme setup and constants
@@ -86,4 +85,16 @@ if(!function_exists('lmcit_theme_register_style')) {
 		wp_register_script('lmcit_theme_js_highslide-with-gallery.js', $jsUrl . '/highslide-with-gallery.js', array(), '1.0');
 		wp_enqueue_script('lmcit_theme_js_highslide-with-gallery.js',true);
 	}
+}
+
+//******************************************
+
+add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+function custom_override_checkout_fields($fields){
+	unset($fields['billing']['billing_country']);
+	unset($fields['billing']['billing_postcode']);
+	unset($fields['billing']['billing_address_2']);
+	unset($fields['order']['order_comments']);
+    return $fields;
 }

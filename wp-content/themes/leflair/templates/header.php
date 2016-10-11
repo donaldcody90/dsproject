@@ -110,7 +110,7 @@
 										</ul>
 									</li>
 									<li class="ng-scope">
-										<a href="">Giỏ: <span class="trinidad ng-binding"> 0</span></a>
+										<a href="<?php echo site_url('/cart');?>">Giỏ: <span class="trinidad ng-binding"> 0</span></a>
 									</li>
 								</ul>
 							</div>

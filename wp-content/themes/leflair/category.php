@@ -1,10 +1,12 @@
 <?php
 get_template_part('templates', 'head');
-get_template_part('templates', 'header'); ?>
+get_template_part('templates', 'header');
+
+
+ ?>
 
 <section>
-			
-
+		
 		<img class="fluid category-hero ng-isolate-scope" src="https://src0.responsive.io/webp/w=1349/https://leflair-assets.storage.googleapis.com/57e1098b52b3930f00aefe3c.jpg">
 
 		<div class="container">
@@ -15,7 +17,7 @@ get_template_part('templates', 'header'); ?>
 						<li class="active ng-binding">Cọ Trang Điểm KT Cosmetics</li>
 					</ol>
 					<div class="sale-closing-time">
-						<img class="brand-logo ng-isolate-scope" >
+						<img class="brand-logo ng-isolate-scope" />
 
 						<div class="closing-time ng-binding ng-scope">
 							<span class="glyphicon glyphicon-time"></span>

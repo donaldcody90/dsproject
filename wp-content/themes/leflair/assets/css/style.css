@@ -5,6 +5,41 @@
 	float: left;
 }
 
+.panel-group .panel-default .panel-collapse.in{
+	height: auto;
+}
+
+.panel-group .panel-default .panel-collapse.collapse{
+	height: 0px;
+}
+
+.panel-group .panel-default .panel-heading{
+	cursor: pointer;
+}
+
+.upcoming-img{
+	position: relative;
+	overflow: hidden;
+}
+
+.upcoming-img img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100%!important;
+	width: auto!important;
+	max-width: none!important;
+	-webkit-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+}
+
+.woocommerce-checkout .content.row, .woocommerce-cart .content.row{
+	margin: 50px 40px 50px 40px !important;
+}
+
+
+
 
 
 

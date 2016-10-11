@@ -19,11 +19,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+global $post, $product;
+$args = array( 'post_type' => 'product', 'posts_per_page' => 4, 'product_cat' => 'dong-ho' );
+$loop = new WP_Query( $args );
+$current_product= $product->id;
+echo $current_product;
 
-global $product;
 
 ?>
-<section class="recommendations-section ng-scope ng-hide">
+<section class="recommendations-section ng-scope">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -31,9 +35,27 @@ global $product;
 				<h2 class="recommended-products hidden-xs">Sản phẩm bạn có thể thích:</h2>
 			</div>
 		</div>
-
+		
 		<div class="row recommendation">
-			<!-- ngRepeat: product in recommendations -->
+			<?php while ( $loop->have_posts() ) : $loop->the_post();
+					$id= get_the_id();
+				if($id != $current_product){ ?>
+			<div class="product-grid-item ng-scope">
+				<a href="<?php echo get_permalink();?>" class="thumbnail">
+					<?php echo woocommerce_get_product_thumbnail();?>
+				</a>
+				<div class="product-info">
+					<div class="product-brand ng-binding">
+						Juicy Couture
+					</div>
+					<div class="product-title ng-binding">
+						<?php echo get_the_title();?>
+					</div>
+				</div>
+			</div>
+			<?php } endwhile; 
+				wp_reset_query();  ?>
+			
 		</div>
 	</div>
 </section>

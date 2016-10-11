@@ -29,18 +29,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <accordion class="product apart ng-isolate-scope" accordion-scroll="accordionList">
 	<div class="panel-group">
-		<div class="panel panel-default ng-isolate-scope" is-open="accordionList[0]">
+		<div class="panel panel-default ng-isolate-scope">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
-						<span class="ng-scope opened">
-							<i class="leflair pull-right i-leflair-minus"></i>
+					<a>
+						<span class="ng-scope">
+							<i class="leflair pull-right i-leflair-plus"></i>
 							Thông tin sản phẩm
 						</span>
 					</a>
 				</h4>
 			</div>
-			<div class="panel-collapse in" style="height: auto;">
+			<div class="panel-collapse collapse">
 				<div class="panel-body">
 					<accordion-heading class="ng-scope"></accordion-heading>
 					<description-display contents="product.description.secondary" class="ng-scope ng-isolate-scope">
@@ -76,27 +76,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="panel panel-default ng-isolate-scope">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a href="javascript:void(0)" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" accordion-transclude="heading">
-						<span ng-class="{'opened': accordionList[1]}" class="ng-scope">
+					<a>
+						<span class="ng-scope">
 							<i class="leflair pull-right i-leflair-plus" ></i>
 							Chất liệu &amp; Cách bảo quản
 						</span>
 					</a>
 				</h4>
 			</div>
-			<div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
+			<div class="panel-collapse collapse">
 				<div class="panel-body">
-						<accordion-heading class="ng-scope"></accordion-heading>
-						<description-display contents="product.materialCare" class="ng-scope ng-isolate-scope">
-					<div class="ui bulleted list">
-						<div class="item ng-scope">
-							<div class="ng-binding ng-scope">Chất liệu: Sợi tự nhiên</div>
+					<accordion-heading class="ng-scope"></accordion-heading>
+					<description-display contents="product.materialCare" class="ng-scope ng-isolate-scope">
+						<div class="ui bulleted list">
+							<div class="item ng-scope">
+								<div class="ng-binding ng-scope">Chất liệu: Sợi tự nhiên</div>
+							</div>
+							<div class="item ng-scope">
+								
+								<div class="ng-binding ng-scope">Bảo quản: Xem hướng dẫn trên tag sản phẩm.</div>
+							</div>
 						</div>
-						<div class="item ng-scope">
-							
-							<div class="ng-binding ng-scope">Bảo quản: Xem hướng dẫn trên tag sản phẩm.</div>
-						</div>
-					</div></description-display>
+					</description-display>
 				</div>
 			</div>
 		</div>
@@ -104,21 +105,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="panel panel-default ng-isolate-scope ng-hide">
 		  <div class="panel-heading">
 			<h4 class="panel-title">
-			  <a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
-								<span class="ng-scope">
-									<i class="leflair pull-right i-leflair-plus"></i>
-									Chi Tiết Kích Cỡ
-								</span>
-							</a>
+				<a>
+					<span class="ng-scope">
+						<i class="leflair pull-right i-leflair-plus"></i>
+						Chi Tiết Kích Cỡ
+					</span>
+				</a>
 			</h4>
 		  </div>
-			<div class="panel-collapse collapse" style="height: 0px;">
+			<div class="panel-collapse collapse">
 				<div class="panel-body">
-				<accordion-heading class="ng-scope"></accordion-heading>
-				<description-display contents="product.sizeFit" class="ng-scope ng-isolate-scope ng-hide">
-				<div class="ui bulleted list">
-					<!-- ngRepeat: content in formattedContents -->
-				</div></description-display>
+					<accordion-heading class="ng-scope"></accordion-heading>
+					<description-display contents="product.sizeFit" class="ng-scope ng-isolate-scope ng-hide">
+						<div class="ui bulleted list">
+							<!-- ngRepeat: content in formattedContents -->
+						</div>
+					</description-display>
 					<div class="size-chart ng-scope ng-hide" id="sizeTable">
 						<table class="table">
 							<thead>
@@ -140,7 +142,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="visible-xs panel panel-default ng-isolate-scope">
 			<div class="panel-heading">
 			<h4 class="panel-title">
-				<a href="javascript:void(0)" tabindex="0" class="accordion-toggle">
+				<a href="" class="accordion-toggle">
 					<span class="ng-scope">
 						<i class="leflair pull-right i-leflair-plus"></i>
 						<span>Thông tin thương hiệu</span>
@@ -149,7 +151,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 			</h4>
 			</div>
-			<div class="panel-collapse collapse" style="height: 0px;">
+			<div class="panel-collapse collapse">
 				<div class="panel-body">
 					<accordion-heading class="ng-scope"></accordion-heading>
 					<h5 class="ng-binding ng-scope">"Dụng cụ trang điểm chuyên nghiệp"</h5>
@@ -157,4 +159,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 			</div>
 		</div>
-	</div></accordion>
+	</div>
+</accordion>

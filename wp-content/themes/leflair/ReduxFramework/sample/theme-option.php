@@ -240,10 +240,30 @@ if (!class_exists('Redux_Framework_theme_option_config')) {
 							)
 						),
 						array(
+							'id' => 'home_text_slider1',
+							'type' => 'text',
+							'url' => true,
+							'title' => __('Home Text Slider 1', 'wpf-framework-demo'),
+						),
+						array(
+							'id' => 'home_text_slider2',
+							'type' => 'text',
+							'url' => true,
+							'title' => __('Home Text Slider 2', 'wpf-framework-demo'),
+						),
+						array(
 							'id' => 'home_banner',
 							'type' => 'media',
 							'url' => true,
 							'title' => __('Home Banner', 'wpf-framework-demo'),
+							'compiler' => 'true',
+							'description'=>'Size : 2347 × 853',
+						),
+						array(
+							'id' => 'home_banner2',
+							'type' => 'media',
+							'url' => true,
+							'title' => __('Home Banner 2', 'wpf-framework-demo'),
 							'compiler' => 'true',
 							'description'=>'Size : 1140px x 254px',
 						),
