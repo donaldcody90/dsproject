@@ -15,7 +15,7 @@
  * @package 	WooCommerce/Templates
  * @version     2.5.0
  */
- /*
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -59,4 +59,3 @@ if ( ! is_ajax() ) {
 if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_after_payment' );
 }
-*/

@@ -87,11 +87,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php endif; ?>
 	
-	<div class="text-center row">
-
-	<?php echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="btn btn-primary btn-order" name="woocommerce_checkout_place_order" id="place_order" value="Giao hàng đến địa chỉ này" data-value="' . esc_attr( $order_button_text ) . '" />' ); ?>
-
-	</div>
-	
 	</div>
 </div>
