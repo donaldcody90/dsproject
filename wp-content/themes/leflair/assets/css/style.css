@@ -38,6 +38,35 @@
 	margin: 50px 40px 50px 40px !important;
 }
 
+best-seller .bx-controls-direction a span{display:table-cell;vertical-align:middle;font-size:3em;color:rgba(0,0,0,.3)}
+best-seller .bx-controls-direction a span:hover{color:rgba(0,0,0,.6)}
+best-seller .bx-controls-direction .bx-prev span{float:left;}
+best-seller .bx-controls-direction .bx-next span{float:right;}
+
+best-seller .price del{
+    color: #CECECE;
+}
+best-seller .price ins{
+    text-decoration: none;
+}
+
+.product-grid-details del {
+    font-size: 16px;
+    color: #BCBCBC;
+    font-weight: 400;
+}
+.product-grid-details ins {
+    text-decoration: none;
+}
+
+.product-info .product-price ins{
+	font-size: 1.4em;
+    padding-left: 5px;
+    color: #0c7c8e;
+	text-decoration: none!important;
+}
+
+
 
 
 

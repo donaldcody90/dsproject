@@ -38,18 +38,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<div class="well white-well well-big row">
 		<div class="col-xs-12  ng-scope">
-		<h4 class="form-header"> Địa Chỉ Giao Hàng </h4>
+			<h4 class="form-header"> Địa Chỉ Giao Hàng </h4>
+			<br class="hidden-xs">
 
-	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
+			<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 
-	<?php foreach ( $checkout->checkout_fields['billing'] as $key => $field ) : ?>
+			<?php foreach ( $checkout->checkout_fields['billing'] as $key => $field ) : ?>
 
-		<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+				<?php customizing_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
 
-	<?php endforeach; ?>
+			<?php endforeach; ?>
 
-	<?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
-	
+			<?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
+		
+			<div class="ui checkbox fluid checked active" ng-show="addressType === 'shipping' &amp;&amp; isNewAddress" ng-class="{active: !options.differentAddress}">
+				<input name="example" type="checkbox" ng-model="options.differentAddress" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+				<label>
+					Địa chỉ in trên hoá đơn giống như trên
+				</label>
+			</div>
 		</div>
 	</div>
 

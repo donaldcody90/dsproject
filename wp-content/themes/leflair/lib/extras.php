@@ -44,7 +44,7 @@ function template_loop_product_thumbnail() {
 	echo '<div class="thumbnail product-thumb">';
 	echo template_loop_product_link_open();
 	echo woocommerce_get_product_thumbnail();
-	echo '</div>';
+	echo '</a></div>';
 }
 function template_loop_product_title() {
 	echo '<h3><a class="title ng-binding" href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
@@ -348,7 +348,7 @@ if ( ! function_exists( 'customizing_form_field' ) ) {
 
         $field = '';
         $label_id = $args['id'];
-        $field_container = '<div class="form-group">%3$s</p>';
+        $field_container = '<div class="form-group form-row %1$s">%3$s</div>';
 
         switch ( $args['type'] ) {
             case 'country' :
@@ -426,7 +426,7 @@ if ( ! function_exists( 'customizing_form_field' ) ) {
             case 'tel' :
             case 'number' :
 
-                $field .= '<input type="' . esc_attr( $args['type'] ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) .'" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . $args['maxlength'] . ' ' . $args['autocomplete'] . ' value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+                $field .= '<input type="' . esc_attr( $args['type'] ) . '" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required ' . esc_attr( implode( ' ', $args['input_class'] ) ) .'" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . $args['maxlength'] . ' ' . $args['autocomplete'] . ' value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
 
                 break;
             case 'select' :

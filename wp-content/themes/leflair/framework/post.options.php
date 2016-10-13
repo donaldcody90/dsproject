@@ -9,6 +9,30 @@ $fields_page = array(
 		'type'	=> 'select',
 		'options' => $sliders,
 	),
+	array(
+		'label' => 'Trademark',
+		'desc'	=> '',
+		'id' 	=> $prefix.'trademark',
+		'type'	=> 'text'
+	),
+	array(
+		'label' => 'Trademark Logo',
+		'desc'	=> '',
+		'id' 	=> $prefix.'trademark_logo',
+		'type'	=> 'image'
+	),
+	array(
+		'label' => 'Trademark Slogan',
+		'desc'	=> '',
+		'id' 	=> $prefix.'trademark_slogan',
+		'type'	=> 'text'
+	),
+	array(
+		'label' => 'Trademark Description',
+		'desc'	=> '',
+		'id' 	=> $prefix.'trademark_description',
+		'type'	=> 'editor'
+	),
 	array( 
 		'label'	=> 'Header Image', 
 		'desc'	=> '', 

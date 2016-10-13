@@ -23,13 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<?php if ( $price_html = $product->sale_price ){ ?>
+<?php if ( $price_html = $product->get_price_html() ){ ?>
 <div class="product-price">
-	<span class="product-price-discount ng-binding"><?php echo $product->regular_price . '₫';?></span> 
-	<span class="product-price-total ng-binding"><?php echo $product->sale_price?$product->sale_price.'₫':'';?></span>
-</div>
-<?php } else{ ?>
-<div class="product-price">
-	<span class="product-price-total ng-binding"><?php echo $product->regular_price . '₫';?></span>
+	<?php echo $product->get_price_html();?>
 </div>
 <?php } ?>

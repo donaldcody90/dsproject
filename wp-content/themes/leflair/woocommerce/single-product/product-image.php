@@ -71,9 +71,10 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 						</div>
 
 						<div class="apart-big apart-no-bottom hidden-xs">
-							<img class="brand-logo ng-isolate-scope" src="https://src0.responsive.io/webp/w=653/https://leflair-assets.storage.googleapis.com/57e10ad752b3930f00aefe61.jpg" >
+							<!--<img class="brand-logo ng-isolate-scope" src="-->
+							<?php echo wp_get_attachment_image(get_post_meta( $product->id, 'product_trademark_logo', true )); ?>
 
-							<h5 class="ng-binding">"Dụng cụ trang điểm chuyên nghiệp"</h5>
-							<p class="ng-binding">Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
+							<h5 class="ng-binding"><?php echo get_post_meta($product->id, 'product_trademark_slogan', true);?></h5>
+							<p class="ng-binding"><?php echo get_post_meta($product->id, 'product_trademark_description', true);?></p>
 						</div>
 					</div>
