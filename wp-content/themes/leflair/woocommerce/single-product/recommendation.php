@@ -46,7 +46,7 @@ echo $current_product;
 				</a>
 				<div class="product-info">
 					<div class="product-brand ng-binding">
-						Juicy Couture
+						<?php echo get_post_meta($id, 'product_trademark', true); ?>
 					</div>
 					<div class="product-title ng-binding">
 						<?php echo get_the_title();?>

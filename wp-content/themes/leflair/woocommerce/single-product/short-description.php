@@ -20,11 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-// global $post;
+global $post, $product;
 
-// if ( ! $post->post_excerpt ) {
-	// return;
-// }
+if ( ! $post->post_excerpt ) {
+	return;
+}
 
 ?>
 <accordion class="product apart ng-isolate-scope" accordion-scroll="accordionList">
@@ -45,28 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<accordion-heading class="ng-scope"></accordion-heading>
 					<description-display contents="product.description.secondary" class="ng-scope ng-isolate-scope">
 					<div class="ui bulleted list">
-					
-						<div class="item ng-scope">
-							<div class="ng-binding ng-scope">
-								Bộ sản phẩn gồm:
-								<div class="ui bulleted dashed list">
-									<div class="item ng-binding ng-scope">1 cọ mút</div>
-									<div class="item ng-binding ng-scope">1 cọ eyeliner</div>
-									<div class="item ng-binding ng-scope">1 cọ kẻ chân mày</div>
-									<div class="item ng-binding ng-scope">1 cọ kem che khuyết điểm</div>
-									<div class="item ng-binding ng-scope">1 cọ phấn nền</div>
-									<div class="item ng-binding ng-scope">1 cọ môi</div>
-								</div>
-							</div>
-						</div>
-						<div class="item ng-scope">
-							
-							<div class="ng-binding ng-scope"> Xuất xứ: Hàn Quốc</div>
-						</div>
-						<div class="item ng-scope">
-							
-							<div class="ng-binding ng-scope"> Nơi sản xuất: Hàn Quốc</div>
-						</div>
+						<?php echo get_post_meta($product->id, 'product_product_information', true);?>
 					</div>
 					</description-display>		
 				</div>
@@ -89,20 +68,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<accordion-heading class="ng-scope"></accordion-heading>
 					<description-display contents="product.materialCare" class="ng-scope ng-isolate-scope">
 						<div class="ui bulleted list">
-							<div class="item ng-scope">
-								<div class="ng-binding ng-scope">Chất liệu: Sợi tự nhiên</div>
-							</div>
-							<div class="item ng-scope">
-								
-								<div class="ng-binding ng-scope">Bảo quản: Xem hướng dẫn trên tag sản phẩm.</div>
-							</div>
+							<?php echo get_post_meta($product->id, 'product_material_guide', true); ?>
 						</div>
 					</description-display>
 				</div>
 			</div>
 		</div>
 
-		<div class="panel panel-default ng-isolate-scope ng-hide">
+		<div class="panel panel-default ng-isolate-scope">
 		  <div class="panel-heading">
 			<h4 class="panel-title">
 				<a>
@@ -118,7 +91,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<accordion-heading class="ng-scope"></accordion-heading>
 					<description-display contents="product.sizeFit" class="ng-scope ng-isolate-scope ng-hide">
 						<div class="ui bulleted list">
-							<!-- ngRepeat: content in formattedContents -->
+							<?php echo get_post_meta($product->id, 'product_detailed_size', true); ?>
 						</div>
 					</description-display>
 					<div class="size-chart ng-scope ng-hide" id="sizeTable">

@@ -51,12 +51,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
 		
-			<div class="ui checkbox fluid checked active" ng-show="addressType === 'shipping' &amp;&amp; isNewAddress" ng-class="{active: !options.differentAddress}">
-				<input name="example" type="checkbox" ng-model="options.differentAddress" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+			<!--<div class="ui checkbox fluid checked active">
+				<input name="example" type="checkbox" class="ng-valid ng-dirty ng-valid-parse ng-touched">
 				<label>
 					Địa chỉ in trên hoá đơn giống như trên
 				</label>
-			</div>
+			</div>-->
 		</div>
 	</div>
 

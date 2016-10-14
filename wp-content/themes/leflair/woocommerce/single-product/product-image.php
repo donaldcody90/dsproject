@@ -74,7 +74,9 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 							<!--<img class="brand-logo ng-isolate-scope" src="-->
 							<?php echo wp_get_attachment_image(get_post_meta( $product->id, 'product_trademark_logo', true )); ?>
 
-							<h5 class="ng-binding"><?php echo get_post_meta($product->id, 'product_trademark_slogan', true);?></h5>
+							<h5 class="ng-binding">"<?php echo get_post_meta($product->id, 'product_trademark_slogan', true);?>"</h5>
 							<p class="ng-binding"><?php echo get_post_meta($product->id, 'product_trademark_description', true);?></p>
 						</div>
+						
+						<?php //echo $post->post_excerpt; ?>
 					</div>

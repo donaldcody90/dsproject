@@ -232,6 +232,15 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
+	$(".product .panel-group .panel-default").each(function(){
+		var item= $(this).find(".panel-collapse .panel-body div").hasClass("item");
+		if(item==false){
+			$(this).addClass("ng-hide");
+		}
+	});
+});
+
 
 
 

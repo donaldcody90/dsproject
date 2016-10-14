@@ -33,6 +33,24 @@ $fields_page = array(
 		'id' 	=> $prefix.'trademark_description',
 		'type'	=> 'editor'
 	),
+	array(
+		'label' => 'Product Information',
+		'desc'	=> '',
+		'id' 	=> $prefix.'product_information',
+		'type'	=> 'editor'
+	),
+	array(
+		'label' => 'Material & Guide',
+		'desc'	=> '',
+		'id' 	=> $prefix.'material_guide',
+		'type'	=> 'editor'
+	),
+	array(
+		'label' => 'Detailed Size',
+		'desc'	=> '',
+		'id' 	=> $prefix.'detailed_size',
+		'type'	=> 'editor'
+	),
 	array( 
 		'label'	=> 'Header Image', 
 		'desc'	=> '', 

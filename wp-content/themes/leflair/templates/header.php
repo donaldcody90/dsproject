@@ -1,22 +1,77 @@
 <body class="" breakpoint="">
 		
-		
-		<div class="ui simple sidebar push menu shopping-cart ng-scope ng-isolate-scope right">
+		<?php 
+			$args= array();
+			echo woocommerce_mini_cart(); ?>
+		<div class="ui simple sidebar push menu shopping-cart ng-scope ng-isolate-scope right uncover visible">
 			<div class="wrapper">
 				<div class="header text-center">
 					<i class="leflair i-leflair-close"></i>
-						Giỏ Hàng
+					Giỏ Hàng
 				</div>
 
-				<div class="content ng-hide">
+				<div class="content">
+					<div class="cart-item ng-scope">
+						<div class="row">
+							<div class="col-xs-4">
+								<img class="image ng-isolate-scope" src="https://src0.responsive.io/webp/w=420/https://leflair-assets.storage.googleapis.com/57a60cc2ee457b1000dddbe4.jpg">
+							</div>
+							<div class="col-xs-8 no-left-padding">
+								<p class="ng-binding">
+									Kính Mát Nữ Kiểu Phi Công	
+								</p>
+
+								<div class="row">
+									<div class="col-xs-6">
+										<p>
+											<span class="ng-binding ng-scope">
+												Color: C03 <br>
+											</span>
+										</p>
+										<p class="box">
+											<span class="middle">Qty: </span>
+											<uiselect class="sm-mobile ng-isolate-scope" list="item.quantities" selected="item" selected-property="quantity" action="updateItemQuantity">
+												<div class="ui-select input-group">
+													<input type="text" ng-model="displayItem" class="form-control dropdown-toggle ng-pristine ng-valid ng-touched" readonly="">
+													<ul class="dropdown-menu">
+														<li class="ng-scope">
+															<a href="" class="ng-binding">1</a>
+														</li>
+													</ul>
+													<div class="input-group-btn">
+														<button class="btn bt-default">
+															<span class="caret"></span>
+														</button>
+													</div>
+												</div>
+											</uiselect>
+										</p>
+									</div>
+
+									<div class="col-xs-6 text-right">
+										<p>
+											<b class="actual-price ng-binding" style="float: right">
+												1,379,000₫
+											</b>
+											<br>
+											<a href="">Bỏ sản phẩm</a>
+										</p>
+									</div>
+										
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
 					<div class="stats cart-item">
 						<p class="subtotal big clearfix">
 							<span class="pull-left">Tổng tiền:</span>
-							<b class="number pull-right ng-binding">0₫</b>
+							<b class="number pull-right ng-binding">1,379,000₫</b>
 						</p>
 						<p class="subtotal clearfix">
 							<span class="pull-left">Tiết kiệm:</span>
-							<span class="number pull-right ng-binding">0₫</span>
+							<span class="number pull-right ng-binding">1,521,000₫</span>
 						</p>
 						<hr>
 
@@ -28,13 +83,12 @@
 								<button type="button" class="btn btn-primary btn-order">Tiến hành đặt hàng</button>
 							</div>
 
-							<p><a href=""> &lt; Tiếp tục mua sắm</a></p>
+							<p><a href="" class=""> &lt; Tiếp tục mua sắm</a></p>
 						</div>
 					</div>
 				</div>
 
-				<div class="content empty text-center">
-
+				<div class="content empty text-center ng-hide">
 					<div class="wrapper">
 						<i class="leflair i-leflair-sadness"></i>
 
@@ -44,7 +98,6 @@
 
 						<div class="apart-sm">
 							<button type="button" class="btn btn-primary btn-order">Tiếp tục mua sắm!</button>
-
 						</div>
 					</div>
 				</div>
