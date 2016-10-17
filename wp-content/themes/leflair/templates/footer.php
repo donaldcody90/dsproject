@@ -11,7 +11,7 @@
 								<ul class="list-unstyled">
 									<li class="list-title">Liên lạc</li>
 									<li>
-										<a href="tel:<?php echo get_theme_option('phone_number', 'url');?>"><span class="glyphicon glyphicon-earphone"></span> <?php echo get_theme_option('phone_number');?></a>
+										<a href="tel:<?php echo get_theme_option('phone_number');?>"><span class="glyphicon glyphicon-earphone"></span> <?php echo get_theme_option('phone_number');?></a>
 									</li>
 									<li>
 										<a href="mailto:<?php echo get_theme_option('email');?>" class="lowercase"><span class="glyphicon glyphicon-envelope"></span> <?php echo get_theme_option('email');?></a>
@@ -84,8 +84,6 @@
 				</div>
 			</section>
 		</footer>
-		</div>
+	</div>
 
 
-	</body>
-</html>

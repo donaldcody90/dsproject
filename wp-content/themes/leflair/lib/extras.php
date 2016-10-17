@@ -182,6 +182,16 @@ function short_code_careers($atts, $content = null) {
 }
 add_shortcode('careers', 'short_code_careers');
 
+function short_code_account($atts, $content = null) {
+    $output = '';
+    ob_start();
+	include(get_template_directory().'/templates/sc-account.php');
+    $output .= ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+add_shortcode('account', 'short_code_account');
+
 add_shortcode( 'bestselling_product_categories', 'sp_bestselling_products' );
 function sp_bestselling_products($atts){
  

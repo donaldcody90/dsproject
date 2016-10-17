@@ -19,7 +19,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+echo '<br>
+<br>
+<br>
+<br>
+<br>';
+global $wp;
+print_r($wp->query_vars);
 wc_print_notices();
 
 /**

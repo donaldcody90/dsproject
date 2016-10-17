@@ -241,6 +241,90 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
+	
+	$("#nav_cart").click(function(){
+		var minicart= $("div.shopping-cart").hasClass("uncover");
+		$(".dropdown").removeClass("open");
+		if(!minicart){
+			$("div.shopping-cart").addClass("uncover visible");
+			$("body .pusher").addClass("dimmed");
+		}else{
+			$("div.shopping-cart").removeClass("uncover visible");
+			$("body .pusher").removeClass("dimmed");
+		}
+	});
+});
+
+$(document).ready(function(){
+	$(".i-leflair-bag").click(function(){
+		var minicart= $("div.shopping-cart").hasClass("uncover");
+		if(!minicart){
+			$("div.shopping-cart").addClass("uncover visible");
+			$("body .pusher").addClass("dimmed");
+		}else{
+			$("div.shopping-cart").removeClass("uncover visible");
+			$("body .pusher").removeClass("dimmed");
+		}
+	});
+});
+
+$(document).ready(function(){
+	$(".i-leflair-menu").click(function(){
+		var minicart= $("div.sidebar.menu.left").hasClass("uncover");
+		if(!minicart){
+			$("div.sidebar.menu.left").addClass("uncover visible");
+			$("body .pusher").addClass("dimmed");
+		}else{
+			$("div.sidebar.menu.left").removeClass("uncover visible");
+			$("body .pusher").removeClass("dimmed");
+		}
+	});
+});
+
+$(document).ready(function(){
+	$("body .pusher.dimmed").click(function(){
+		if($("div.shopping-cart").hasClass("uncover")==true){
+			$("div.shopping-cart").removeClass("visible");
+			$("div.shopping-cart").addClass("animating");
+			$("div.shopping-cart").removeClass("uncover animating");
+			$("body .pusher").removeClass("dimmed");
+		}
+	});
+});
+
+$(document).ready(function(){
+	$(".mini-cart-cancel").click(function(){
+		$(".shopping-cart").removeClass("uncover visible");
+		$("body .pusher").removeClass("dimmed");
+	});
+});
+
+
+$(document).ready(function(){
+	$(".dropdown").each(function(){
+		$(".dropdown").click(function(){
+			if($(this).hasClass("open")==false){
+				$(".dropdown").removeClass("open");
+				$(this).addClass("open");
+				$(this).find(".dropdown-menu").show();
+			}else{
+				$(this).removeClass("open");
+			}
+		});
+	});
+});
+/*
+$(document).ready(function(){
+	$(".edit_account_info").click(function(){
+		
+	});
+});
+
+
+    
+
+
 
 
 

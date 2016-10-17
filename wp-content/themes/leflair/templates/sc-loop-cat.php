@@ -20,19 +20,15 @@ $loop = new WP_Query( $args_bs );
 	<section autoscroll="false" le-scroll="" offset="400" class="ng-scope">
 		<section class="ng-scope">
 		<promotion-carousel>
-		<div ng-mouseenter="pause()" class="info-slider hidden-xs hidden-sm carousel ng-isolate-scope" interval="5000">
-		<div class="carousel-inner">
-		<div ng-class="{
-		'active': active
-		  }" class="item text-center ng-isolate-scope active">
-				<a href="" class="ng-binding ng-scope"><?php echo get_theme_option('home_text_slider1'); ?></a>
+		<div class="info-slider hidden-xs hidden-sm carousel ng-isolate-scope">
+			<div class="carousel-inner">
+				<div class="item text-center ng-isolate-scope">
+					<a href="" class="ng-binding ng-scope"><?php echo get_theme_option('home_text_slider1'); ?></a>
+				</div>
+				<div class="item text-center ng-isolate-scope active">
+					<a href="tel:<?php echo get_theme_option('phone_number');?>" class="ng-binding ng-scope"><?php echo get_theme_option('home_text_slider2'); ?></a>
+				</div>
 			</div>
-		<div ng-class="{
-			'active': active
-		  }" class="item text-center ng-isolate-scope">
-				<a href="tel:19006710" class="ng-binding ng-scope"><?php echo get_theme_option('home_text_slider2'); ?></a>
-			</div>
-		</div>
 			<a class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
 			<a class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		</div>
