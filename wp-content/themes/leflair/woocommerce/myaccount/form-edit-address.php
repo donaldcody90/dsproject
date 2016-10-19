@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $page_title = ( $load_address === 'billing' ) ? __( 'Billing Address', 'woocommerce' ) : __( 'Shipping Address', 'woocommerce' );
-
+//echo '<pre>'; print_r($address);
 do_action( 'woocommerce_before_edit_account_address_form' ); ?>
 
 <?php if ( ! $load_address ) : ?>

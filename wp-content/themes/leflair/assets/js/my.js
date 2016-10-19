@@ -242,7 +242,6 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	
 	$("#nav_cart").click(function(){
 		var minicart= $("div.shopping-cart").hasClass("uncover");
 		$(".dropdown").removeClass("open");
@@ -283,23 +282,11 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	$("body .pusher.dimmed").click(function(){
-		if($("div.shopping-cart").hasClass("uncover")==true){
-			$("div.shopping-cart").removeClass("visible");
-			$("div.shopping-cart").addClass("animating");
-			$("div.shopping-cart").removeClass("uncover animating");
-			$("body .pusher").removeClass("dimmed");
-		}
-	});
-});
-
-$(document).ready(function(){
 	$(".mini-cart-cancel").click(function(){
 		$(".shopping-cart").removeClass("uncover visible");
 		$("body .pusher").removeClass("dimmed");
 	});
 });
-
 
 $(document).ready(function(){
 	$(".dropdown").each(function(){
@@ -308,18 +295,74 @@ $(document).ready(function(){
 				$(".dropdown").removeClass("open");
 				$(this).addClass("open");
 				$(this).find(".dropdown-menu").show();
-			}else{
+			}
+			else{
 				$(this).removeClass("open");
 			}
 		});
-	});
-});
-/*
-$(document).ready(function(){
-	$(".edit_account_info").click(function(){
 		
 	});
+	$(document).click(function(e){
+		var target = e.target;
+		if(!$(target).is('.dropdown') && !$(target).parents().is('.dropdown')){
+			$(".dropdown").removeClass("open");
+		}
+	});
 });
+
+$(document).ready(function(){
+	$(".edit-account-info a").click(function(){
+		$(".account-info-content").children("div").addClass("ng-hide");
+		$(".form-account-info").removeClass("ng-hide");
+	});
+	$(".account-info-back").click(function(){
+		$(".account-info-content").children("div").removeClass("ng-hide");
+		$(".form-account-info").addClass("ng-hide");
+	});
+});
+
+$(document).ready(function(){
+	$(".address-details .underline-link").click(function(){
+		$(".account-info-content").children("h4").addClass("ng-hide");
+		$(".account-info-content").children("div").addClass("ng-hide");
+		$(".change-address-form").find(".company-name").addClass("ng-hide");
+		$(".change-address-form").find(".taxcode").addClass("ng-hide");
+		$(".change-address-form").find(".checkbox").addClass("ng-hide");
+		$(".change-address-form").removeClass("ng-hide");
+		if($(this).hasClass("edit-billing-address")){
+			$(".change-address-form").find(".change-address-form-title").html("Điền địa chỉ giao hàng");
+			$(".change-address-form").find(".checkbox").removeClass("ng-hide");
+		}
+		if($(this).hasClass("edit-shipping-address")){
+			$(".change-address-form").find(".change-address-form-title").html("Điền địa chỉ trên hoá đơn");
+			$(".change-address-form").find(".company-name").removeClass("ng-hide");
+			$(".change-address-form").find(".taxcode").removeClass("ng-hide");
+		}
+	});
+	$(".change-address-form-back").click(function(){
+		$(".account-info-content").children("h4").removeClass("ng-hide");
+		$(".account-info-content").children("div").removeClass("ng-hide");
+		$(".form-account-info").addClass("ng-hide");
+		$(".change-address-form").addClass("ng-hide");
+	});
+});
+
+$(document).ready(function(){
+	$(".change-password").click(function(){
+		$(this).parent().addClass("ng-hide");
+		$(".form-change-password").removeClass("ng-hide");
+	});
+	$(".form-change-password-back").click(function(){
+		$(".change-password").parent().removeClass("ng-hide");
+		$(".form-change-password").addClass("ng-hide");
+	});
+	$(".leflair-gift-code").click(function(){
+		$(".account-balance").addClass("ng-hide");
+		$(".form-gift-code").removeClass("ng-hide");
+	});
+});
+
+
 
 
     

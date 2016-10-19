@@ -100,6 +100,34 @@ function woocommerce_category_image() {
 	}
 }
 
+function leflair_wc_discount_total() {
+ 
+    global $woocommerce;
+     
+     
+    $cart_subtotal = $woocommerce->cart->cart_contents;
+ 
+    $discount_total = 0;
+    
+    foreach ($woocommerce->cart->cart_contents as $product_data) {
+        
+        if ($product_data['variation_id'] > 0) {
+            $product = wc_get_product( $product_data['variation_id'] );
+        } else {
+            $product = wc_get_product( $product_data['product_id'] );
+        }
+ 
+        if ( !empty($product->sale_price) ) {
+        $discount = ($product->regular_price - $product->sale_price) * $product_data['quantity'];
+        $discount_total += $discount;
+        }
+    }
+     
+    if ( $discount_total > 0 ) {
+    echo wc_price($discount_total);
+    }
+}
+
 
 
 // Action Hook
@@ -191,6 +219,16 @@ function short_code_account($atts, $content = null) {
     return $output;
 }
 add_shortcode('account', 'short_code_account');
+
+function short_code_orders($atts, $content = null) {
+    $output = '';
+    ob_start();
+	include(get_template_directory().'/templates/sc-orders.php');
+    $output .= ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+add_shortcode('orders', 'short_code_orders');
 
 add_shortcode( 'bestselling_product_categories', 'sp_bestselling_products' );
 function sp_bestselling_products($atts){

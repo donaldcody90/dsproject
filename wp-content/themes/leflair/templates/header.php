@@ -25,7 +25,6 @@
 					<div class="cart-item ng-scope">
 						<div class="row">
 							<div class="col-xs-4">
-								<!--<img class="image ng-isolate-scope" src="https://src0.responsive.io/webp/w=420/https://leflair-assets.storage.googleapis.com/57a60cc2ee457b1000dddbe4.jpg">-->
 								<?php if ( ! $_product->is_visible() ) : ?>
 									<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
 								<?php else : ?>
@@ -56,17 +55,21 @@
 											<span class="middle">Qty: </span>
 											<uiselect class="sm-mobile ng-isolate-scope" list="item.quantities" selected="item" selected-property="quantity" action="updateItemQuantity">
 												<div class="ui-select input-group">
-													<input type="text" class="form-control dropdown-toggle ng-pristine ng-valid ng-touched" >
-													<!--<ul class="dropdown-menu">
-														<li class="ng-scope">
-															<a href="" class="ng-binding">1</a>
-														</li>
-													</ul>
-													<div class="input-group-btn">
-														<button class="btn bt-default">
-															<span class="caret"></span>
-														</button>
-													</div>-->
+													<!--<input type="text" class="form-control dropdown-toggle ng-pristine ng-valid ng-touched" value="" >-->
+													<?php
+														if ( $_product->is_sold_individually() ) {
+															$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+														} else {
+															$product_quantity = woocommerce_quantity_input( array(
+																'input_name'  => "cart[{$cart_item_key}][qty]",
+																'input_value' => $cart_item['quantity'],
+																'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+																'min_value'   => '0'
+															), $_product, false );
+														}
+
+														echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
+													?>
 												</div>
 											</uiselect>
 										</p>
@@ -74,12 +77,8 @@
 
 									<div class="col-xs-6 text-right">
 										<p>
-											<!--<b class="actual-price ng-binding" style="float: right">
-												1,379,000₫
-											</b>-->
 											<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<b class="actual-price ng-binding" style="float: right">' . sprintf( '%s', $product_price ) . '</b>', $cart_item, $cart_item_key ); ?>
 											<br>
-											<!--<a href="">Bỏ sản phẩm</a>-->
 											<?php
 											echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 												'<a href="%s">Bỏ sản phẩm</a>',
@@ -107,7 +106,7 @@
 						</p>
 						<p class="subtotal clearfix">
 							<span class="pull-left">Tiết kiệm:</span>
-							<span class="number pull-right ng-binding">1,521,000₫</span>
+							<span class="number pull-right ng-binding"><?php echo leflair_wc_discount_total();?></span>
 						</p>
 						<hr>
 
@@ -156,10 +155,10 @@
 					</a>
 				</li>
 				<li>
-					<a href="">Thông Tin</a>
+					<a href="<?php echo site_url('my-account');?>">Thông Tin</a>
 				</li>
 				<li>
-					<a href="">Đơn Hàng</a>
+					<a href="<?php echo site_url('orders');?>">Đơn Hàng</a>
 				</li>
 				<li>
 					<a href="">Mời bạn bè</a>
@@ -239,8 +238,8 @@
 											<span class="caret"></span>
 										</a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="/account">Thông Tin</a></li>
-											<li><a href="/account/orders">Đơn Hàng</a></li>
+											<li><a href="<?php echo site_url('my-account');?>">Thông Tin</a></li>
+											<li><a href="<?php echo site_url('orders');?>">Đơn Hàng</a></li>
 											<li><a href="<?php echo esc_url( wc_get_account_endpoint_url( 'customer-logout' ) ); ?>">Thoát ra</a></li>
 										</ul>
 									</li>
