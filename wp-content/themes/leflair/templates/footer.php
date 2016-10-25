@@ -1,6 +1,6 @@
 		<footer class="ng-scope">
 			<section class="ng-scope">
-				<div class="footer ng-scope" >
+				<div class="footer" >
 					<div class="container">
 						<div class="row">
 							<div class="col-md-2 hidden-xs">

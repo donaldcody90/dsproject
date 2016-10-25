@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /** @global WC_Checkout $checkout */
 
 ?>
-<div class="ng-scope">
-	<div class="shipping-form ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-pattern">
+<div>
+	<div class="shipping-form">
 	
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 	
 	<div class="well white-well well-big row">
-		<div class="col-xs-12  ng-scope">
+		<div class="col-xs-12">
 			<h4 class="form-header"> Địa Chỉ Giao Hàng </h4>
 			<br class="hidden-xs">
 
@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
 		
 			<!--<div class="ui checkbox fluid checked active">
-				<input name="example" type="checkbox" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+				<input name="example" type="checkbox">
 				<label>
 					Địa chỉ in trên hoá đơn giống như trên
 				</label>

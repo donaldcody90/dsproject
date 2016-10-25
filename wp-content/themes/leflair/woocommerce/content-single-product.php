@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="ng-scope">
-	<div class="container header-offset ng-scope">
+	<div class="container header-offset">
 
 <?php
 	/**

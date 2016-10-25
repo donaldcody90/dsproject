@@ -1,5 +1,5 @@
 
-.ng-hide{ display:none!important; }
+.vf-hide{ display:none!important; }
 
 .pusher .ng-scope item{
 	float: left;
@@ -87,6 +87,20 @@ a{
 .shopping-cart .input-group input{
 	border-radius: 4px!important;
 	width: 60px!important;
+}
+
+.bx-wrapper{
+}
+.bx-controls a{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.bx-next{
+	right:-50px;
+}
+.bx-prev{
+	left:-50px;
 }
 
 

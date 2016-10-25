@@ -47,7 +47,7 @@ function template_loop_product_thumbnail() {
 	echo '</a></div>';
 }
 function template_loop_product_title() {
-	echo '<h3><a class="title ng-binding" href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+	echo '<h3><a class="title" href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
 }
 if ( ! function_exists( 'woocommerce_breadcrumb_leflair' ) ) {
 	function woocommerce_breadcrumb_leflair( $args = array() ) {
@@ -78,7 +78,7 @@ function after_add_to_cart_button(){
 	echo '</div>';
 }
 function before_cart(){
-	echo 	'<div class="ui simple sidebar push menu shopping-cart ng-scope ng-isolate-scope right">
+	echo 	'<div class="ui simple sidebar push menu shopping-cart right">
 				<div class="wrapper">
 					<div class="header text-center">
 						<i class="leflair i-leflair-close"></i>
@@ -95,7 +95,7 @@ function woocommerce_category_image() {
 	    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
 	    $image = wp_get_attachment_url( $thumbnail_id );
 	    if ( $image ) {
-		    echo '<img class="fluid category-hero ng-isolate-scope" src="' . $image . '" alt="" style="height: 422px;" />';
+		    echo '<img class="fluid category-hero" src="' . $image . '" alt="" style="height: 422px;" />';
 		}
 	}
 }
@@ -147,9 +147,9 @@ function vn_provinces(){
 	'Vĩnh Phúc','Yên Bái'
 	);
 	foreach($province_list as $id => $province){
-		echo '<div id="ui-select-choices-row-2-'.$id.'" class="ui-select-choices-row ng-scope">
+		echo '<div id="ui-select-choices-row-2-'.$id.'" class="ui-select-choices-row">
 			<a href="" class="ui-select-choices-row-inner">
-				<span class="ng-binding ng-scope">'.$province.'</span>
+				<span class="ng-binding">'.$province.'</span>
 			</a>
 		</div>';
 	}
@@ -501,7 +501,7 @@ if ( ! function_exists( 'customizing_form_field' ) ) {
             case 'tel' :
             case 'number' :
 
-                $field .= '<input type="' . esc_attr( $args['type'] ) . '" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required ' . esc_attr( implode( ' ', $args['input_class'] ) ) .'" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . $args['maxlength'] . ' ' . $args['autocomplete'] . ' value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+                $field .= '<input type="' . esc_attr( $args['type'] ) . '" class="form-control account-input-required ' . esc_attr( implode( ' ', $args['input_class'] ) ) .'" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . $args['maxlength'] . ' ' . $args['autocomplete'] . ' value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
 
                 break;
             case 'select' :

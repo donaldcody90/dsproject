@@ -40,7 +40,7 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 				Giao hàng trong 2-7 ngày
 			</div>
 		</div>
-		<div class="item ng-hide">
+		<div class="item vf-hide">
 			<i class="leflair i-leflair-return big icon"></i>
 			<div class="content">
 				Trả hàng trong 30 ngày

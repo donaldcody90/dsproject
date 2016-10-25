@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-md-4 col-sm-6 ng-scope">
+<div class="col-md-4 col-sm-6">
 	<div class=" product-grid-item">
 	<?php
 	/**

@@ -1,7 +1,7 @@
 // Remove first product
 
 $(document).ready(function(){
-	$("sales-list .row item:first").addClass("ng-hide");
+	$("sales-list .row item:first").addClass("vf-hide");
 });
 
 // Top best seller
@@ -160,15 +160,15 @@ slide_index = new_slide_index
 
 $(document).ready(function () {
 	var action= false;
-	$(".product-image-wrapper .imageSlide:first").removeClass("ng-hide");
+	$(".product-image-wrapper .imageSlide:first").removeClass("vf-hide");
 	$(".product-image-wrapper .outer-wrapper li").hover(function(){
 		var thumbnail_index= $(this).index();
 		$(".product-image-wrapper .imageSlide").each(function(){
 			var image_index= $(this).index();
 			if(thumbnail_index==image_index){
-				$(".product-image-wrapper .imageSlide").removeClass("ng-hide");
-				$(".product-image-wrapper .imageSlide").addClass("ng-hide");
-				$(this).removeClass("ng-hide");
+				$(".product-image-wrapper .imageSlide").removeClass("vf-hide");
+				$(".product-image-wrapper .imageSlide").addClass("vf-hide");
+				$(this).removeClass("vf-hide");
 			}
 		});
 	});
@@ -236,7 +236,7 @@ $(document).ready(function(){
 	$(".product .panel-group .panel-default").each(function(){
 		var item= $(this).find(".panel-collapse .panel-body div").hasClass("item");
 		if(item==false){
-			$(this).addClass("ng-hide");
+			$(this).addClass("vf-hide");
 		}
 	});
 });
@@ -338,55 +338,55 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$(".edit-account-info a").click(function(){
-		$(".account-info-content").children("div").addClass("ng-hide");
-		$(".form-account-info").removeClass("ng-hide");
+		$(".account-info-content").children("div").addClass("vf-hide");
+		$(".form-account-info").removeClass("vf-hide");
 	});
 	$(".account-info-back").click(function(){
-		$(".account-info-content").children("div").removeClass("ng-hide");
-		$(".form-account-info").addClass("ng-hide");
+		$(".account-info-content").children("div").removeClass("vf-hide");
+		$(".form-account-info").addClass("vf-hide");
 	});
 });
 
 $(document).ready(function(){
 	$(".address-details .underline-link").click(function(){
-		$(".account-info-content").children("h4").addClass("ng-hide");
-		$(".account-info-content").children("div").addClass("ng-hide");
-		$(".change-address-form").find(".company-name").addClass("ng-hide");
-		$(".change-address-form").find(".taxcode").addClass("ng-hide");
-		$(".change-address-form").find(".checkbox").addClass("ng-hide");
-		$(".change-address-form").removeClass("ng-hide");
+		$(".account-info-content").children("h4").addClass("vf-hide");
+		$(".account-info-content").children("div").addClass("vf-hide");
+		$(".change-address-form").find(".company-name").addClass("vf-hide");
+		$(".change-address-form").find(".taxcode").addClass("vf-hide");
+		$(".change-address-form").find(".checkbox").addClass("vf-hide");
+		$(".change-address-form").removeClass("vf-hide");
 		if($(this).hasClass("edit-billing-address")){
 			$(".change-address-form").find(".change-address-form-title").html("Điền địa chỉ giao hàng");
-			$(".change-address-form").find(".checkbox").removeClass("ng-hide");
+			$(".change-address-form").find(".checkbox").removeClass("vf-hide");
 			var abckey= "billing";
 		}
 		if($(this).hasClass("edit-shipping-address")){
 			$(".change-address-form").find(".change-address-form-title").html("Điền địa chỉ trên hoá đơn");
-			$(".change-address-form").find(".company-name").removeClass("ng-hide");
-			$(".change-address-form").find(".taxcode").removeClass("ng-hide");
+			$(".change-address-form").find(".company-name").removeClass("vf-hide");
+			$(".change-address-form").find(".taxcode").removeClass("vf-hide");
 			var abckey="shipping";
 		}
 	});
 	$(".change-address-form-back").click(function(){
-		$(".account-info-content").children("h4").removeClass("ng-hide");
-		$(".account-info-content").children("div").removeClass("ng-hide");
-		$(".form-account-info").addClass("ng-hide");
-		$(".change-address-form").addClass("ng-hide");
+		$(".account-info-content").children("h4").removeClass("vf-hide");
+		$(".account-info-content").children("div").removeClass("vf-hide");
+		$(".form-account-info").addClass("vf-hide");
+		$(".change-address-form").addClass("vf-hide");
 	});
 });
 
 $(document).ready(function(){
 	$(".change-password").click(function(){
-		$(this).parent().addClass("ng-hide");
-		$(".form-change-password").removeClass("ng-hide");
+		$(this).parent().addClass("vf-hide");
+		$(".form-change-password").removeClass("vf-hide");
 	});
 	$(".form-change-password-back").click(function(){
-		$(".change-password").parent().removeClass("ng-hide");
-		$(".form-change-password").addClass("ng-hide");
+		$(".change-password").parent().removeClass("vf-hide");
+		$(".form-change-password").addClass("vf-hide");
 	});
 	$(".leflair-gift-code").click(function(){
-		$(".account-balance").addClass("ng-hide");
-		$(".form-gift-code").removeClass("ng-hide");
+		$(".account-balance").addClass("vf-hide");
+		$(".form-gift-code").removeClass("vf-hide");
 	});
 });
 
@@ -395,12 +395,12 @@ $(document).ready(function(){
 		$(".nav-orders li").removeClass("active");
 		$(this).addClass("active");
 		if($(".new-orders-button").hasClass("active")){
-			$(".account-inner .order-list").addClass("ng-hide");
-			$(".new-orders").removeClass("ng-hide");
+			$(".account-inner .order-list").addClass("vf-hide");
+			$(".new-orders").removeClass("vf-hide");
 		}
 		if($(".old-orders-button").hasClass("active")){
-			$(".account-inner .order-list").addClass("ng-hide");
-			$(".old-orders").removeClass("ng-hide");
+			$(".account-inner .order-list").addClass("vf-hide");
+			$(".old-orders").removeClass("vf-hide");
 		}
 	});
 });

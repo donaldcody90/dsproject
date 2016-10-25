@@ -57,7 +57,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 	</form>
 	<!-- uiView:  -->
 	<section class="ng-scope">
-	<section class="container account ng-scope">
+	<section class="container account">
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
 			<div class="col-xs-12 account-inner">
@@ -87,7 +87,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 								$order      = wc_get_order( $customer_order );
 								$item_count = $order->get_item_count();
 								if($order->post_date >= $yesterday_date){ ?>
-								<div class="product-row ng-scope">
+								<div class="product-row">
 									<div class="table-responsive">
 										<table class="table">
 											<tbody>
@@ -121,20 +121,20 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 										</table>
 									</div>
 									<!-- ngRepeat: product in order.products -->
-									<div class="row ng-scope">
+									<div class="row">
 										<div class="col-lg-8">
 											<?php foreach($order->get_items() as $item_id => $item){ ?>
-											<div class="row ng-scope">
+											<div class="row">
 												<div class="row checkout-cart order-history-item" style="padding: 0 .5em;">
 													<div class="col-md-8">
 														<p class="ng-binding">
 															<?php echo $item['qty'];?>x
-															<span class="product ng-binding"><?php echo $item['name'];?></span>
+															<span class="product"><?php echo $item['name'];?></span>
 														</p>
 													</div>
 													<div class="col-md-4">
 														<p>
-															<span class="total ng-binding"><?php echo $order->get_formatted_line_subtotal( $item ); ?></span>
+															<span class="total"><?php echo $order->get_formatted_line_subtotal( $item ); ?></span>
 														</p>
 													</div>
 												</div>
@@ -142,7 +142,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 											<!-- end ngRepeat: product in order.products -->
 											<?php } ?>
 										</div>
-										<div class="col-lg-4 ng-scope">
+										<div class="col-lg-4">
 											<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>">
 												<div class="btn btn-default btn-product btn-white" style="margin: 0;">Xem chi tiết</div>
 											</a>
@@ -156,13 +156,13 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 							
 							<!-- Đơn hàng cũ -->
 							
-							<div class="order-list old-orders ng-hide">
+							<div class="order-list old-orders vf-hide">
 							<?php foreach($customer_orders as $customer_order){ 
 								$order      = wc_get_order( $customer_order );
 								$item_count = $order->get_item_count();
 								if($order->post_date < $yesterday_date){
 								?>
-								<div class="product-row ng-scope">
+								<div class="product-row">
 									<div class="table-responsive">
 										<table class="table">
 											<tbody>
@@ -196,20 +196,20 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 										</table>
 									</div>
 									<!-- ngRepeat: product in order.products -->
-									<div class="row ng-scope">
+									<div class="row">
 										<div class="col-lg-8">
 											<?php foreach($order->get_items() as $item_id => $item){ ?>
-											<div class="row ng-scope">
+											<div class="row">
 												<div class="row checkout-cart order-history-item" style="padding: 0 .5em;">
 													<div class="col-md-8">
 														<p class="ng-binding">
 															<?php echo $item['qty'];?>x
-															<span class="product ng-binding"><?php echo $item['name'];?></span>
+															<span class="product"><?php echo $item['name'];?></span>
 														</p>
 													</div>
 													<div class="col-md-4">
 														<p>
-															<span class="total ng-binding"><?php echo $order->get_formatted_line_subtotal( $item ); ?></span>
+															<span class="total"><?php echo $order->get_formatted_line_subtotal( $item ); ?></span>
 														</p>
 													</div>
 												</div>
@@ -217,7 +217,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 											<!-- end ngRepeat: product in order.products -->
 											<?php } ?>
 										</div>
-										<div class="col-lg-4 ng-scope">
+										<div class="col-lg-4">
 											
 												<div class="btn btn-default btn-product btn-white order-detail-button" style="margin: 0;">Xem chi tiết</div>
 											

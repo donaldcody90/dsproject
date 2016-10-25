@@ -20,4 +20,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
-the_title( '<div class="product-title ng-binding">', '</div>' );
+the_title( '<div class="product-title">', '</div>' );

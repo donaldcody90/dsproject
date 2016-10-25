@@ -32,7 +32,7 @@ if ( ! empty( $breadcrumb ) ) {
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
 			echo '<li><a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a></li>';
 		} else {
-			echo '<li class="active ng-binding">' . esc_html( $crumb[0] ) . '</li>';
+			echo '<li class="active">' . esc_html( $crumb[0] ) . '</li>';
 		}
 
 		echo $after;

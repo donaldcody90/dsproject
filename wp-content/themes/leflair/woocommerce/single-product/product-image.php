@@ -26,13 +26,13 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 					<div class="col-sm-7">
 						<div class="product-image-wrapper">
 							
-							<product-slide images="product.images[selectedVariation]" class="ng-isolate-scope">
+							<product-slide images="product.images[selectedVariation]">
 							<div class="row">
 								<div class="col-md-10 big-image" style="height: 673.75px;">
-									<div class="ng-scope" ng-if="!interval">
+									<div>
 										<?php foreach($attachment_ids as $attachment_id) { ?>
-										<div class="imageSlide ng-scope ng-hide leflair_zoom" >
-											<img class="img-responsive product-displayed-image ng-isolate-scope" src="<?php echo wp_get_attachment_url($attachment_id); ?>" >
+										<div class="imageSlide vf-hide leflair_zoom" >
+											<img class="img-responsive product-displayed-image" src="<?php echo wp_get_attachment_url($attachment_id); ?>" >
 										</div>
 										<?php } ?>
 									</div>
@@ -40,9 +40,9 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 								</div> 
 
 							<!-- Thumbnail on big screen -->
-							<product-vertical-slide class="col-md-2 thumbnail-container ng-isolate-scope" set-image-index="setImageIndex" slides="slides">
+							<product-vertical-slide class="col-md-2 thumbnail-container" set-image-index="setImageIndex" slides="slides">
 								<div class="outer-wrapper">
-									<a href="" class="arrow-box top ng-scope" ng-click="reset(); moveUp()" >
+									<a href="" class="arrow-box top">
 										<span class="glyphicon glyphicon-chevron-up"></span>
 									</a>
 									<div class="content-wrapper active" >
@@ -50,8 +50,8 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 											<div class="inner-content" style="width: 100%;">
 												<ul class="list-inline" style="width: 100%;">
 													<?php foreach( $attachment_ids as $attachment_id ) { ?>
-														<li style="width: 100%;" class="ng-scope">
-															<img class="thumbnail product-image-thumbnail ng-isolate-scope" src="<?php echo wp_get_attachment_url( $attachment_id ); ?>">
+														<li style="width: 100%;">
+															<img class="thumbnail product-image-thumbnail" src="<?php echo wp_get_attachment_url( $attachment_id ); ?>">
 														</li>
 													<?php } ?>
 												</ul>
@@ -59,7 +59,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 										</div>
 									</div>
 
-									<a href="" class="arrow-box bottom ng-scope" >
+									<a href="" class="arrow-box bottom" >
 										<span class="glyphicon glyphicon-chevron-down"></span>
 									</a>
 
@@ -71,11 +71,11 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 						</div>
 
 						<div class="apart-big apart-no-bottom hidden-xs">
-							<!--<img class="brand-logo ng-isolate-scope" src="-->
+							<!--<img class="brand-logo" src="-->
 							<?php echo wp_get_attachment_image(get_post_meta( $product->id, 'product_trademark_logo', true )); ?>
 
-							<h5 class="ng-binding">"<?php echo get_post_meta($product->id, 'product_trademark_slogan', true);?>"</h5>
-							<p class="ng-binding"><?php echo get_post_meta($product->id, 'product_trademark_description', true);?></p>
+							<h5>"<?php echo get_post_meta($product->id, 'product_trademark_slogan', true);?>"</h5>
+							<p><?php echo get_post_meta($product->id, 'product_trademark_description', true);?></p>
 						</div>
 						
 						<?php //echo $post->post_excerpt; ?>

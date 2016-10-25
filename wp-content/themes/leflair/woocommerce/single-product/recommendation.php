@@ -27,7 +27,7 @@ echo $current_product;
 
 
 ?>
-<section class="recommendations-section ng-scope">
+<section class="recommendations-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -40,15 +40,15 @@ echo $current_product;
 			<?php while ( $loop->have_posts() ) : $loop->the_post();
 					$id= get_the_id();
 				if($id != $current_product){ ?>
-			<div class="product-grid-item ng-scope">
+			<div class="product-grid-item">
 				<a href="<?php echo get_permalink();?>" class="thumbnail">
 					<?php echo woocommerce_get_product_thumbnail();?>
 				</a>
 				<div class="product-info">
-					<div class="product-brand ng-binding">
+					<div class="product-brand">
 						<?php echo get_post_meta($id, 'product_trademark', true); ?>
 					</div>
-					<div class="product-title ng-binding">
+					<div class="product-title">
 						<?php echo get_the_title();?>
 					</div>
 				</div>

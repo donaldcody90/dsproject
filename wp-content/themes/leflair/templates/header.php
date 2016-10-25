@@ -1,7 +1,7 @@
 
 		
 		<?php //$args= array(); echo woocommerce_mini_cart(); ?>
-		<div class="ui simple sidebar push menu shopping-cart ng-scope ng-isolate-scope right">
+		<div class="ui simple sidebar push menu shopping-cart right">
 			<div class="wrapper">
 				<div class="header text-center">
 					<i class="leflair i-leflair-close mini-cart-cancel"></i>
@@ -22,7 +22,7 @@
 						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 						?>
 				
-					<div class="cart-item ng-scope">
+					<div class="cart-item">
 						<div class="row">
 							<div class="col-xs-4">
 								<?php if ( ! $_product->is_visible() ) : ?>
@@ -47,15 +47,15 @@
 								<div class="row">
 									<div class="col-xs-6">
 										<p>
-											<span class="ng-binding ng-scope">
+											<span class="ng-binding">
 												Color: C03 <br>
 											</span>
 										</p>
 										<p class="box">
 											<span class="middle">Qty: </span>
-											<uiselect class="sm-mobile ng-isolate-scope" list="item.quantities" selected="item" selected-property="quantity" action="updateItemQuantity">
+											<uiselect class="sm-mobile" list="item.quantities" selected="item" selected-property="quantity" action="updateItemQuantity">
 												<div class="ui-select input-group">
-													<!--<input type="text" class="form-control dropdown-toggle ng-pristine ng-valid ng-touched" value="" >-->
+													<!--<input type="text" class="form-control dropdown-toggle" value="" >-->
 													<?php
 														if ( $_product->is_sold_individually() ) {
 															$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -77,7 +77,7 @@
 
 									<div class="col-xs-6 text-right">
 										<p>
-											<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<b class="actual-price ng-binding" style="float: right">' . sprintf( '%s', $product_price ) . '</b>', $cart_item, $cart_item_key ); ?>
+											<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<b class="actual-price" style="float: right">' . sprintf( '%s', $product_price ) . '</b>', $cart_item, $cart_item_key ); ?>
 											<br>
 											<?php
 											echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
@@ -102,17 +102,17 @@
 					<div class="stats cart-item">
 						<p class="subtotal big clearfix">
 							<span class="pull-left">Tổng tiền:</span>
-							<b class="number pull-right ng-binding"><?php echo WC()->cart->get_cart_subtotal(); ?></b>
+							<b class="number pull-right"><?php echo WC()->cart->get_cart_subtotal(); ?></b>
 						</p>
 						<p class="subtotal clearfix">
 							<span class="pull-left">Tiết kiệm:</span>
-							<span class="number pull-right ng-binding"><?php echo leflair_wc_discount_total();?></span>
+							<span class="number pull-right"><?php echo leflair_wc_discount_total();?></span>
 						</p>
 						<hr>
 
 						<div class="text-center">
 							<div class="apart-sm">
-								<p class="text-danger ng-binding">
+								<p class="text-danger">
 									
 								</p>
 								<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
@@ -147,8 +147,8 @@
 			</div>
 		</div>
 		
-		<div class="ui simple sidebar push menu ng-isolate-scope left vertical ng-scope">
-			<ul class="sidebar-nav ng-scope">
+		<div class="ui simple sidebar push menu left vertical">
+			<ul class="sidebar-nav">
 				<li class="sidebar-brand">
 					<a href="">
 						<img src="<?php echo site_url('wp-content/themes/leflair/assets/img/leflair-black-logo.svg');?>">
@@ -165,14 +165,14 @@
 				</li>
 
 				<li class="dropdown">
-					<a class="dropdown-toggle ng-binding">
+					<a class="dropdown-toggle">
 						Language:&nbsp;&nbsp;VN<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li class="ng-scope">
 							<a href="" class="ng-binding">ENG</a>
 						</li>
-						<li class="ng-scope ng-hide">
+						<li class="ng-scope vf-hide">
 							<a href="" class="ng-binding">VN</a>
 						</li>
 					</ul>
@@ -196,43 +196,43 @@
 								<a type="button" class="left menu collapsed visible-xs">
 									<i class="leflair i-leflair-menu"></i>
 								</a>
-								<a class="mobile-cart-icon ng-scope">
+								<a class="mobile-cart-icon">
 									<i class="leflair i-leflair-bag"></i>
 								</a>
 
-								<div class="visible-xs tel ng-hide">
+								<div class="visible-xs tel vf-hide">
 									<a href="tel:<?php echo get_theme_option('phone_number');?>"><i class="leflair i-leflair-telephone"></i> <?php echo get_theme_option('phone_number');?></a>
 								</div>
 								
 								<a class="nav-logo" href="<?php echo site_url(); ?>" style="background-image: url(<?php echo get_theme_option('header_logo', 'url'); ?>);"></a>
 								
-								<a class="nav-logo campaign-logo ng-hide" href="/" style="background-image: url()">
+								<a class="nav-logo campaign-logo vf-hide" href="/" style="background-image: url()">
 								</a>
 							</div>
 
 							
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								
-								<ul class="nav navbar-nav pull-right nav-dropdown ng-scope">
+								<ul class="nav navbar-nav pull-right nav-dropdown">
 
 									<li class="dropdown nav-language">
-										<a class="dropdown-toggle ng-binding">
+										<a class="dropdown-toggle">
 											Language:&nbsp;&nbsp;VN<span class="caret"></span>
 										</a>
 										<ul class="dropdown-menu" role="menu">
 											<li class="ng-scope">
 												<a href="" class="ng-binding">ENG</a>
 											</li>
-											<li class="ng-scope ng-hide">
+											<li class="ng-scope vf-hide">
 												<a href="" class="ng-binding">VN</a>
 											</li>
 										</ul>
 									</li>
 
 									<li class="ng-scope">
-										<a href="#">SỐ DƯ: <span class="trinidad ng-binding">0</span></a>
+										<a href="#">SỐ DƯ: <span class="trinidad">0</span></a>
 									</li>
-									<li class="dropdown ng-scope" dropdown="">
+									<li class="dropdown" dropdown="">
 										<a class="dropdown-toggle">
 											Tài Khoản
 											<span class="caret"></span>
@@ -244,7 +244,7 @@
 										</ul>
 									</li>
 									<li class="ng-scope">
-										<a id="nav_cart">Giỏ: <span class="trinidad ng-binding"> <?php echo count( WC()->cart->get_cart() );?></span></a>
+										<a id="nav_cart">Giỏ: <span class="trinidad"> <?php echo count( WC()->cart->get_cart() );?></span></a>
 									</li>
 								</ul>
 							</div>

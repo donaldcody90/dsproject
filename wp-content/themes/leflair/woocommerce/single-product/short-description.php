@@ -27,13 +27,13 @@ if ( ! $post->post_excerpt ) {
 }
 
 ?>
-<accordion class="product apart ng-isolate-scope" accordion-scroll="accordionList">
+<accordion class="product apart" accordion-scroll="accordionList">
 	<div class="panel-group">
-		<div class="panel panel-default ng-isolate-scope">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a>
-						<span class="ng-scope">
+						<span>
 							<i class="leflair pull-right i-leflair-plus"></i>
 							Thông tin sản phẩm
 						</span>
@@ -42,8 +42,8 @@ if ( ! $post->post_excerpt ) {
 			</div>
 			<div class="panel-collapse collapse">
 				<div class="panel-body">
-					<accordion-heading class="ng-scope"></accordion-heading>
-					<description-display contents="product.description.secondary" class="ng-scope ng-isolate-scope">
+					<accordion-heading></accordion-heading>
+					<description-display contents="product.description.secondary">
 					<div class="ui bulleted list">
 						<?php echo get_post_meta($product->id, 'product_product_information', true);?>
 					</div>
@@ -52,11 +52,11 @@ if ( ! $post->post_excerpt ) {
 			</div>
 		</div>
 
-		<div class="panel panel-default ng-isolate-scope">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a>
-						<span class="ng-scope">
+						<span>
 							<i class="leflair pull-right i-leflair-plus" ></i>
 							Chất liệu &amp; Cách bảo quản
 						</span>
@@ -65,8 +65,8 @@ if ( ! $post->post_excerpt ) {
 			</div>
 			<div class="panel-collapse collapse">
 				<div class="panel-body">
-					<accordion-heading class="ng-scope"></accordion-heading>
-					<description-display contents="product.materialCare" class="ng-scope ng-isolate-scope">
+					<accordion-heading></accordion-heading>
+					<description-display contents="product.materialCare">
 						<div class="ui bulleted list">
 							<?php echo get_post_meta($product->id, 'product_material_guide', true); ?>
 						</div>
@@ -75,11 +75,11 @@ if ( ! $post->post_excerpt ) {
 			</div>
 		</div>
 
-		<div class="panel panel-default ng-isolate-scope">
+		<div class="panel panel-default">
 		  <div class="panel-heading">
 			<h4 class="panel-title">
 				<a>
-					<span class="ng-scope">
+					<span>
 						<i class="leflair pull-right i-leflair-plus"></i>
 						Chi Tiết Kích Cỡ
 					</span>
@@ -88,13 +88,13 @@ if ( ! $post->post_excerpt ) {
 		  </div>
 			<div class="panel-collapse collapse">
 				<div class="panel-body">
-					<accordion-heading class="ng-scope"></accordion-heading>
-					<description-display contents="product.sizeFit" class="ng-scope ng-isolate-scope ng-hide">
+					<accordion-heading></accordion-heading>
+					<description-display contents="product.sizeFit" class="vf-hide">
 						<div class="ui bulleted list">
 							<?php echo get_post_meta($product->id, 'product_detailed_size', true); ?>
 						</div>
 					</description-display>
-					<div class="size-chart ng-scope ng-hide" id="sizeTable">
+					<div class="size-chart vf-hide" id="sizeTable">
 						<table class="table">
 							<thead>
 								<tr>
@@ -112,23 +112,23 @@ if ( ! $post->post_excerpt ) {
 			</div>
 		</div>				
 
-		<div class="visible-xs panel panel-default ng-isolate-scope">
+		<div class="visible-xs panel panel-default">
 			<div class="panel-heading">
 			<h4 class="panel-title">
 				<a href="" class="accordion-toggle">
-					<span class="ng-scope">
+					<span>
 						<i class="leflair pull-right i-leflair-plus"></i>
 						<span>Thông tin thương hiệu</span>
-						<img class="brand-logo ng-isolate-scope ng-hide" src="https://src0.responsive.io/webp/w=398/https://leflair-assets.storage.googleapis.com/57e10ad752b3930f00aefe61.jpg">
+						<img class="brand-logo vf-hide" src="https://src0.responsive.io/webp/w=398/https://leflair-assets.storage.googleapis.com/57e10ad752b3930f00aefe61.jpg">
 					</span>		
 				</a>
 			</h4>
 			</div>
 			<div class="panel-collapse collapse">
 				<div class="panel-body">
-					<accordion-heading class="ng-scope"></accordion-heading>
-					<h5 class="ng-binding ng-scope">"Dụng cụ trang điểm chuyên nghiệp"</h5>
-					<p class="ng-binding ng-scope">Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
+					<accordion-heading></accordion-heading>
+					<h5>"Dụng cụ trang điểm chuyên nghiệp"</h5>
+					<p>Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
 				</div>
 			</div>
 		</div>

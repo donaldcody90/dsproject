@@ -9,4 +9,4 @@ global $product;
 $id = $product->id;
 
 ?>
-<div class="product-brand ng-binding"><?php echo get_post_meta($id, 'product_trademark', true);?></div>
+<div class="product-brand"><?php echo get_post_meta($id, 'product_trademark', true);?></div>

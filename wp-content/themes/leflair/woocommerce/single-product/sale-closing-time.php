@@ -6,9 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="sale-closing-time">
-	<img class="brand-logo ng-isolate-scope" />
+	<img class="brand-logo" />
 
-	<div class="closing-time ng-binding ng-scope">
+	<div class="closing-time">
 		<span class="glyphicon glyphicon-time"></span>
 		KẾT THÚC TRONG 5 NGÀY TỚI
 	</div>

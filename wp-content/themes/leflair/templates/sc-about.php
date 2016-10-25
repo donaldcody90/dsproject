@@ -2,8 +2,8 @@
 			
 	<!-- uiView:  -->
 	<section data-ui-view="" autoscroll="false" le-scroll="" offset="400" class="ng-scope">
-		<section class="section-info ng-scope">
-			<div class="hero about-hero aligner inverted ng-isolate-scope" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/About-Us-01.jpg');?>); background-position: 50% 25%; background-repeat: no-repeat; background-size: 1350px;">
+		<section class="section-info">
+			<div class="hero about-hero aligner inverted" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/About-Us-01.jpg');?>); background-position: 50% 25%; background-repeat: no-repeat; background-size: 1350px;">
 				<div class="container aligner-item">
 					<div class="row">
 						<div class="col-lg-12 text-center hero-center-callout">
@@ -18,7 +18,7 @@
 				<h2>Chúng tôi có<br> một sứ mệnh</h2>
 				<p class="lead">Mang tới người tiêu dùng Việt Nam những thương hiệu hàng đầu thế giới với mức giá tốt nhất.</p>
 			</div>
-			<div class="hero about-hero aligner ng-isolate-scope" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/shoes1.jpg');?>); background-position: 100% 80%; background-repeat: no-repeat; background-size: 1350px;">
+			<div class="hero about-hero aligner" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/shoes1.jpg');?>); background-position: 100% 80%; background-repeat: no-repeat; background-size: 1350px;">
 			</div>
 
 			<div class="container static-container relaxed text-center">
@@ -34,7 +34,7 @@
 			</div>
 
 			<div class="static-container inverted">
-				<div class="hero about-hero aligner ng-isolate-scope" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/About-Us-02.jpg');?>); background-position: 50% 50%; background-repeat: no-repeat; background-size: 1350px;">
+				<div class="hero about-hero aligner" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/About-Us-02.jpg');?>); background-position: 50% 50%; background-repeat: no-repeat; background-size: 1350px;">
 					<div class="aligner-item">
 						<div class="container">
 							<div class="row">
@@ -71,7 +71,7 @@
 			</div>
 
 			<div class="static-container">
-				<div class="hero about-hero aligner gray-xs ng-isolate-scope" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/vision.jpg');?>); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
+				<div class="hero about-hero aligner gray-xs" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/vision.jpg');?>); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover;">
 					<div class="aligner-item">
 						<div class="container">
 							<div class="row">

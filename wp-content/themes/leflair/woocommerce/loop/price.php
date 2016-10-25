@@ -24,7 +24,7 @@ global $product;
 ?>
 
 <?php if ( $price_html = $product->get_price_html() ){ ?>
-	<p class="price ng-binding">
+	<p class="price">
 		<?php echo $product->get_price_html();?>
 	</p>
 <?php } ?>

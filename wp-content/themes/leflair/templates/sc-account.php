@@ -25,8 +25,8 @@ $col    = 1;
 	
 	<!-- uiView:  -->
 	<section class="ng-scope">
-	<section class="container account ng-scope">
-	<!--<form name="userForm" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-min ng-valid-max ng-valid-pattern">-->
+	<section class="container account">
+	<!--<form name="userForm" class="ng-pristine-email-min-max-pattern">-->
 		<fieldset>
 		<?php
 $user_name = 'wp_admin';
@@ -60,23 +60,23 @@ $user = get_user_by('id',1 );
 
 										<!-- Account Information: Edit Mode -->
 										<form class="woocommerce-EditAccountForm" action="" method="post">
-											<div class="row ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-min ng-valid-max ng-valid-pattern form-account-info ng-hide">
+											<div class="row-email-min-max-pattern form-account-info vf-hide">
 												<div class="col-xs-12 form-group">
 													<div class="row">
 														<div class="col-md-6 form-group">
 															<p>
 																<label for="">Họ</label>
 															</p>
-															<input name="account_last_name" type="text" id="account_last_name" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->last_name ); ?>" required="">
-															<p class="text text-danger ng-hide">Vui lòng điền họ của bạn</p>	
+															<input name="account_last_name" type="text" id="account_last_name" class="form-control account-input" value="<?php echo esc_attr( $user->last_name ); ?>" required="">
+															<p class="text text-danger vf-hide">Vui lòng điền họ của bạn</p>	
 														</div>
 														<div class="col-md-6 form-group">
 															<p>
 																<label for="">Tên</label>
 															</p>
-															<input name="account_first_name" type="text" id="account_first_name" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->first_name ); ?>" required="">
+															<input name="account_first_name" type="text" id="account_first_name" class="form-control account-input" value="<?php echo esc_attr( $user->first_name ); ?>" required="">
 
-															<p class="text text-danger ng-hide">Vui lòng điền tên của bạn</p>	
+															<p class="text text-danger vf-hide">Vui lòng điền tên của bạn</p>	
 														</div>
 													</div>
 												</div>
@@ -87,48 +87,48 @@ $user = get_user_by('id',1 );
 																<p>
 																	<label for="">Địa chỉ email</label>
 																</p>
-																	<input name="account_email" type="email" id="account_email" class="form-control account-input ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->user_email ); ?>" required="">
+																	<input name="account_email" type="email" id="account_email" class="form-control account-input-email" value="<?php echo esc_attr( $user->user_email ); ?>" required="">
 																
-																<p class="text text-danger ng-hide">Vui lòng điền địa chỉ email của bạn</p>
+																<p class="text text-danger vf-hide">Vui lòng điền địa chỉ email của bạn</p>
 														</div>
 														<div class="col-md-6 form-group">
 															<p>
 																<label for="">Giới tính</label>
 															</p>
 
-															<div class="ui-select-container ui-select-bootstrap dropdown ng-valid direction-up open" name="gender">
+															<div class="ui-select-container ui-select-bootstrap dropdown direction-up open" name="gender">
 																<div class="ui-select-match">
 																	<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
-																		<span class="ui-select-placeholder text-muted ng-binding"></span> 
+																		<span class="ui-select-placeholder text-muted"></span> 
 																		<span class="ui-select-match-text pull-left">
-																			<span class="ng-binding ng-scope"></span>
+																			<span class="ng-binding"></span>
 																		</span>
 																		<i class="caret pull-right"></i> 
-																		<a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide">
+																		<a style="margin-right: 10px" class="btn btn-xs btn-link pull-right vf-hide">
 																			<i class="glyphicon glyphicon-remove"></i>
 																		</a>
 																	</span>
 																</div>
-																<input type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="">
-																<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
+																<input type="text" tabindex="-1" class="form-control ui-select-search vf-hide" placeholder="">
+																<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu">
 																	<li class="ui-select-choices-group" id="ui-select-choices-0">
-																		<div class="divider ng-hide"></div>
-																		<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
+																		<div class="divider vf-hide"></div>
+																		<div class="ui-select-choices-group-label dropdown-header vf-hide"></div>
 																		
-																		<div id="ui-select-choices-row-14-0" class="ui-select-choices-row ng-scope">
+																		<div id="ui-select-choices-row-14-0" class="ui-select-choices-row">
 																			<a href="" class="ui-select-choices-row-inner">
-																				<span class="ng-binding ng-scope">Nữ</span>
+																				<span class="ng-binding">Nữ</span>
 																			</a>
 																		</div>
 																		
-																		<div id="ui-select-choices-row-14-1" class="ui-select-choices-row ng-scope active">
+																		<div id="ui-select-choices-row-14-1" class="ui-select-choices-row active">
 																			<a href="" class="ui-select-choices-row-inner">
-																				<span class="ng-binding ng-scope">Nam</span>
+																				<span class="ng-binding">Nam</span>
 																			</a>
 																		</div>
 																	</li>
 																</ul>
-																<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-0">
+																<input class="ui-select-focusser ui-select-offscreen" type="text" id="focusser-0">
 															</div>
 														</div>
 													</div>
@@ -142,40 +142,40 @@ $user = get_user_by('id',1 );
 															<div class="row">
 																<div class="col-md-4 form-group">
 																	<p>
-																		<input type="number" name="day" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-min ng-valid-max ng-valid-pattern" placeholder="Ngày" min="0" max="30" ng-pattern="/^\d{1,2}$/">
+																		<input type="number" name="day" class="form-control account-input-min-max-pattern" placeholder="Ngày" min="0" max="30">
 																	</p>
-																	<p class="text text-danger ng-hide">Ngày sinh không hợp lệ</p>
+																	<p class="text text-danger vf-hide">Ngày sinh không hợp lệ</p>
 																</div>
 																<div class="col-md-4 form-group">
-																	<div class="ui-select-container ui-select-bootstrap dropdown ng-valid" name="month">
+																	<div class="ui-select-container ui-select-bootstrap dropdown" name="month">
 																		<div class="ui-select-match" placeholder="Tháng">
 																			<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
-																				<span class="ui-select-placeholder text-muted ng-binding">Tháng</span> <span class="ui-select-match-text pull-left ng-hide"><span class="ng-binding ng-scope"></span></span> <i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide">
+																				<span class="ui-select-placeholder text-muted">Tháng</span> <span class="ui-select-match-text pull-left vf-hide"><span class="ng-binding"></span></span> <i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right vf-hide">
 																				<i class="glyphicon glyphicon-remove"></i>
 																				</a>
 																			</span>
 																		</div>
-																	<input type="text" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="Tháng">
-																	<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
+																	<input type="text" class="form-control ui-select-search vf-hide" placeholder="Tháng">
+																	<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu">
 																		<li class="ui-select-choices-group" id="ui-select-choices-1">
-																			<div class="divider ng-hide"></div>
-																			<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
+																			<div class="divider vf-hide"></div>
+																			<div class="ui-select-choices-group-label dropdown-header vf-hide"></div>
 																		</li>
 																	</ul>
-																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-1"></div>
-																	<p class="text text-danger ng-hide">Tháng sinh không hợp lệ</p>
+																	<input class="ui-select-focusser ui-select-offscreen" type="text" id="focusser-1"></div>
+																	<p class="text text-danger vf-hide">Tháng sinh không hợp lệ</p>
 																</div>
 																<div class="col-md-4 form-group">
 																	<p>
-																		<input name="year" type="number" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern" placeholder="Năm">
+																		<input name="year" type="number" class="form-control account-input-pattern" placeholder="Năm">
 																	</p>
-																	<p class="text text-danger ng-hide">Năm sinh không hợp lệ</p>
+																	<p class="text text-danger vf-hide">Năm sinh không hợp lệ</p>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<div class="col-xs-12 form-group alert alert-danger ng-binding ng-hide">
+												<div class="col-xs-12 form-group alert alert-danger vf-hide">
 													
 												</div>
 												<div class="col-xs-12 form-group">
@@ -223,7 +223,7 @@ $user = get_user_by('id',1 );
 
 										<!-- ngIf: isEdit && !editInformation -->
 										<form method="post" action="">
-										<div class="row change-address-form ng-scope ng-hide">
+										<div class="row change-address-form vf-hide">
 											<div class="col-md-offset-2 col-md-8">
 												<h4>
 													<!-- ngSwitchWhen: shipping -->
@@ -232,31 +232,31 @@ $user = get_user_by('id',1 );
 													<!-- ngSwitchWhen: billing -->
 												</h4>
 											<ui-address-form class="ng-isolate-scope">
-												<div class="row ng-pristine ng-valid ng-valid-required ng-valid-pattern">
+												<div class="row-required-pattern">
 													<div class="col-xs-12">
 														<div class="row">
 															<div class="col-xs-6 form-group">
-																<input name="billing_last_name" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Họ" value="<?php echo get_user_meta( $customer_id, 'billing_last_name', true );?>">
-																<p class="text text-danger ng-hide">Họ là thông tin bắt buộc</p>
+																<input name="billing_last_name" type="text" class="form-control account-input-required" placeholder="Họ" value="<?php echo get_user_meta( $customer_id, 'billing_last_name', true );?>">
+																<p class="text text-danger vf-hide">Họ là thông tin bắt buộc</p>
 															</div>
 															<div class="col-xs-6 form-group">
-																<input name="billing_first_name" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Tên" value="<?php echo get_user_meta( $customer_id, 'billing_first_name', true );?>">
-																<p class="text text-danger ng-hide">Tên là thông tin bắt buộc</p>
+																<input name="billing_first_name" type="text" class="form-control account-input-required" placeholder="Tên" value="<?php echo get_user_meta( $customer_id, 'billing_first_name', true );?>">
+																<p class="text text-danger vf-hide">Tên là thông tin bắt buộc</p>
 															</div>
 															<div class="form-group"></div>
 														</div>
 
-														<div class="form-group company-name ng-hide">
-															<input name="billing_company" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid" placeholder="Công ty (không bắt buộc)" value="<?php echo get_user_meta( $customer_id, 'billing_company', true );?>">
+														<div class="form-group company-name vf-hide">
+															<input name="billing_company" type="text" class="form-control account-input" placeholder="Công ty (không bắt buộc)" value="<?php echo get_user_meta( $customer_id, 'billing_company', true );?>">
 														</div>
-														<div class="form-group taxcode ng-hide">
-															<input name="taxCode" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern" placeholder="Mã số thuế (không bắt buộc)" value="<?php echo get_user_meta( $customer_id, 'billing_first_name', true );?>">
-															<p class="text text-danger ng-hide">Mã số thuế không hợp lệ</p>
+														<div class="form-group taxcode vf-hide">
+															<input name="taxCode" type="text" class="form-control account-input-pattern" placeholder="Mã số thuế (không bắt buộc)" value="<?php echo get_user_meta( $customer_id, 'billing_first_name', true );?>">
+															<p class="text text-danger vf-hide">Mã số thuế không hợp lệ</p>
 														</div>
 														<div class="form-group row">
 															<div class="col-xs-12">
-																<input type="text" name="billing_address_1" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Địa chỉ" value="<?php echo get_user_meta( $customer_id, 'billing_address_1', true );?>">
-																<p class="text text-danger ng-hide">Thông tin địa chỉ bắt buộc.</p>
+																<input type="text" name="billing_address_1" class="form-control account-input-required" placeholder="Địa chỉ" value="<?php echo get_user_meta( $customer_id, 'billing_address_1', true );?>">
+																<p class="text text-danger vf-hide">Thông tin địa chỉ bắt buộc.</p>
 															</div>
 														</div>
 
@@ -265,76 +265,76 @@ $user = get_user_by('id',1 );
 														</div> -->
 														<div class="row">
 															<div class="col-sm-6 form-group">
-																<div class="ui-select-container ui-select-bootstrap dropdown ng-valid ng-valid-required" name="city" theme="bootstrap">
+																<div class="ui-select-container ui-select-bootstrap dropdown-required" name="city" theme="bootstrap">
 																	<div class="ui-select-match" placeholder="Tỉnh/Thành Phố">
 																		<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
-																			<span class="ui-select-placeholder text-muted ng-binding ng-hide">Tỉnh/Thành Phố</span> <span class="ui-select-match-text pull-left">
-																			<span class="ng-binding ng-scope"><?php echo get_user_meta( $customer_id, 'billing_city', true );?></span></span> <i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove"></i></a>
+																			<span class="ui-select-placeholder text-muted vf-hide">Tỉnh/Thành Phố</span> <span class="ui-select-match-text pull-left">
+																			<span class="ng-binding"><?php echo get_user_meta( $customer_id, 'billing_city', true );?></span></span> <i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right vf-hide"><i class="glyphicon glyphicon-remove"></i></a>
 																		</span>
 																	</div>
-																	<input name="billing_city" type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="Tỉnh/Thành Phố">
-																		<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
+																	<input name="billing_city" type="text" tabindex="-1" class="form-control ui-select-search vf-hide" placeholder="Tỉnh/Thành Phố">
+																		<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu">
 																			<li class="ui-select-choices-group" id="ui-select-choices-8">
-																				<div class="divider ng-hide"></div>
-																				<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
+																				<div class="divider vf-hide"></div>
+																				<div class="ui-select-choices-group-label dropdown-header vf-hide"></div>
 																				<?php vn_provinces(); ?>
 																			</li>
 																		</ul>
-																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-8" role="button">
+																	<input class="ui-select-focusser ui-select-offscreen" type="text" id="focusser-8" role="button">
 																</div>
-																<p class="text text-danger ng-hide">Thông tin Tỉnh/Thành Phố bắt buộc</p>
+																<p class="text text-danger vf-hide">Thông tin Tỉnh/Thành Phố bắt buộc</p>
 															</div>
 															<div class="col-sm-6 form-group">
-																<div class="ui-select-container ui-select-bootstrap dropdown ng-valid ng-valid-required" name="district" theme="bootstrap">
+																<div class="ui-select-container ui-select-bootstrap dropdown-required" name="district" theme="bootstrap">
 																	<div class="ui-select-match" placeholder="Quận/Huyện">
 																		<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
-																			<span class="ui-select-placeholder text-muted ng-binding ng-hide">Quận/Huyện</span> 
+																			<span class="ui-select-placeholder text-muted vf-hide">Quận/Huyện</span> 
 																			<span class="ui-select-match-text pull-left">
-																				<span class="ng-binding ng-scope">Quận Hai Bà Trưng</span>
+																				<span class="ng-binding">Quận Hai Bà Trưng</span>
 																			</span> 
-																			<i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove"></i></a>
+																			<i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right vf-hide"><i class="glyphicon glyphicon-remove"></i></a>
 																		</span>
 																	</div>
-																	<input type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="Quận/Huyện">
-																	<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
+																	<input type="text" tabindex="-1" class="form-control ui-select-search vf-hide" placeholder="Quận/Huyện">
+																	<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu">
 																		<li class="ui-select-choices-group" id="ui-select-choices-9">
-																			<div class="divider ng-hide"></div>
-																			<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
+																			<div class="divider vf-hide"></div>
+																			<div class="ui-select-choices-group-label dropdown-header vf-hide"></div>
 																		</li>
 																	</ul>
-																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-9">
+																	<input class="ui-select-focusser ui-select-offscreen" type="text" id="focusser-9">
 																</div>
-																<p class="text text-danger ng-hide">Thông tin Quận/Huyện bắt buộc</p>
+																<p class="text text-danger vf-hide">Thông tin Quận/Huyện bắt buộc</p>
 															</div>
 															<div class="form-group"></div>
 														</div>
 														<div class="form-group">
-															<input name="billing_phone" type="tel" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern" placeholder="Số di động" value="<?php echo get_user_meta( $customer_id, 'billing_phone', true );?>" required="">
-															<p class="text text-danger ng-hide">Thông tin Số di động bắt buộc</p>
+															<input name="billing_phone" type="tel" class="form-control account-input-required-pattern" placeholder="Số di động" value="<?php echo get_user_meta( $customer_id, 'billing_phone', true );?>" required="">
+															<p class="text text-danger vf-hide">Thông tin Số di động bắt buộc</p>
 
-															<p class="text text-danger ng-hide">Số điện thoại này không hợp lệ</p>
+															<p class="text text-danger vf-hide">Số điện thoại này không hợp lệ</p>
 														</div>
 
-														<div class="checkbox ng-hide">
+														<div class="checkbox vf-hide">
 															<label>
-																<input type="checkbox" class="ng-pristine ng-untouched ng-valid"> <small>Địa chỉ in trên hoá đơn giống như trên</small>
+																<input type="checkbox" class="ng-pristine"> <small>Địa chỉ in trên hoá đơn giống như trên</small>
 															</label>
 														</div>
 														<div class="form-group">
-															<button class="btn btn-primary btn-java ng-hide" type="submit">Lưu địa chỉ</button>
+															<button class="btn btn-primary btn-java vf-hide" type="submit">Lưu địa chỉ</button>
 															<input type="submit" class="btn btn-primary btn-java" name="save_address" value="Lưu địa chỉ">
 															<div class="btn btn-default btn-lg btn-uppercase change-address-form-back" type="button">Trở lại</div>
 															<input type="hidden" id="_wpnonce" name="_wpnonce" value="595e6d9e42">
 															<input type="hidden" name="_wp_http_referer" value="/leflair/my-account/">
 															<input type="hidden" name="action" value="edit_address">
 														</div>
-														<div class="form-group ng-hide">
+														<div class="form-group vf-hide">
 															<div class="alert alert-info">
 																Thông tin địa chỉ đang được cập nhật…
 															</div>
 														</div>
-														<div class="form-group ng-hide">
-															<div class="alert alert-danger ng-binding">
+														<div class="form-group vf-hide">
+															<div class="alert alert-danger">
 																
 															</div>
 														</div>
@@ -356,31 +356,31 @@ $user = get_user_by('id',1 );
 										</p>
 									</div>
 									<div class="row">
-										<div class="col-sm-6 form-gift-code ng-hide">
+										<div class="col-sm-6 form-gift-code vf-hide">
 											<ui-giftcard close-trigger="isRedeem" is-large="" avail-credit="account.availableCredit" class="ng-isolate-scope"> 
-											<div class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern">
+											<div class="ng-pristine-pattern">
 												<fieldset class="row">
 													<div class="form-group col-xs-7">
-														<input name="code" class="form-control ng-pristine ng-untouched input-lg ng-invalid ng-invalid-required ng-valid-pattern" placeholder="Điền mã">
+														<input name="code" class="form-control input-lg-pattern" placeholder="Điền mã">
 													</div>
 
 													<div class="form-group col-xs-5 no-left-padding">
 														<!-- ngIf: !giftCard -->
-														<button type="button" class="btn btn-block btn-primary ng-scope btn-lg">NẠP</button>
+														<button type="button" class="btn btn-block btn-primary btn-lg">NẠP</button>
 														<!-- end ngIf: !giftCard -->
-														<button type="button" class="btn btn-block btn-primary btn-lg ng-hide">Nạp tiền</button>
+														<button type="button" class="btn btn-block btn-primary btn-lg vf-hide">Nạp tiền</button>
 													</div>
 
-													<div class="form-group col-xs-12 ng-hide">
+													<div class="form-group col-xs-12 vf-hide">
 														<div class="text-info">
-															<p>Thẻ quà tặng của bạn có <span class="java ng-binding">₫</span></p>
+															<p>Thẻ quà tặng của bạn có <span class="java">₫</span></p>
 															<p>Nhấn nút "Nạp" để thêm số tiền trong thẻ vào tài khoản</p>
 														</div>
 													</div>
 
 
-													<div class="form-group col-xs-12 ng-hide">
-														<div class="text-danger ng-binding">
+													<div class="form-group col-xs-12 vf-hide">
+														<div class="text-danger">
 															
 														</div>
 													</div>
@@ -398,19 +398,19 @@ $user = get_user_by('id',1 );
 												<button class="btn btn-primary btn-java btn-fluid-mobile change-password" type="button">Thay mật khẩu</button>
 											</p>
 											
-											<div class="form-change-password ng-hide">
+											<div class="form-change-password vf-hide">
 												<div class="row col-md-7">
 													<div class="form-group">
 														<p><label for="">Mật khẩu hiện tại</label></p>
-														<input type="password" name="password_current" id="password_current" placeholder="Vui lòng điền mật khẩu hiện tại" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern">
+														<input type="password" name="password_current" id="password_current" placeholder="Vui lòng điền mật khẩu hiện tại" class="form-control account-input-pattern">
 													</div>
 													<div class="form-group">
 														<p><label for="">Mật khẩu mới</label></p>
-														<p><input type="password" name="password_1" id="password_1" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern"></p>
+														<p><input type="password" name="password_1" id="password_1" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input-pattern"></p>
 													</div>
 													<div class="form-group">
 														<p><label for="">Nhập lại mật khẩu mới</label></p>
-														<p><input type="password" name="password_2" id="password_2" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern"></p>
+														<p><input type="password" name="password_2" id="password_2" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input-pattern"></p>
 													</div>
 													<br>
 													<div class="col-md-12 form-group">

@@ -7,19 +7,19 @@ get_template_part('templates', 'header');
 
 <section>
 		
-		<img class="fluid category-hero ng-isolate-scope" src="https://src0.responsive.io/webp/w=1349/https://leflair-assets.storage.googleapis.com/57e1098b52b3930f00aefe3c.jpg">
+		<img class="fluid category-hero" src="https://src0.responsive.io/webp/w=1349/https://leflair-assets.storage.googleapis.com/57e1098b52b3930f00aefe3c.jpg">
 
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<ol class="breadcrumb">
 						<li><a href="/">Sales</a></li>
-						<li class="active ng-binding">Cọ Trang Điểm KT Cosmetics</li>
+						<li class="active">Cọ Trang Điểm KT Cosmetics</li>
 					</ol>
 					<div class="sale-closing-time">
-						<img class="brand-logo ng-isolate-scope" />
+						<img class="brand-logo" />
 
-						<div class="closing-time ng-binding ng-scope">
+						<div class="closing-time">
 							<span class="glyphicon glyphicon-time"></span>
 							KẾT THÚC TRONG 5 NGÀY TỚI
 						</div>
@@ -31,7 +31,7 @@ get_template_part('templates', 'header');
     <div class="container">
 
 		<div class="row">
-			<div class="col-md-4 col-sm-6 ng-scope">
+			<div class="col-md-4 col-sm-6">
 				<div class=" product-grid-item">
 					
 					<div class="thumbnail product-thumb">
@@ -41,18 +41,18 @@ get_template_part('templates', 'header');
 						</a>
 					</div>
 					<div class="product-grid-details">
-						<p class="brand ng-binding">KT Cosmetics</p>
+						<p class="brand">KT Cosmetics</p>
 						<h3>
-							<a class="title ng-binding" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 6 Cọ Trang Điểm Mini</a>
+							<a class="title" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 6 Cọ Trang Điểm Mini</a>
 						</h3>
-						<p class="price ng-binding">
-							<span class="original-price ng-binding">515,000₫</span>
+						<p class="price">
+							<span class="original-price">515,000₫</span>
 							419,000₫
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 ng-scope">
+			<div class="col-md-4 col-sm-6">
 				<div class=" product-grid-item">
 					
 					<div class="thumbnail product-thumb">
@@ -62,18 +62,18 @@ get_template_part('templates', 'header');
 						</a>
 					</div>
 					<div class="product-grid-details">
-						<p class="brand ng-binding">KT Cosmetics</p>
+						<p class="brand">KT Cosmetics</p>
 						<h3>
-							<a class="title ng-binding" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 7 Cọ Trang Điểm Mini</a>
+							<a class="title" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 7 Cọ Trang Điểm Mini</a>
 						</h3>
-						<p class="price ng-binding">
-							<span class="original-price ng-binding" >394,000₫</span>
+						<p class="price">
+							<span class="original-price" >394,000₫</span>
 							339,000₫
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 ng-scope" >
+			<div class="col-md-4 col-sm-6" >
 				<div class=" product-grid-item">
 					
 					<div class="thumbnail product-thumb">
@@ -83,18 +83,18 @@ get_template_part('templates', 'header');
 						</a>
 					</div>
 					<div class="product-grid-details">
-						<p class="brand ng-binding">KT Cosmetics</p>
+						<p class="brand">KT Cosmetics</p>
 						<h3>
-							<a class="title ng-binding" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 14 Cọ Trang Điểm Chuyên Nghiệp</a>
+							<a class="title" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 14 Cọ Trang Điểm Chuyên Nghiệp</a>
 						</h3>
-						<p class="price ng-binding">
-							<span class="original-price ng-binding" >1,599,000₫</span>
+						<p class="price">
+							<span class="original-price" >1,599,000₫</span>
 							1,139,000₫
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 ng-scope" >
+			<div class="col-md-4 col-sm-6" >
 				<div class=" product-grid-item">
 					
 					<div class="thumbnail product-thumb">
@@ -104,22 +104,22 @@ get_template_part('templates', 'header');
 						</a>
 					</div>
 					<div class="product-grid-details">
-						<p class="brand ng-binding">KT Cosmetics</p>
+						<p class="brand">KT Cosmetics</p>
 						<h3>
-							<a class="title ng-binding" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 16 Cọ Trang Điểm Chuyên Nghiệp</a>
+							<a class="title" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 16 Cọ Trang Điểm Chuyên Nghiệp</a>
 						</h3>
-						<p class="price ng-binding">
-							<span class="original-price ng-binding" >1,233,000₫</span>
+						<p class="price">
+							<span class="original-price" >1,233,000₫</span>
 							899,000₫
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6 ng-scope" >
+			<div class="col-md-4 col-sm-6" >
 				<div class=" product-grid-item">
 					
 					<div class="thumbnail product-thumb">
-						<div class="sold-out-overlay ng-scope" >
+						<div class="sold-out-overlay" >
 							<div class="sold-out-text">HẾT HÀNG</div>
 						</div>
 						<a href="<?php echo site_url('product/test-product/'); ?>">
@@ -127,12 +127,12 @@ get_template_part('templates', 'header');
 						</a>
 					</div>
 					<div class="product-grid-details">
-						<p class="brand ng-binding">KT Cosmetics</p>
+						<p class="brand">KT Cosmetics</p>
 						<h3>
-							<a class="title ng-binding" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 8 Cọ Trang Điểm Mini</a>
+							<a class="title" href="<?php echo site_url('product/test-product/'); ?>">Bộ: 8 Cọ Trang Điểm Mini</a>
 						</h3>
-						<p class="price ng-binding">
-							<span class="original-price ng-binding" >536,000₫</span>
+						<p class="price">
+							<span class="original-price" >536,000₫</span>
 							429,000₫
 						</p>
 					</div>
