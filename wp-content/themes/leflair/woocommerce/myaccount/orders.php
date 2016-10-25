@@ -21,7 +21,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+echo '<pre>'; print_r($customer_orders); echo '</pre>';
 do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php if ( $has_orders ) : ?>

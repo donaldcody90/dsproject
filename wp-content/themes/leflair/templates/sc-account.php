@@ -1,15 +1,18 @@
+
+
+
 <?php 
 $user = wp_get_current_user(); 
 $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'billing' => __( 'Billing Address', 'woocommerce' ),
-		'shipping' => __( 'Shipping Address', 'woocommerce' )
+		'billing' => __( 'Địa chỉ trên hoá đơn', 'woocommerce' ),
+		'shipping' => __( 'Địa chỉ giao hàng', 'woocommerce' )
 	), $customer_id );
 } else {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'billing' =>  __( 'Billing Address', 'woocommerce' )
+		'billing' =>  __( 'Địa chỉ trên hoá đơn', 'woocommerce' )
 	), $customer_id );
 }
 
@@ -19,12 +22,17 @@ $col    = 1;
 
 
 <section>
-			
+	
 	<!-- uiView:  -->
 	<section class="ng-scope">
 	<section class="container account ng-scope">
-	<form name="userForm" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-min ng-valid-max ng-valid-pattern">
+	<!--<form name="userForm" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-min ng-valid-max ng-valid-pattern">-->
 		<fieldset>
+		<?php
+$user_name = 'wp_admin';
+$user = get_user_by('id',1 );
+//var_dump($user);
+?>
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="col-xs-12 account-inner">
@@ -35,6 +43,7 @@ $col    = 1;
 									<li><a href="<?php echo site_url('orders');?>">Lịch sử đơn hàng</a></li>
 								</ul>
 							</div>
+							
 							<div class="col-md-10 col-md-offset-1">
 								<!-- Account Information -->
 								<div>
@@ -55,19 +64,19 @@ $col    = 1;
 												<div class="col-xs-12 form-group">
 													<div class="row">
 														<div class="col-md-6 form-group">
-																<p>
-																	<label for="">Họ</label>
-																</p>
-																<input type="text" name="account_last_name" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->last_name ); ?>" required="">
-																<p class="text text-danger ng-hide">Vui lòng điền họ của bạn</p>	
+															<p>
+																<label for="">Họ</label>
+															</p>
+															<input name="account_last_name" type="text" id="account_last_name" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->last_name ); ?>" required="">
+															<p class="text text-danger ng-hide">Vui lòng điền họ của bạn</p>	
 														</div>
 														<div class="col-md-6 form-group">
-																<p>
-																	<label for="">Tên</label>
-																</p>
-																	<input name="account_first_name" type="text" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->first_name ); ?>" required="">
+															<p>
+																<label for="">Tên</label>
+															</p>
+															<input name="account_first_name" type="text" id="account_first_name" class="form-control account-input ng-pristine ng-untouched ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->first_name ); ?>" required="">
 
-																<p class="text text-danger ng-hide">Vui lòng điền tên của bạn</p>	
+															<p class="text text-danger ng-hide">Vui lòng điền tên của bạn</p>	
 														</div>
 													</div>
 												</div>
@@ -78,54 +87,49 @@ $col    = 1;
 																<p>
 																	<label for="">Địa chỉ email</label>
 																</p>
-																	<input name="account_email" type="email" class="form-control account-input ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->user_email ); ?>" required="">
+																	<input name="account_email" type="email" id="account_email" class="form-control account-input ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" value="<?php echo esc_attr( $user->user_email ); ?>" required="">
 																
 																<p class="text text-danger ng-hide">Vui lòng điền địa chỉ email của bạn</p>
 														</div>
 														<div class="col-md-6 form-group">
-																<p>
-																	<label for="">Giới tính</label>
-																</p>
+															<p>
+																<label for="">Giới tính</label>
+															</p>
 
-																<div class="ui-select-container ui-select-bootstrap dropdown ng-valid direction-up open" name="gender">
-																	<div class="ui-select-match">
-																		<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
-																			<span class="ui-select-placeholder text-muted ng-binding"></span> 
-																			<span class="ui-select-match-text pull-left">
-																				<span class="ng-binding ng-scope"></span>
-																			</span>
-																			<i class="caret pull-right"></i> 
-																			<a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide">
-																				<i class="glyphicon glyphicon-remove"></i>
-																			</a>
+															<div class="ui-select-container ui-select-bootstrap dropdown ng-valid direction-up open" name="gender">
+																<div class="ui-select-match">
+																	<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
+																		<span class="ui-select-placeholder text-muted ng-binding"></span> 
+																		<span class="ui-select-match-text pull-left">
+																			<span class="ng-binding ng-scope"></span>
 																		</span>
-																	</div>
-																	<input type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="">
-																	<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
-																		<li class="ui-select-choices-group" id="ui-select-choices-0">
-																			<div class="divider ng-hide"></div>
-																			<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
-																			<!-- ngRepeat: gender in $select.items -->
-																			<!-- ngIf: $select.open -->
-																			<div id="ui-select-choices-row-14-0" class="ui-select-choices-row ng-scope">
-																				<a href="" class="ui-select-choices-row-inner">
-																					<span class="ng-binding ng-scope">Nữ</span>
-																				</a>
-																			</div>
-																			<!-- end ngRepeat: gender in $select.items -->
-																			<!-- ngIf: $select.open -->
-																			<div id="ui-select-choices-row-14-1" class="ui-select-choices-row ng-scope active">
-																				<a href="" class="ui-select-choices-row-inner">
-																					<span class="ng-binding ng-scope">Nam</span>
-																				</a>
-																			</div>
-																			<!-- end ngRepeat: gender in $select.items -->
-																		</li>
-																	</ul>
-																<ui-select-single>
-																</ui-select-single>
-																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-0">
+																		<i class="caret pull-right"></i> 
+																		<a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide">
+																			<i class="glyphicon glyphicon-remove"></i>
+																		</a>
+																	</span>
 																</div>
+																<input type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="">
+																<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
+																	<li class="ui-select-choices-group" id="ui-select-choices-0">
+																		<div class="divider ng-hide"></div>
+																		<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
+																		
+																		<div id="ui-select-choices-row-14-0" class="ui-select-choices-row ng-scope">
+																			<a href="" class="ui-select-choices-row-inner">
+																				<span class="ng-binding ng-scope">Nữ</span>
+																			</a>
+																		</div>
+																		
+																		<div id="ui-select-choices-row-14-1" class="ui-select-choices-row ng-scope active">
+																			<a href="" class="ui-select-choices-row-inner">
+																				<span class="ng-binding ng-scope">Nam</span>
+																			</a>
+																		</div>
+																	</li>
+																</ul>
+																<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-0">
+															</div>
 														</div>
 													</div>
 												</div>
@@ -158,7 +162,6 @@ $col    = 1;
 																			<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
 																		</li>
 																	</ul>
-																	<ui-select-single></ui-select-single>
 																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-1"></div>
 																	<p class="text text-danger ng-hide">Tháng sinh không hợp lệ</p>
 																</div>
@@ -176,9 +179,13 @@ $col    = 1;
 													
 												</div>
 												<div class="col-xs-12 form-group">
-													<button type="submit" class="btn btn-primary btn-java btn-lg">Lưu lại</button>
+													<input type="submit" name="save_account_details" class="btn btn-primary btn-java btn-lg" value="Lưu lại">
 													<div class="btn btn-default btn-lg account-info-back">Trở lại</div>
 												</div>
+												<input type="hidden" id="_wpnonce" name="_wpnonce" value="c1a94fa7b2">
+												<input type="hidden" name="_wp_http_referer" value="/leflair/my-account/edit-account/">		
+												
+												<input type="hidden" name="action" value="save_account_details">
 											</div>
 										</form>
 										
@@ -220,7 +227,7 @@ $col    = 1;
 											<div class="col-md-offset-2 col-md-8">
 												<h4>
 													<!-- ngSwitchWhen: shipping -->
-													<div class="ng-scope change-address-form-title"></div>
+													<div class="ng-scope change-address-form-title">22222222222</div>
 													<!-- end ngSwitchWhen: -->
 													<!-- ngSwitchWhen: billing -->
 												</h4>
@@ -229,26 +236,26 @@ $col    = 1;
 													<div class="col-xs-12">
 														<div class="row">
 															<div class="col-xs-6 form-group">
-																<input name="lastName" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Họ">
+																<input name="billing_last_name" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Họ" value="<?php echo get_user_meta( $customer_id, 'billing_last_name', true );?>">
 																<p class="text text-danger ng-hide">Họ là thông tin bắt buộc</p>
 															</div>
 															<div class="col-xs-6 form-group">
-																<input name="firstName" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Tên">
+																<input name="billing_first_name" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Tên" value="<?php echo get_user_meta( $customer_id, 'billing_first_name', true );?>">
 																<p class="text text-danger ng-hide">Tên là thông tin bắt buộc</p>
 															</div>
 															<div class="form-group"></div>
 														</div>
 
 														<div class="form-group company-name ng-hide">
-															<input type="text" class="form-control account-input ng-pristine ng-untouched ng-valid" placeholder="Công ty (không bắt buộc)">
+															<input name="billing_company" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid" placeholder="Công ty (không bắt buộc)" value="<?php echo get_user_meta( $customer_id, 'billing_company', true );?>">
 														</div>
 														<div class="form-group taxcode ng-hide">
-															<input name="taxCode" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern" placeholder="Mã số thuế (không bắt buộc)">
+															<input name="taxCode" type="text" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern" placeholder="Mã số thuế (không bắt buộc)" value="<?php echo get_user_meta( $customer_id, 'billing_first_name', true );?>">
 															<p class="text text-danger ng-hide">Mã số thuế không hợp lệ</p>
 														</div>
 														<div class="form-group row">
 															<div class="col-xs-12">
-																<input type="text" name="address1" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Địa chỉ">
+																<input type="text" name="billing_address_1" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="Địa chỉ" value="<?php echo get_user_meta( $customer_id, 'billing_address_1', true );?>">
 																<p class="text text-danger ng-hide">Thông tin địa chỉ bắt buộc.</p>
 															</div>
 														</div>
@@ -258,20 +265,21 @@ $col    = 1;
 														</div> -->
 														<div class="row">
 															<div class="col-sm-6 form-group">
-																<div class="ui-select-container ui-select-bootstrap dropdown ng-valid ng-valid-required" name="city" theme="bootstrap" on-select="selectCity($item)">
+																<div class="ui-select-container ui-select-bootstrap dropdown ng-valid ng-valid-required" name="city" theme="bootstrap">
 																	<div class="ui-select-match" placeholder="Tỉnh/Thành Phố">
 																		<span tabindex="-1" class="btn btn-default form-control ui-select-toggle" style="outline: 0;">
 																			<span class="ui-select-placeholder text-muted ng-binding ng-hide">Tỉnh/Thành Phố</span> <span class="ui-select-match-text pull-left">
-																			<span class="ng-binding ng-scope">Thành phố Hà Nội</span></span> <i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove"></i></a>
+																			<span class="ng-binding ng-scope"><?php echo get_user_meta( $customer_id, 'billing_city', true );?></span></span> <i class="caret pull-right"></i> <a style="margin-right: 10px" class="btn btn-xs btn-link pull-right ng-hide"><i class="glyphicon glyphicon-remove"></i></a>
 																		</span>
 																	</div>
-																	<input type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="Tỉnh/Thành Phố">
+																	<input name="billing_city" type="text" tabindex="-1" class="form-control ui-select-search ng-pristine ng-untouched ng-valid ng-hide" placeholder="Tỉnh/Thành Phố">
 																		<ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope">
-																			<li class="ui-select-choices-group" id="ui-select-choices-8"><div class="divider ng-hide"></div>
+																			<li class="ui-select-choices-group" id="ui-select-choices-8">
+																				<div class="divider ng-hide"></div>
 																				<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
+																				<?php vn_provinces(); ?>
 																			</li>
 																		</ul>
-																	<ui-select-single></ui-select-single>
 																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-8" role="button">
 																</div>
 																<p class="text text-danger ng-hide">Thông tin Tỉnh/Thành Phố bắt buộc</p>
@@ -294,7 +302,6 @@ $col    = 1;
 																			<div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
 																		</li>
 																	</ul>
-																	<ui-select-single></ui-select-single>
 																	<input class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-9">
 																</div>
 																<p class="text text-danger ng-hide">Thông tin Quận/Huyện bắt buộc</p>
@@ -302,7 +309,7 @@ $col    = 1;
 															<div class="form-group"></div>
 														</div>
 														<div class="form-group">
-															<input name="phone" type="tel" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern" placeholder="Số di động" required="">
+															<input name="billing_phone" type="tel" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-required ng-valid-pattern" placeholder="Số di động" value="<?php echo get_user_meta( $customer_id, 'billing_phone', true );?>" required="">
 															<p class="text text-danger ng-hide">Thông tin Số di động bắt buộc</p>
 
 															<p class="text text-danger ng-hide">Số điện thoại này không hợp lệ</p>
@@ -314,8 +321,12 @@ $col    = 1;
 															</label>
 														</div>
 														<div class="form-group">
-															<button class="btn btn-primary btn-java " type="submit">Lưu địa chỉ</button>
-															<button class="btn btn-default btn-lg btn-uppercase change-address-form-back" type="button">Trở lại</button>
+															<button class="btn btn-primary btn-java ng-hide" type="submit">Lưu địa chỉ</button>
+															<input type="submit" class="btn btn-primary btn-java" name="save_address" value="Lưu địa chỉ">
+															<div class="btn btn-default btn-lg btn-uppercase change-address-form-back" type="button">Trở lại</div>
+															<input type="hidden" id="_wpnonce" name="_wpnonce" value="595e6d9e42">
+															<input type="hidden" name="_wp_http_referer" value="/leflair/my-account/">
+															<input type="hidden" name="action" value="edit_address">
 														</div>
 														<div class="form-group ng-hide">
 															<div class="alert alert-info">
@@ -386,24 +397,27 @@ $col    = 1;
 											<p>
 												<button class="btn btn-primary btn-java btn-fluid-mobile change-password" type="button">Thay mật khẩu</button>
 											</p>
-
+											
 											<div class="form-change-password ng-hide">
 												<div class="row col-md-7">
 													<div class="form-group">
 														<p><label for="">Mật khẩu hiện tại</label></p>
-														<input type="password" name="password_current" placeholder="Vui lòng điền mật khẩu hiện tại" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern">
+														<input type="password" name="password_current" id="password_current" placeholder="Vui lòng điền mật khẩu hiện tại" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern">
 													</div>
 													<div class="form-group">
 														<p><label for="">Mật khẩu mới</label></p>
-														<p><input type="password" name="password_1" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern"></p>
+														<p><input type="password" name="password_1" id="password_1" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern"></p>
 													</div>
 													<div class="form-group">
 														<p><label for="">Nhập lại mật khẩu mới</label></p>
-														<p><input type="password" name="password_2" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern"></p>
+														<p><input type="password" name="password_2" id="password_2" placeholder="Vui lòng điền mật khẩu mới" class="form-control account-input ng-pristine ng-untouched ng-valid ng-valid-pattern"></p>
 													</div>
 													<br>
 													<div class="col-md-12 form-group">
-														<button class="btn btn-primary btn-java btn-lg">Lưu lại</button>
+														<input type="hidden" id="_wpnonce" name="_wpnonce" value="c1a94fa7b2">
+														<input type="hidden" name="_wp_http_referer" value="/leflair/my-account/edit-account/">		
+														<input type="hidden" name="action" value="save_account_details">
+														<input type="submit" name="save_account_details" class="btn btn-primary btn-java btn-lg" value="Lưu lại">
 														<div class="btn btn-default btn-lg form-change-password-back">Trở lại</div>
 													</div>
 												</div>
@@ -419,7 +433,7 @@ $col    = 1;
 				</div>
 			</div>
 		</fieldset>
-	</form>
+	<!--</form>-->
 	</section>
 	</section>
 

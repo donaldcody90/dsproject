@@ -248,12 +248,22 @@ $(document).ready(function(){
 		if(!minicart){
 			$("div.shopping-cart").addClass("uncover visible");
 			$("body .pusher").addClass("dimmed");
+			$('body div.pusher').attr('id', 'click');
 		}else{
 			$("div.shopping-cart").removeClass("uncover visible");
 			$("body .pusher").removeClass("dimmed");
 		}
 	});
+	
 });
+$(document).ready(function(){
+	$("body #click").click(function(){
+		$("div.shopping-cart").removeClass("uncover visible");
+		$("body .pusher").removeClass("dimmed");
+	});
+	
+});
+
 
 $(document).ready(function(){
 	$(".i-leflair-bag").click(function(){
@@ -286,6 +296,14 @@ $(document).ready(function(){
 		$(".shopping-cart").removeClass("uncover visible");
 		$("body .pusher").removeClass("dimmed");
 	});
+	/*if($(".shopping-cart").hasClass("uncover visible")){
+		$(document).click(function(e){
+			var target = e.target;
+			if(!$(target).is('.sidebar.uncover') && !$(target).parents().is('.sidebar.uncover')){
+				alert("success");
+			}
+		});
+	}*/
 });
 
 $(document).ready(function(){
@@ -310,6 +328,14 @@ $(document).ready(function(){
 	});
 });
 
+// Edit account info
+
+$(document).ready(function(){
+	if($("section").hasClass("account")){
+		$(".content.row").addClass("gray-bg");
+	}
+});
+
 $(document).ready(function(){
 	$(".edit-account-info a").click(function(){
 		$(".account-info-content").children("div").addClass("ng-hide");
@@ -332,11 +358,13 @@ $(document).ready(function(){
 		if($(this).hasClass("edit-billing-address")){
 			$(".change-address-form").find(".change-address-form-title").html("Điền địa chỉ giao hàng");
 			$(".change-address-form").find(".checkbox").removeClass("ng-hide");
+			var abckey= "billing";
 		}
 		if($(this).hasClass("edit-shipping-address")){
 			$(".change-address-form").find(".change-address-form-title").html("Điền địa chỉ trên hoá đơn");
 			$(".change-address-form").find(".company-name").removeClass("ng-hide");
 			$(".change-address-form").find(".taxcode").removeClass("ng-hide");
+			var abckey="shipping";
 		}
 	});
 	$(".change-address-form-back").click(function(){
@@ -359,6 +387,29 @@ $(document).ready(function(){
 	$(".leflair-gift-code").click(function(){
 		$(".account-balance").addClass("ng-hide");
 		$(".form-gift-code").removeClass("ng-hide");
+	});
+});
+
+$(document).ready(function(){
+	$(".nav-orders li").click(function(){
+		$(".nav-orders li").removeClass("active");
+		$(this).addClass("active");
+		if($(".new-orders-button").hasClass("active")){
+			$(".account-inner .order-list").addClass("ng-hide");
+			$(".new-orders").removeClass("ng-hide");
+		}
+		if($(".old-orders-button").hasClass("active")){
+			$(".account-inner .order-list").addClass("ng-hide");
+			$(".old-orders").removeClass("ng-hide");
+		}
+	});
+});
+
+$(document).ready(function(){
+	$(".order-detail-button").click(function(){
+		$(".modal-backdrop").show(1000);
+		$(".modal").show(1000);
+		$("body").addClass("modal-open");
 	});
 });
 
