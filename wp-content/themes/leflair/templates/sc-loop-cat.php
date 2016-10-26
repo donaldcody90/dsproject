@@ -48,11 +48,13 @@ $loop = new WP_Query( $args_bs );
 		<!-- TODAYS TOP SALES -->
 		<div class="container bump-container-next white">
 			<div class="border-left"></div>
-			<div class="row section-header" ng-if="$breakpoint.availFrom('md')">
+			
+			<div class="row section-header">
 				<div class="col-lg-12 text-center">
 					<h3>Ưu Đãi Đang Diễn Ra</h3>
 				</div>
-			</div><!-- end ngIf: $breakpoint.availFrom('md') -->
+			</div>
+			
 			<sales-list sales="sales" banner="sales.banner" banner-position="5" featured-avail="sm" class="ng-isolate-scope">
 			<div class="row">
 			<?php  if($terms) 
@@ -104,7 +106,7 @@ $loop = new WP_Query( $args_bs );
 									<?php echo woocommerce_get_product_thumbnail(); ?>
 									<div class="content">
 										<p class="brand">Lolita Lempicka</p>
-										<h3 class="ng-binding"><?php the_title(); ?></h3>
+										<h3><?php the_title();?></h3>
 										<?php if ( $price_html = $product->get_price_html() ){ ?>
 											<p class="price">
 												<?php echo $product->get_price_html();?>

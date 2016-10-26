@@ -26,66 +26,154 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 
-<ul class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
+<form action="" method="post">
+		<div class="ui simple sidebar push menu shopping-cart right">
+			<div class="wrapper">
+				<div class="header text-center">
+					<i class="leflair i-leflair-close mini-cart-cancel"></i>
+					Giỏ Hàng
+				</div>
+				
+				<?php if ( ! WC()->cart->is_empty() ) : ?>
+				<div class="content">
+				<?php
+				foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+					$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+					$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
-	<?php if ( ! WC()->cart->is_empty() ) : ?>
-
-		<?php
-			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-				$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
-				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-					$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
-					$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-					$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-					?>
-					<li class="<?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
-						<?php
-						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-							'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'woocommerce' ),
-							esc_attr( $product_id ),
-							esc_attr( $_product->get_sku() )
-						), $cart_item_key );
+					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+						$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
+						$thumbnail         = apply_filters( '', $_product->get_image(), $cart_item, $cart_item_key );
+						$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 						?>
-						<?php if ( ! $_product->is_visible() ) : ?>
-							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
-						<?php else : ?>
-							<a href="<?php echo esc_url( $product_permalink ); ?>">
-								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
-							</a>
-						<?php endif; ?>
-						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
+				
+					<div class="cart-item">
+						<div class="row">
+							<div class="col-xs-4">
+								<?php if ( ! $_product->is_visible() ) : ?>
+									<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
+								<?php else : ?>
+									<a href="<?php echo esc_url( $product_permalink ); ?>">
+										<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
+									</a>
+								<?php endif; ?>
+							</div>
+							<div class="col-xs-8 no-left-padding">
+								<p class="ng-binding">
+									<?php if ( ! $_product->is_visible() ) : ?>
+										<?php echo $product_name; ?>
+									<?php else : ?>
+										<a href="<?php echo esc_url( $product_permalink ); ?>">
+											<?php echo $product_name; ?>
+										</a>
+									<?php endif; ?>	
+								</p>
 
-						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
-					</li>
+								<div class="row">
+									<div class="col-xs-6">
+										<!--<p>
+											<span>
+												Color: C03 <br>
+											</span>
+										</p>-->
+										
+										<p class="box">
+											<span class="middle">Qty: </span>
+											<uiselect class="sm-mobile" list="item.quantities" selected="item" selected-property="quantity" action="updateItemQuantity">
+												<div class="ui-select input-group">
+													
+													<!--<input type="text" class="form-control dropdown-toggle" value="" name="toanabc">-->
+													<?php
+														if ( $_product->is_sold_individually() ) {
+															$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+														} else {
+															$product_quantity = woocommerce_quantity_input( array(
+																'input_name'  => "cart[{$cart_item_key}][qty]",
+																'input_value' => $cart_item['quantity'],
+																'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+																'min_value'   => '0'
+															), $_product, false );
+														}
+															
+														echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
+													?>
+												</div>
+											</uiselect>
+										</p>
+									</div>
+
+									<div class="col-xs-6 text-right">
+										<p>
+											<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<b class="actual-price" style="float: right">' . sprintf( '%s', $product_price ) . '</b>', $cart_item, $cart_item_key ); ?>
+											<br>
+											<?php
+											echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+												'<a href="%s">Bỏ sản phẩm</a>',
+												esc_url( WC()->cart->get_remove_url( $cart_item_key ) )
+											), $cart_item_key );
+											?>
+										</p>
+									</div>
+										
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
 					<?php
-				}
-			}
-		?>
+						}
+					}
+				?>
 
-	<?php else : ?>
+					<div class="stats cart-item">
+						<p class="subtotal big clearfix">
+							<span class="pull-left">Tổng tiền:</span>
+							<b class="number pull-right"><?php echo WC()->cart->get_cart_subtotal(); ?></b>
+						</p>
+						<p class="subtotal clearfix">
+							<span class="pull-left">Tiết kiệm:</span>
+							<span class="number pull-right"><?php echo leflair_wc_discount_total();?></span>
+						</p>
+						<hr>
 
-		<li class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></li>
+						<div class="text-center">
+							<div class="apart-sm">
+								<p class="text-danger">
+									
+								</p>
+								<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
+									<button type="button" class="btn btn-primary btn-order">Tiến hành đặt hàng</button>
+								</a>
+							</div>
 
-	<?php endif; ?>
+							<p><a href="" class="mini-cart-cancel"> &lt; Tiếp tục mua sắm</a></p>
+						</div>
+					</div>
+				</div>
+						
 
-</ul><!-- end product list -->
+				<?php else : ?>
+				
+				<div class="content empty text-center">
+					<div class="wrapper">
+						<i class="leflair i-leflair-sadness"></i>
 
-<?php if ( ! WC()->cart->is_empty() ) : ?>
+						<p class="description">				
+							Giỏ hàng của bạn còn trống
+						</p>
 
-	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
-
-	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
-
-	<p class="buttons">
-		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="button wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>
-		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
-	</p>
-
-<?php endif; ?>
+						<div class="apart-sm">
+							<button type="button" class="btn btn-primary btn-order mini-cart-cancel">Tiếp tục mua sắm!</button>
+						</div>
+					</div>
+				</div>
+				
+				<?php endif; ?>
+				
+			</div>
+		</div>
+		</form>
 
 <?php do_action( 'woocommerce_after_mini_cart' ); ?>

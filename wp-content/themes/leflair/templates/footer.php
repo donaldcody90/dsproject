@@ -11,33 +11,36 @@
 								<ul class="list-unstyled">
 									<li class="list-title">Liên lạc</li>
 									<li>
-										<a href="tel:<?php echo get_theme_option('phone_number');?>"><span class="glyphicon glyphicon-earphone"></span> <?php echo get_theme_option('phone_number');?></a>
+										<a href="tel:<?php echo get_theme_option('phone_number');?>">
+											<span class="glyphicon glyphicon-earphone"></span> <?php echo get_theme_option('phone_number');?>
+										</a>
 									</li>
 									<li>
-										<a href="mailto:<?php echo get_theme_option('email');?>" class="lowercase"><span class="glyphicon glyphicon-envelope"></span> <?php echo get_theme_option('email');?></a>
+										<a href="mailto:<?php echo get_theme_option('email');?>" class="lowercase">
+											<span class="glyphicon glyphicon-envelope"></span> <?php echo get_theme_option('email');?>
+										</a>
 									</li>
 								</ul>
 							</div>
 
 							<div class="col-md-2 col-sm-4">
-								<ul class="list-unstyled">
-									<li class="list-title">DOANH NGHIỆP</li>
-									<li><a href="<?php echo site_url('/about');?>" target="_blank">VỀ CHÚNG TÔI</a></li>
-									<li><a href="http://styleguide.leflair.vn/" target="_blank">Style Guide</a></li>
-									<li><a href="<?php echo site_url('/partners');?>" target="_blank">HỢP TÁC VỚI LEFLAIR</a></li>
-									<li><a href="<?php echo site_url('/careers');?>" target="_blank">TUYỂN DỤNG</a></li>
-								</ul>
+								<?php
+									$location= 'about_menu';
+									if (has_nav_menu($location)) :
+										$menu_obj= vf_get_menu_by_location( $location );
+										wp_nav_menu(array('theme_location' => $location, 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'list-unstyled', 'items_wrap'=> '<ul id="%1$s" class="%2$s"><li class="list-title">'.esc_html($menu_obj->name).'</li>%3$s</ul>'));
+									endif;
+								?>
 							</div>
 
 							<div class="col-md-2 col-sm-4">
-								<ul class="list-unstyled">
-									<li class="list-title">CHĂM SÓC KHÁCH HÀNG</li>
-									<li><a href="https://support.leflair.vn/hc/vi" target="_blank">Hỏi Đáp</a></li>
-									<li><a href="https://support.leflair.vn/hc/vi/articles/214167448-Ch%C3%ADnh-s%C3%A1ch-tr%E1%BA%A3-h%C3%A0ng-v%C3%A0-ho%C3%A0n-ti%E1%BB%81n" target="_blank">Chính sách đổi trả</a></li>
-									<li><a href="https://support.leflair.vn/hc/vi/articles/214857097-%C4%90i%E1%BB%81u-kho%E1%BA%A3n-v%C3%A0-quy-%C4%91%E1%BB%8Bnh-chung" target="_blank">Điều khoản &amp; quy định</a></li>
-									<li><a href="https://support.leflair.vn/hc/vi/articles/214167378-Ch%C3%ADnh-s%C3%A1ch-giao-v%C3%A0-nh%E1%BA%ADn-h%C3%A0ng" target="_blank">Giao hàng</a></li>
-									<li><a href="https://support.leflair.vn/hc/vi/articles/214113678-T%C3%B4i-c%C3%B3-nh%E1%BA%ADn-%C4%91%C6%B0%E1%BB%A3c-h%C3%B3a-%C4%91%C6%A1n-GTGT-trong-b%C6%B0u-ki%E1%BB%87n-kh%C3%B4ng-" target="_blank">Thuế</a></li>
-								</ul>
+								<?php
+									$location= 'support_menu';
+									if (has_nav_menu($location)) :
+										$menu_obj= vf_get_menu_by_location( $location );
+										wp_nav_menu(array('theme_location' => $location, 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'list-unstyled', 'items_wrap'=> '<ul id="%1$s" class="%2$s"><li class="list-title">'.esc_html($menu_obj->name).'</li>%3$s</ul>'));
+									endif;
+								?>
 							</div>
 
 							<div class="col-md-3 col-sm-12">
