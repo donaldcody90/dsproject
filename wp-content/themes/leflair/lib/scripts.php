@@ -37,22 +37,11 @@ function roots_scripts() {
     );
   }
 	$assets['bootstrap_min']   = '/assets/css/bootstrap.min.css'; 
-	$assets['dropkick']   = '/assets/css/dropkick.css'; 
-	$assets['loading-bar_min']   = '/assets/css/loading-bar.min.css'; 
-	$assets['menu']   = '/assets/css/menu.css'; 
-	$assets['sidebar']   = '/assets/css/sidebar.css'; 
-	$assets['application_min']   = '/assets/css/application.min.css'; 
-	$assets['select_min']   = '/assets/css/select.min.css'; 
-	$assets['style']   = '/assets/css/style.css'; 
+	$assets['theme_css']   = '/assets/css/theme.min.css'; 
 	
   wp_enqueue_style('bootstrap_min', get_template_directory_uri() . $assets['bootstrap_min'], false, null);
-  wp_enqueue_style('dropkick', get_template_directory_uri() . $assets['dropkick'], false, null);
-  wp_enqueue_style('loading-bar_min', get_template_directory_uri() . $assets['loading-bar_min'], false, null);
-  wp_enqueue_style('menu', get_template_directory_uri() . $assets['menu'], false, null);
-  wp_enqueue_style('sidebar', get_template_directory_uri() . $assets['sidebar'], false, null);
-  wp_enqueue_style('application_min', get_template_directory_uri() . $assets['application_min'], false, null);
-  wp_enqueue_style('select_min', get_template_directory_uri() . $assets['select_min'], false, null);
-  wp_enqueue_style('style', get_template_directory_uri() . $assets['style'], false, null);
+  wp_enqueue_style('theme_css', get_template_directory_uri() . $assets['theme_css'], false, null);
+  
 
   /**
    * jQuery is loaded using the same method from HTML5 Boilerplate:
@@ -69,14 +58,14 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
   
-  $assets['my']   = '/assets/js/my.js'; 
+  //$assets['my']   = '/assets/js/my.js'; 
   $assets['jquery_zoom']   = '/assets/js/jquery.zoom.js'; 
   $assets['bxslider']   = '/assets/js/jquery.bxslider.js'; 
 
   wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
-  wp_enqueue_script('my', get_template_directory_uri() . $assets['my'], array(), null, true);
+ // wp_enqueue_script('my', get_template_directory_uri() . $assets['my'], array(), null, true);
   wp_enqueue_script('jquery_zoom', get_template_directory_uri() . $assets['jquery_zoom'], array(), null, true);
   wp_enqueue_script('bxslider', get_template_directory_uri() . $assets['bxslider'], array(), null, true);
 }

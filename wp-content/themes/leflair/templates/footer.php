@@ -1,7 +1,5 @@
-		<footer class="ng-scope">
-			<section class="ng-scope">
-				<div class="footer" >
-					<div class="container">
+<div class="footer">
+	<div class="container">
 						<div class="row">
 							<div class="col-md-2 hidden-xs">
 								<img src="<?php echo get_theme_option('footer_logo', 'url');?>">
@@ -12,12 +10,12 @@
 									<li class="list-title">Liên lạc</li>
 									<li>
 										<a href="tel:<?php echo get_theme_option('phone_number');?>">
-											<span class="glyphicon glyphicon-earphone"></span> <?php echo get_theme_option('phone_number');?>
+											<i class="fa fa-phone" aria-hidden="true"></i> <?php echo get_theme_option('phone_number');?>
 										</a>
 									</li>
 									<li>
 										<a href="mailto:<?php echo get_theme_option('email');?>" class="lowercase">
-											<span class="glyphicon glyphicon-envelope"></span> <?php echo get_theme_option('email');?>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo get_theme_option('email');?>
 										</a>
 									</li>
 								</ul>
@@ -69,24 +67,15 @@
 							</div>
 						</div>
 						<div class="row text-center" style="text-transform: none;">
-							<?php echo get_theme_option('company_name');?> - <span class="hidden-lg"><br></span> <?php echo get_theme_option('contact_address');?>
-							<br>
-							<br>
-
-							<span><?php echo get_theme_option('license');?></span>
-							<br>
-							<span><?php echo get_theme_option('copyright_text');?></span>
-							<br>
-							<br>
-							<a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=19306" target="_blank">
-								<img src="<?php echo get_theme_option('gov_icon', 'url');?>" class="footer-gov">
-							</a>
+						
+							<p><?php echo get_theme_option('company_name');?> - <?php echo get_theme_option('contact_address');?></p>
+							
+							<p><?php echo get_theme_option('license');?></p>
+							
+							<p><?php echo get_theme_option('copyright_text');?></p>
+							
 
 						</div>
 					</div>
-				</div>
-			</section>
-		</footer>
-	</div>
-
+</div>
 

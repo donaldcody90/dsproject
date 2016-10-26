@@ -14,6 +14,7 @@ function roots_setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus(array(
+    'primary_navigation' => __('primary_navigation', 'roots'),
     'about_menu' => __('About', 'roots'),
     'support_menu' => __('Support', 'roots')
   ));

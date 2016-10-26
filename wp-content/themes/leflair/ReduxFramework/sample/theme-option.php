@@ -240,10 +240,10 @@ if (!class_exists('Redux_Framework_theme_option_config')) {
 							)
 						),
 						array(
-							'id' => 'home_text_slider1',
+							'id' => 'site_notice',
 							'type' => 'text',
 							'url' => true,
-							'title' => __('Home Text Slider 1', 'wpf-framework-demo'),
+							'title' => __('Site Notice', 'wpf-framework-demo'),
 						),
 						array(
 							'id' => 'home_text_slider2',

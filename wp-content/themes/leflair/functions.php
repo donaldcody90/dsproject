@@ -62,7 +62,7 @@ define('LMCIT_THEME_IMG_URL', LMCIT_THEME_URL . '/images'); //Đường dẫn UR
 
 
 // /* Khai báo sử dụng CSS, Javascript *********************************************/
-add_action('wp_enqueue_scripts', 'lmcit_theme_register_style');
+//add_action('wp_enqueue_scripts', 'lmcit_theme_register_style');
 if(!function_exists('lmcit_theme_register_style')) {
 	function lmcit_theme_register_style(){
 		$cssUrl = LMCIT_THEME_URL . '/assets/css';
