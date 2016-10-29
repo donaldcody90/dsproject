@@ -34,6 +34,32 @@ a:focus, a:hover {
     font-weight: 300;
 }
 
+/*---------nav_menu-----------*/
+
+.dropdown-menu{
+	background-color: #eee;
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+	padding: 0 0!important;
+}
+.dropdown-menu a{
+	padding-top: 10px!important;
+	padding-bottom: 10px!important;
+}
+.header{
+	background-color: #1b1b1b;
+}
+.nav.navbar-nav>li>a{
+	color: white!important;
+}
+.nav.navbar-nav>li>a:hover{
+	color: black!important;
+}
+.nav.navbar-nav>li.open>a{
+	color: black!important;
+}
+
 /*---------categories----------*/
 
 img.category-hero{
