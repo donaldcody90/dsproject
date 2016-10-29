@@ -183,36 +183,37 @@ $(document).ready(function(){
 // Product information
 
 $(document).ready(function(){
-	$(".panel-group .panel-default .panel-heading span.ng-scope:first").addClass("opened");
-	$(".panel-group .panel-default .panel-heading span.ng-scope i:first").removeClass("i-leflair-plus");
-	$(".panel-group .panel-default .panel-heading span.ng-scope i:first").addClass("i-leflair-minus");
+	var first_property= $(".panel-group .panel-default .panel-heading .product-property:first").not('.vf-hide');
+	$(".panel-group .panel-default:not(.vf-hide):first").find('.product-property').addClass("opened");
+	$(".panel-group .panel-default .panel-heading .product-property i:first").removeClass("glyphicon glyphicon-plus");
+	$(".panel-group .panel-default .panel-heading .product-property i:first").addClass("glyphicon glyphicon-minus");
 	$(".panel-group .panel-default .panel-collapse:first").removeClass("collapse");
 	$(".panel-group .panel-default .panel-collapse:first").addClass("in");
 	
 	$(".panel-group .panel-default .panel-heading").click(function(){
-		if($("span.ng-scope", this).hasClass("opened")==false){
+		if($(".product-property", this).hasClass("opened")==false){
 			$(".panel-group .panel-default").each(function(){
-				if($("span.ng-scope", this).hasClass("opened")){
-					$("span.ng-scope", this).removeClass("opened");
-					$("span.ng-scope i", this).removeClass("i-leflair-minus");
-					$("span.ng-scope i", this).addClass("i-leflair-plus");
+				if($(".product-property", this).hasClass("opened")){
+					$(".product-property", this).removeClass("opened");
+					$(".product-property i", this).removeClass("glyphicon glyphicon-minus");
+					$(".product-property i", this).addClass("glyphicon glyphicon-plus");
 					$(".panel-collapse", this).removeClass("in");
 					$(".panel-collapse", this).addClass("collapse");
 				}
 			});
 			
-			$("span.ng-scope", this).addClass("opened");
-			$("span.ng-scope i", this).removeClass("i-leflair-plus");
-			$("span.ng-scope i", this).addClass("i-leflair-minus");
+			$(".product-property", this).addClass("opened");
+			$(".product-property i", this).removeClass("glyphicon glyphicon-plus");
+			$(".product-property i", this).addClass("glyphicon glyphicon-minus");
 			$(this).parent().find(".panel-collapse").removeClass("collapse");
 			$(this).parent().find(".panel-collapse").addClass("in");
 			
 		}
 		
 		else{
-			$("span.ng-scope", this).removeClass("opened");
-			$("span.ng-scope i", this).removeClass("i-leflair-minus");
-			$("span.ng-scope i", this).addClass("i-leflair-plus");
+			$(".product-property", this).removeClass("opened");
+			$(".product-property i", this).removeClass("glyphicon glyphicon-minus");
+			$(".product-property i", this).addClass("glyphicon glyphicon-plus");
 			$(this).parent().find(".panel-collapse").removeClass("in");
 			$(this).parent().find(".panel-collapse").addClass("collapse");
 		}

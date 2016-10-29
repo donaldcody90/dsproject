@@ -33,6 +33,18 @@ $fields_page = array(
 		'id' 	=> $prefix.'trademark_description',
 		'type'	=> 'editor'
 	),
+    array(
+		'label'	=> 'Giao hàng trong 2-7 ngày', 
+		'desc'	=> '', 
+		'id'	=> $prefix.'shipment_quantity',
+		'type'	=> 'checkbox',
+	),
+    array(
+		'label'	=> 'Trả hàng trong 30 ngày', 
+		'desc'	=> '', 
+		'id'	=> $prefix.'returnable',
+		'type'	=> 'checkbox',
+	),
 	array(
 		'label' => 'Product Information',
 		'desc'	=> '',

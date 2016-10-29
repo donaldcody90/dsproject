@@ -12,20 +12,18 @@
     get_template_part('templates/header');
   ?>
     <div class="wrap" role="document">
-    <div class="container">
-      <div class="row">
-          <div class="content">
-            <?php include roots_template_path(); ?>
-        </div><!-- /.main -->
-        <?php /*
-		if (roots_display_sidebar()) : ?>
-          <div class="sidebar" role="complementary">
-             <?php include roots_sidebar_path(); ?>
-          </div><!-- /.sidebar -->
-        <?php endif; */ ?>
-      </div>
-    </div>
-  </div><!-- /.wrap -->
+			<div class="row">
+				<div class="content">
+				<?php include roots_template_path(); ?>
+				</div><!-- /.main -->
+			<?php /*
+			if (roots_display_sidebar()) : ?>
+			  <div class="sidebar" role="complementary">
+				 <?php include roots_sidebar_path(); ?>
+			  </div><!-- /.sidebar -->
+			<?php endif; */ ?>
+			</div>
+	</div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
 

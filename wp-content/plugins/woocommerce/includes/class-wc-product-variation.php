@@ -97,7 +97,9 @@ class WC_Product_Variation extends WC_Product {
 	 * @return bool
 	 */
 	public function __isset( $key ) {
-		if ( in_array( $key, array_keys( $this->variation_level_meta_data ) ) ) {
+		if ( in_array( $key, array( 'variation_data', 'variation_has_stock' ) ) ) {
+			return true;
+		} elseif ( in_array( $key, array_keys( $this->variation_level_meta_data ) ) ) {
 			return metadata_exists( 'post', $this->variation_id, '_' . $key );
 		} elseif ( in_array( $key, array_keys( $this->variation_inherited_meta_data ) ) ) {
 			return metadata_exists( 'post', $this->variation_id, '_' . $key ) || metadata_exists( 'post', $this->id, '_' . $key );
@@ -319,7 +321,7 @@ class WC_Product_Variation extends WC_Product {
 
 		if ( $this->get_price() !== '' ) {
 			if ( $this->is_on_sale() ) {
-				$price = apply_filters( 'woocommerce_variation_sale_price_html', '<del>' . wc_price( $display_regular_price ) . '</del>' . wc_price( $display_sale_price ) . '' . $this->get_price_suffix(), $this );
+				$price = apply_filters( 'woocommerce_variation_sale_price_html', '<del>' . wc_price( $display_regular_price ) . '</del> <ins>' . wc_price( $display_sale_price ) . '</ins>' . $this->get_price_suffix(), $this );
 			} elseif ( $this->get_price() > 0 ) {
 				$price = apply_filters( 'woocommerce_variation_price_html', wc_price( $display_price ) . $this->get_price_suffix(), $this );
 			} else {
@@ -569,7 +571,7 @@ class WC_Product_Variation extends WC_Product {
 		if ( true === $this->managing_stock() ) {
 			return parent::is_on_backorder( $qty_in_cart );
 		} else {
-			return $this->parent->is_on_backorder( $qty_in_cart );
+			return $this->parent->managing_stock() && $this->parent->backorders_allowed() && ( $this->parent->get_stock_quantity() - $qty_in_cart ) < 0;
 		}
 	}
 
