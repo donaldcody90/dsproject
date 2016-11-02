@@ -45,23 +45,24 @@ $woocommerce_loop['name']    = 'related';
 $woocommerce_loop['columns'] = apply_filters( 'woocommerce_related_products_columns', $columns );
 
 if ( $products->have_posts() ) : ?>
-
-	<div class="related products">
-
-		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
-
+<div class="recommendations-section">
+	<div class="container related-products">
+		<div class="col-lg-12">
+			<h5 class="recommended-products visible-xs"><?php _e( 'Sản phẩm bạn có thể thích:', 'woocommerce' ); ?></h5>
+			<h2 class="recommended-products hidden-xs"><?php _e( 'Sản phẩm bạn có thể thích:', 'woocommerce' ); ?></h2>
+		</div>
 		<?php woocommerce_product_loop_start(); ?>
 
 			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php wc_get_template_part( 'content', 'product_related' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
 		<?php woocommerce_product_loop_end(); ?>
 
 	</div>
-
+</div>
 <?php endif;
 
 wp_reset_postdata();

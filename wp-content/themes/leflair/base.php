@@ -11,7 +11,11 @@
     do_action('get_header');
     get_template_part('templates/header');
   ?>
+  <?php if(is_user_logged_in()){ ?>
     <div class="wrap" role="document">
+  <?php }else{ ?>
+	<div class="wrap background_2" role="document">
+  <?php } ?>
 			<div class="row">
 				<div class="content">
 				<?php include roots_template_path(); ?>

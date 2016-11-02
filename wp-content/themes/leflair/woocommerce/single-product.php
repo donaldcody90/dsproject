@@ -21,8 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 //get_header( 'shop' ); ?>
-<div class="container">
-
+<div>
+	<div class="container">
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-
+	</div>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>

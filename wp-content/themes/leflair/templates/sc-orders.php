@@ -34,7 +34,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 
 
 <section>
-			<form method="post" action="">
+	<form method="post" action="">
 
 		<h3><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h3>
 
@@ -56,7 +56,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 
 	</form>
 	<!-- uiView:  -->
-	<section class="ng-scope">
+	<section>
 	<section class="container account">
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
@@ -107,7 +107,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 													<td class="">
 														<?php echo $order->get_formatted_order_total(); ?>
 													</td>
-													<td class="ng-binding">
+													<td>
 														<?php 
 														if(wc_get_order_status_name( $order->get_status() ) == "completed"){
 															echo 'đã hoàn thành';
@@ -127,7 +127,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 											<div class="row">
 												<div class="row checkout-cart order-history-item" style="padding: 0 .5em;">
 													<div class="col-md-8">
-														<p class="ng-binding">
+														<p>
 															<?php echo $item['qty'];?>x
 															<span class="product"><?php echo $item['name'];?></span>
 														</p>
@@ -182,7 +182,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 													<td class="">
 														<?php echo $order->get_formatted_order_total(); ?>
 													</td>
-													<td class="ng-binding">
+													<td>
 														<?php
 														if(wc_get_order_status_name( $order->get_status() ) == "Completed"){
 															echo 'Đã hoàn thành';
@@ -202,7 +202,7 @@ $yesterday_date= date("Y-m-d h:i:s", $d);
 											<div class="row">
 												<div class="row checkout-cart order-history-item" style="padding: 0 .5em;">
 													<div class="col-md-8">
-														<p class="ng-binding">
+														<p>
 															<?php echo $item['qty'];?>x
 															<span class="product"><?php echo $item['name'];?></span>
 														</p>

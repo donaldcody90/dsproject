@@ -36,8 +36,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<div class="container">
+	<div class="row">
 	<?php
 		/**
 		 * woocommerce_before_single_product_summary hook.
@@ -64,14 +64,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 	</div><!-- .summary -->
-
+	</div>
 	<?php
 		/**
 		 * woocommerce_after_single_product_summary hook.
 		 *
 		 * @hooked woocommerce_output_product_data_tabs - 10
 		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
+		 * //@hooked woocommerce_output_related_products - 20
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
@@ -79,5 +79,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 </div><!-- #product-<?php the_ID(); ?> -->
+
+	<?php
+		/**
+		 * custom_related_products hook.
+		 *
+		 * @hooked woocommerce_output_related_products - 10
+		 */
+		do_action( 'custom_related_products' );
+	?>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

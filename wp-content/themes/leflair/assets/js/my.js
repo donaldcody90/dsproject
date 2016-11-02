@@ -197,6 +197,8 @@ $(document).ready(function(){
 					$(".product-property", this).removeClass("opened");
 					$(".product-property i", this).removeClass("glyphicon glyphicon-minus");
 					$(".product-property i", this).addClass("glyphicon glyphicon-plus");
+					$(".product-property span", this).removeClass("vf-hide");
+					$(".product-property img", this).addClass("vf-hide");
 					$(".panel-collapse", this).removeClass("in");
 					$(".panel-collapse", this).addClass("collapse");
 				}
@@ -205,6 +207,8 @@ $(document).ready(function(){
 			$(".product-property", this).addClass("opened");
 			$(".product-property i", this).removeClass("glyphicon glyphicon-plus");
 			$(".product-property i", this).addClass("glyphicon glyphicon-minus");
+			$(".product-property span", this).addClass("vf-hide");
+			$(".product-property img", this).removeClass("vf-hide");
 			$(this).parent().find(".panel-collapse").removeClass("collapse");
 			$(this).parent().find(".panel-collapse").addClass("in");
 			
@@ -214,6 +218,8 @@ $(document).ready(function(){
 			$(".product-property", this).removeClass("opened");
 			$(".product-property i", this).removeClass("glyphicon glyphicon-minus");
 			$(".product-property i", this).addClass("glyphicon glyphicon-plus");
+			$(".product-property span", this).removeClass("vf-hide");
+			$(".product-property img", this).addClass("vf-hide");
 			$(this).parent().find(".panel-collapse").removeClass("in");
 			$(this).parent().find(".panel-collapse").addClass("collapse");
 		}

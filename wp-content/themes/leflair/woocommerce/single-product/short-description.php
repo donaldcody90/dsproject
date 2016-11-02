@@ -22,7 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post, $product;
 
-
+$product_trademark_logo= get_post_meta( $product->id, 'product_trademark_logo', true );
+$product_trademark_slogan= get_post_meta($product->id, 'product_trademark_slogan', true);
+$product_trademark_description= get_post_meta($product->id, 'product_trademark_description', true);
 ?>
 <div class="product apart">
 	<div class="panel-group">
@@ -79,10 +81,8 @@ global $post, $product;
 			</div>
 			<div class="panel-collapse collapse">
 				<div class="panel-body">
-					<div class="vf-hide">
-						<div class="ui bulleted list">
-							<?php echo get_post_meta($product->id, 'product_detailed_size', true); ?>
-						</div>
+					<div class="ui bulleted list">
+						<?php echo get_post_meta($product->id, 'product_detailed_size', true); ?>
 					</div>
 					<div class="size-chart vf-hide" id="sizeTable">
 						<table class="table">
@@ -105,19 +105,19 @@ global $post, $product;
 		<div class="visible-xs panel panel-default">
 			<div class="panel-heading">
 			<h4 class="panel-title">
-				<a href="" class="accordion-toggle">
-					<span>
-						<i class="leflair pull-right i-leflair-plus"></i>
+				<a href="javascript:void(0)" class="accordion-toggle">
+					<span class="product-property">
+						<i class="glyphicon glyphicon-plus pull-right"></i>
 						<span>Thông tin thương hiệu</span>
-						<img class="brand-logo vf-hide" src="https://src0.responsive.io/webp/w=398/https://leflair-assets.storage.googleapis.com/57e10ad752b3930f00aefe61.jpg">
+						<img class="brand-logo vf-hide" src="<?php echo wp_get_attachment_url($product_trademark_logo); ?>">
 					</span>		
 				</a>
 			</h4>
 			</div>
 			<div class="panel-collapse collapse">
 				<div class="panel-body">
-					<h5>"Dụng cụ trang điểm chuyên nghiệp"</h5>
-					<p>Ra đời vào năm 1988, KT Cosmetics là thương hiệu thuộc tập đoàn Kumtaek Brush MFG, chuyên sản xuất các loại cọ trang điểm với chất lượng tốt nhất. KT Cosmetics truyền tải vào từng sản phẩm tâm huyết của thương hiệu về chất lượng an toàn và công nghệ tiên tiến, hỗ trợ nhu cầu làm đẹp đang thịnh hành của người dùng tại Hàn Quốc và trên khắp thế giới.</p>
+					<h5><?php if($product_trademark_slogan!= ''){ echo '"'.$product_trademark_slogan.'"'; }?></h5>
+					<p><?php if($product_trademark_description!= ''){ echo $product_trademark_description; }?></p>
 				</div>
 			</div>
 		</div>

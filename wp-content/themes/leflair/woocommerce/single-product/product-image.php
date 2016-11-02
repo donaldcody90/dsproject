@@ -46,9 +46,9 @@ $product_trademark_description= get_post_meta($product->id, 'product_trademark_d
 					<!-- Thumbnail on big screen -->
 					<div class="col-md-2 thumbnail-container product-vertical-slide">
 						<div class="outer-wrapper">
-							<a href="" class="arrow-box top">
+							<!--<a href="javascript:void(0)" class="arrow-box top">
 								<span class="glyphicon glyphicon-chevron-up"></span>
-							</a>
+							</a>-->
 							<div class="content-wrapper active" >
 								<div class="content" style="height: 620px; width: 100%;">
 									<div class="inner-content" style="width: 100%;">
@@ -63,9 +63,9 @@ $product_trademark_description= get_post_meta($product->id, 'product_trademark_d
 								</div>
 							</div>
 
-							<a href="" class="arrow-box bottom" >
+							<!--<a href="javascript:void(0)" class="arrow-box bottom" >
 								<span class="glyphicon glyphicon-chevron-down"></span>
-							</a>
+							</a>-->
 
 						</div>
 					</div>
@@ -75,9 +75,9 @@ $product_trademark_description= get_post_meta($product->id, 'product_trademark_d
 
 		<div class="apart-big apart-no-bottom hidden-xs">
 			<!--<img class="brand-logo" src="-->
-			<?php if($product_trademark_description!= ''){ echo wp_get_attachment_image($product_trademark_logo); }?>
+			<?php if($product_trademark_logo!= ''){ echo wp_get_attachment_image($product_trademark_logo); }?>
 
-			<h5><?php if($product_trademark_description!= ''){ echo '"'.$product_trademark_slogan.'"'; }?></h5>
+			<h5><?php if($product_trademark_slogan!= ''){ echo '"'.$product_trademark_slogan.'"'; }?></h5>
 			<p><?php if($product_trademark_description!= ''){ echo $product_trademark_description; }?></p>
 		</div>
 		

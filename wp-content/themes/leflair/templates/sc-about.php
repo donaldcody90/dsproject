@@ -1,7 +1,7 @@
 <section>
 			
 	<!-- uiView:  -->
-	<section data-ui-view="" autoscroll="false" le-scroll="" offset="400" class="ng-scope">
+	<section>
 		<section class="section-info">
 			<div class="hero about-hero aligner inverted" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/About-Us-01.jpg');?>); background-position: 50% 25%; background-repeat: no-repeat; background-size: 1350px;">
 				<div class="container aligner-item">

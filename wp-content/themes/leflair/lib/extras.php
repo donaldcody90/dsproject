@@ -168,6 +168,13 @@ function vf_get_menu_by_location( $location ) {
 function custom_commitment(){
 	wc_get_template('single-product/commitment.php');
 }
+function custom_account_info(){
+	$current_user= wp_get_current_user();
+	echo '<div class="account-page-user_info">
+			<img src="'.get_avatar_url('WP_User object', null).'">
+			<label>'.$current_user->display_name . '</label>
+		</div>';
+}
 
 
 // Action Hook
@@ -183,6 +190,8 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
 
 add_action( 'woocommerce_single_product_summary', 'woocommerce_single_product_info', 5);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 60);
@@ -201,6 +210,7 @@ add_action( 'woocommerce_after_add_to_cart_button', 'after_add_to_cart_button', 
 add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
 add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
 add_action( 'woocommerce_single_product_summary', 'custom_commitment', 40 );
+add_action( 'custom_related_products', 'woocommerce_output_related_products', 10 );
 
 /* Shortcode */
 function short_code_loop_cat($atts, $content = null) {
