@@ -11,22 +11,18 @@
     do_action('get_header');
     get_template_part('templates/header');
   ?>
-  <?php if(is_user_logged_in()){ ?>
+  
     <div class="wrap" role="document">
-  <?php }else{ ?>
-	<div class="wrap background_2" role="document">
-  <?php } ?>
-			<div class="row">
-				<div class="content">
-				<?php include roots_template_path(); ?>
-				</div><!-- /.main -->
-			<?php /*
-			if (roots_display_sidebar()) : ?>
-			  <div class="sidebar" role="complementary">
-				 <?php include roots_sidebar_path(); ?>
-			  </div><!-- /.sidebar -->
-			<?php endif; */ ?>
-			</div>
+		<div class="content">
+			<?php include roots_template_path(); ?>
+		</div><!-- /.main -->
+		<?php /*
+		if (roots_display_sidebar()) : ?>
+		  <div class="sidebar" role="complementary">
+			 <?php include roots_sidebar_path(); ?>
+		  </div><!-- /.sidebar -->
+		<?php endif; */ ?>
+			
 	</div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>

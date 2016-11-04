@@ -1,9 +1,9 @@
 <section>
 			
 	<!-- uiView:  -->
-	<section class="ng-scope">
+	<section>
 		<section class="section-info">
-			<div class="hero about-hero aligner inverted"style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/hero-partners.png');?>); background-position: 50% 50%; background-repeat: no-repeat; background-size: 1350px;">
+			<div class="hero about-hero aligner inverted" style="background-image: url(<?php echo site_url('wp-content/themes/leflair/assets/img/hero-partners.png');?>); background-position: 50% 50%; background-repeat: no-repeat; background-size: 1350px;">
 				<div class="container aligner-item">
 					<div class="row">
 						<div class="col-lg-12 text-center hero-center-callout">

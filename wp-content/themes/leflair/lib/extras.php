@@ -175,6 +175,9 @@ function custom_account_info(){
 			<label>'.$current_user->display_name . '</label>
 		</div>';
 }
+function get_form_register_123(){
+	wc_get_template('myaccount/form-register.php');
+}
 
 
 // Action Hook
@@ -596,6 +599,16 @@ if ( ! function_exists( 'customizing_form_field' ) ) {
         }
     }
 }
+
+function short_code_register($atts, $content = null) {
+    $output = '';
+    ob_start();
+	include(get_template_directory().'/woocommerce/myaccount/form-register.php');
+    $output .= ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+add_shortcode('custom_get_form_register', 'short_code_register');
 
 
 

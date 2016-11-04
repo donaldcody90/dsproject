@@ -92,7 +92,7 @@ if(!function_exists('lmcit_theme_register_style')) {
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
 add_filter('woocommerce_enable_order_notes_field', '__return_false');
 add_filter('woocommerce_cart_needs_payment', '__return_false');
-add_filter( 'wc_add_to_cart_message', '__return_empty_string' );
+//add_filter( 'wc_add_to_cart_message', '__return_empty_string' );
 function custom_override_checkout_fields($fields){
 	unset($fields['billing']['billing_country']);
 	unset($fields['billing']['billing_postcode']);

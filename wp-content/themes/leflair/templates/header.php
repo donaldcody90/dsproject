@@ -12,7 +12,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</span>
-		<?php if(is_user_logged_in()){ ?>
+			
 			<div class="collapse navbar-collapse" role="navigation">
 			  <?php
 				if (has_nav_menu('primary_navigation')) :
@@ -27,16 +27,6 @@
 				endif;
 			  ?>
 			</div>
-		<?php }else{ ?>
-			<div class="collapse navbar-collapse" role="navigation">
-				<ul id="menu-menu-ngang" class="nav navbar-nav">
-					<li>
-						<a href="<?php echo site_url('my-account/');?>">Đăng nhập</a>
-					</li>
-				</ul>
-			</div>
-		
-		<?php } ?>
 		</div>
 	</div>
 </div>

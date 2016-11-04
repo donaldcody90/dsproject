@@ -183,12 +183,20 @@ $(document).ready(function(){
 // Product information
 
 $(document).ready(function(){
-	var first_property= $(".panel-group .panel-default .panel-heading .product-property:first").not('.vf-hide');
-	$(".panel-group .panel-default:not(.vf-hide):first").find('.product-property').addClass("opened");
-	$(".panel-group .panel-default .panel-heading .product-property i:first").removeClass("glyphicon glyphicon-plus");
-	$(".panel-group .panel-default .panel-heading .product-property i:first").addClass("glyphicon glyphicon-minus");
-	$(".panel-group .panel-default .panel-collapse:first").removeClass("collapse");
-	$(".panel-group .panel-default .panel-collapse:first").addClass("in");
+	$(".product .panel-group .panel-default").each(function(){
+		var item= $(this).find(".panel-collapse .panel-body div").hasClass("item");
+		if(item==false){
+			$(this).addClass("vf-hide");
+		}
+	});
+});
+
+$(document).ready(function(){
+	$('.panel-group .panel-default:not(".vf-hide"):first').find(".product-property").addClass("opened");
+	$('.panel-group .panel-default:not(".vf-hide"):first').find(".product-property i:first").removeClass("glyphicon glyphicon-plus");
+	$('.panel-group .panel-default:not(".vf-hide"):first').find(".product-property i:first").addClass("glyphicon glyphicon-minus");
+	$('.panel-group .panel-default:not(".vf-hide"):first').find(".panel-collapse").removeClass("collapse");
+	$('.panel-group .panel-default:not(".vf-hide"):first').find(".panel-collapse").addClass("in");
 	
 	$(".panel-group .panel-default .panel-heading").click(function(){
 		if($(".product-property", this).hasClass("opened")==false){
@@ -236,15 +244,6 @@ $(document).ready(function(){
 		nextText: '<span class="glyphicon glyphicon-menu-right"></span>',
 		prevText: '<span class="glyphicon glyphicon-menu-left"></span>',
 		responsive: true
-	});
-});
-
-$(document).ready(function(){
-	$(".product .panel-group .panel-default").each(function(){
-		var item= $(this).find(".panel-collapse .panel-body div").hasClass("item");
-		if(item==false){
-			$(this).addClass("vf-hide");
-		}
 	});
 });
 
@@ -417,6 +416,19 @@ $(document).ready(function(){
 		$(".modal-backdrop").show(1000);
 		$(".modal").show(1000);
 		$("body").addClass("modal-open");
+	});
+});
+
+/*------------login-register--------------*/
+
+$(document).ready(function(){
+	$(".open_resgister_form").click(function(){
+		$(".form-login").addClass("vf-hide");
+		$(".form-register").removeClass("vf-hide");
+	});
+	$(".open_login_form").click(function(){
+		$(".form-login").removeClass("vf-hide");
+		$(".form-register").addClass("vf-hide");
 	});
 });
 
