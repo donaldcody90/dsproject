@@ -1,7 +1,7 @@
 <?php
 
 $prefix = 'product_';
-$fields_page = array(		
+$product_fields = array(		
 	array( 
 		'label'	=> 'Header Slider', 
 		'desc'	=> '', 
@@ -84,6 +84,31 @@ $fields_page = array(
 	
 );	
 
+
+
+$prefix_page = 'page_';
+$page_fields = array(		
+	array( 
+		'label'	=> 'Header Image', 
+		'desc'	=> '', 
+		'id'	=> $prefix_page.'header_image', 
+		'type'	=> 'image',
+	),		
+	array( 
+		'label'	=> 'Title', 
+		'desc'	=> '', 
+		'id'	=> $prefix_page.'title', 
+		'type'	=> 'text',
+	),		
+	array( 
+		'label'	=> 'Subtitle', 
+		'desc'	=> '', 
+		'id'	=> $prefix_page.'subtitle', 
+		'type'	=> 'text',
+	),
+	
+);	
+
 /**
  * Instantiate the class with all variables to create a meta box
  * var $id string meta box id
@@ -95,6 +120,7 @@ $fields_page = array(
 require_once (THEME_PATH . "/framework/metaboxes/meta_box.php");
 //$restaurent_meta_box = new custom_add_meta_box( 'restaurant_meta_box', 'Restaurant info', $fields, 'restaurant', true );
 //$product_meta_box = new custom_add_meta_box( 'product_meta_box', 'Product Restaurant info', $fields_product, 'product', true );
-$post_meta_box = new custom_add_meta_box( 'post_meta_box', 'Product options', $fields_page, array('product'), true );
+$post_meta_box = new custom_add_meta_box( 'post_meta_box', 'Product options', $product_fields, array('product'), true );
+$page_meta_box = new custom_add_meta_box( 'page_meta_box', 'Page options', $page_fields, 'page', true );
 
 

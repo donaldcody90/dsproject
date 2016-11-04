@@ -883,6 +883,53 @@ body.page-id-7{
 }
 
 
+/*--------------about_page---------------*/
+
+.section-info {
+    color: #384452;
+}
+.section-info .hero.about-hero {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+    background-size: cover!important;
+}
+.section-info .aligner {
+    padding: 20em 0;
+}
+.section-info .inverted, .section-info .inverted h2 {
+    color: #fff;
+}
+.about-hero {
+    background-size: cover;
+    min-height: 19em;
+}
+.aligner {
+    display: table!important;
+    width: 100%;
+}
+.aligner>div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.aligner-item {
+    max-width: 100%;
+}
+.hero-center-callout h2 {
+    font-size: 55px;
+    font-weight: 400;
+}
+.section-info h2 {
+    font-size: 5em;
+    font-weight: 700;
+}
+.section-info p.lead {
+    font-size: 16px;
+	color: #5D5C5D;
+}
+.static-container .about-content{
+	margin-top: 75px;
+}
+
 /*----------footer---------*/
 
 .footer{
