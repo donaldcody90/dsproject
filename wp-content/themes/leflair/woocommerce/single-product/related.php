@@ -48,8 +48,8 @@ if ( $products->have_posts() ) : ?>
 <div class="recommendations-section">
 	<div class="container related-products">
 		<div class="col-lg-12">
-			<h5 class="recommended-products visible-xs"><?php _e( 'Sản phẩm bạn có thể thích:', 'woocommerce' ); ?></h5>
-			<h2 class="recommended-products hidden-xs"><?php _e( 'Sản phẩm bạn có thể thích:', 'woocommerce' ); ?></h2>
+			<h5 class="recommended-products visible-xs"><?php _e( 'Sản phẩm bạn có thể thích', 'woocommerce' ); ?></h5>
+			<h2 class="recommended-products hidden-xs"><?php _e( 'Sản phẩm bạn có thể thích', 'woocommerce' ); ?></h2>
 		</div>
 		<?php woocommerce_product_loop_start(); ?>
 

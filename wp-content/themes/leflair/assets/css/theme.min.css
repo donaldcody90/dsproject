@@ -12,6 +12,10 @@ body {
 	display:none;
 }
 
+.wrap{
+	margin-top:60px;
+}
+
 p {
     font-family: 'Open Sans',sans-serif;
     font-size: 14px;
@@ -917,6 +921,15 @@ li.woocommerce-MyAccount-navigation-link.is-active a{
 }
 .woocommerce input.button:disabled[disabled]{
 	color:#fff!important;
+}
+.festi-cart-view-cart{
+	border-radius: 3px!important;
+	background-color: #B78BBF!important;
+	border-color: #B78BBF!important;
+}
+.festi-cart-checkout{
+	border-radius: 3px!important;
+	border-color: #d23a1c!important;
 }
 
 /*----------checkout----------*/

@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header navbar-fixed-top">
 	<div class="container">
 		<div class="logo">
 			<a href="<?php echo site_url();?>">
