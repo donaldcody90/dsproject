@@ -33,13 +33,11 @@ $product_trademark_description= get_post_meta($product->id, 'product_trademark_d
 			<div class="row">
 				<div class="product-slide">
 					<div class="col-md-10 big-image" style="height: 673.75px;">
-						<div>
-							<?php foreach($attachment_ids as $attachment_id) { ?>
-							<div class="imageSlide vf-hide leflair_zoom" >
-								<img class="img-responsive product-displayed-image" src="<?php echo wp_get_attachment_url($attachment_id); ?>" >
-							</div>
-							<?php } ?>
+						<?php foreach($attachment_ids as $attachment_id) { ?>
+						<div class="imageSlide vf-hide leflair_zoom" >
+							<img class="img-responsive product-displayed-image" src="<?php echo wp_get_attachment_url($attachment_id); ?>" >
 						</div>
+						<?php } ?>
 						<div class="backdrop"></div>
 					</div>
 
@@ -69,6 +67,15 @@ $product_trademark_description= get_post_meta($product->id, 'product_trademark_d
 
 						</div>
 					</div>
+				</div>
+				<div class="col-md-10 product-slide-2">
+					<ul class="bxslider">
+						<?php foreach($attachment_ids as $attachment_id) { ?>
+						<li class="imageSlide-2" >
+							<img class="img-responsive product-displayed-image" src="<?php echo wp_get_attachment_url($attachment_id); ?>" >
+						</li>
+						<?php } ?>
+					</ul>
 				</div>
 			</div>
 		</div>

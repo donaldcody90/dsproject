@@ -235,11 +235,24 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	$('.bxslider').bxSlider({
+	$('.best-seller .bxslider').bxSlider({
 		minSlides: 1,
 		maxSlides: 4,
 		slideWidth: 285,
 		infiniteLoop: false,
+		pager: false,
+		nextText: '<span class="glyphicon glyphicon-menu-right"></span>',
+		prevText: '<span class="glyphicon glyphicon-menu-left"></span>',
+		responsive: true
+	});
+});
+
+$(document).ready(function(){
+	$('.product-slide-2 .bxslider').bxSlider({
+		minSlides: 1,
+		maxSlides: 1,
+		slideWidth: 360,
+		infiniteLoop: true,
 		pager: false,
 		nextText: '<span class="glyphicon glyphicon-menu-right"></span>',
 		prevText: '<span class="glyphicon glyphicon-menu-left"></span>',

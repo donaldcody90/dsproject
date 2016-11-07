@@ -30,7 +30,8 @@ a {
 }
 
 button{
-	background-color: #B78BBF!important;
+	background-color: #B78BBF;
+	color:#fff!important;
 }
 
 .shop_table{
@@ -101,7 +102,7 @@ a:focus, a:hover {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 	border:none;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
 }
 .navbar-nav li ul.dropdown-menu li a {
     font-size: 12px;
@@ -127,6 +128,34 @@ a:focus, a:hover {
 }
 .header .main-menu .navbar-toggle{
 	padding-top: 5px;
+}
+
+/*--------login-register------------*/
+
+body.login, body.register{
+	background-color:#f9f9f9;
+}
+#wp-submit {
+	border: 1px solid #B78BBF;
+	border-radius: 3px;
+	background-color: #B78BBF;
+	padding: 5px 10px;
+}
+#loginform .input, #registerform .input{
+	height: 40px;
+    padding: 0 10px;
+    color: #5D5C5D;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 14px;
+}
+.tml {
+	max-width:400px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+	margin-bottom:40px;
 }
 
 
@@ -210,13 +239,13 @@ h3{
 .best-products{
 	padding-bottom: 4em;
 }
-.bxslider li a {
+.best-seller .bxslider li a {
     display: block;
     position: relative;
     padding-left: .5em;
     padding-right: .5em;
 }
-.bxslider li a .content {
+.best-seller .bxslider li a .content {
     position: absolute;
     bottom: -300px;
     left: 0;
@@ -232,20 +261,20 @@ h3{
     transition: .5s ease-in-out;
 }
 .best-seller ul li a:hover .content{bottom:0}
-.bxslider li a .content .brand {
+.best-seller .bxslider li a .content .brand {
     color: #CECECE;
 }
-.bxslider li a .content h3 {
+.best-seller .bxslider li a .content h3 {
     margin: 10px 0;
     font-size: 16px;
     color: #FFF;
     font-weight: 600;
 }
-.bxslider li a .content .price {
+.best-seller .bxslider li a .content .price {
     color: #16accf;
     margin: 0;
 }
-.bxslider li a .content .price .original-price {
+.best-seller .bxslider li a .content .price .original-price {
     text-decoration: line-through;
     color: #CECECE;
 }
@@ -279,6 +308,9 @@ h3{
 }
 .bx-prev{
 	left:-40px;
+}
+.section-header {
+    margin: 3.5em 0;
 }
 
 
@@ -371,9 +403,6 @@ img {
     display: block;
     position: relative;
 }
-.product-slide {
-    display: block;
-}
 .product-slide:before {
     display: table;
     content: " ";
@@ -382,6 +411,16 @@ img {
     clear: both;
     display: table;
     content: " ";
+}
+@media (max-width: 768px){
+	.product-slide{
+		display: none;
+	}
+}
+@media (min-width: 768px){
+	.product-slide-2{
+		display: none;
+	}
 }
 .product-vertical-slide .content-wrapper.active {
     overflow: hidden;
@@ -412,6 +451,42 @@ img {
     min-height: auto;
     min-width: auto;
     margin: 0 0 5px;
+}
+.product-slide-2{
+	position: relative;
+}
+.product-slide-2 .bx-controls-direction a{
+	position: absolute;
+	top:0;
+    height: 100%;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.product-slide-2 .bx-controls-direction a.bx-prev{
+	left:15px;
+	width:15%;
+}
+.product-slide-2 .bx-controls-direction a.bx-next{
+	right:15px;
+	width:15%;
+}
+.product-slide-2 .bx-controls-direction a span{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+}
+.product-slide-2 .bx-controls-direction a span.glyphicon-menu-left{
+	left:50%;
+	transform: translateX(-50%);
+}
+.product-slide-2 .bx-controls-direction a span.glyphicon-menu-right{
+	right:50%;
+	transform: translateX(50%);
 }
 .thumbnail {
     border: none;
@@ -476,6 +551,7 @@ img {
 }
 .btn-primary:hover {
     background-color: #0B90AF;
+	border-color:#0B90AF;
 }
 .woocommerce div.product form.cart div.quantity {
 	float: none;
@@ -593,8 +669,6 @@ img {
     margin: 40px auto;
 }
 h1, h2, h3, h4, h5 {
-    color: #5D5C5D;
-    font-weight: 600;
 	font-family: 'Open Sans',sans-serif;
 }
 @media (min-width: 769px){
@@ -821,6 +895,9 @@ li.woocommerce-MyAccount-navigation-link.is-active a{
 .return-to-shop{
 	margin-bottom: 70px;
 }
+.woocommerce input.button:disabled[disabled]{
+	color:#fff!important;
+}
 
 /*----------checkout----------*/
 
@@ -875,13 +952,13 @@ body.page-id-7{
 }
 .lost_reset_password{
 	margin: 60px 0 150px 0;
-}
+}/*
 .woocommerce>div{
 	float:left;
 	margin-right: 70px;
 	width: 500px;
 }
-
+*/
 
 /*--------------about_page---------------*/
 
