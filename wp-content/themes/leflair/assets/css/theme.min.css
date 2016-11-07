@@ -132,9 +132,6 @@ a:focus, a:hover {
 
 /*--------login-register------------*/
 
-body.login, body.register{
-	background-color:#f9f9f9;
-}
 #wp-submit {
 	border: 1px solid #B78BBF;
 	border-radius: 3px;
@@ -155,7 +152,12 @@ body.login, body.register{
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
-	margin-bottom:40px;
+	margin:20px auto 40px;
+}
+body.login .page-header, body.register .page-header, body.lostpassword .page-header{
+	margin: 40px auto 30px;
+	text-align: center;
+	max-width: 430px
 }
 
 
@@ -215,7 +217,7 @@ h3{
     font-weight: 600;
 }
 .section-item {
-    margin: 2em 0 0;
+    margin: 0 0 2em;
 }
 .section-item>a {
     display: block;
@@ -285,8 +287,26 @@ h3{
 .best-seller ul li a .content h3{margin:10px 0;font-size:16px;color:#FFF;font-weight:600}
 .best-seller ul li a .content .price{color:#b78bbf;margin:0}
 @media(max-width:768px){
-	.best-seller{width:80%}
+	.best-seller{
+		width:80%;
+		margin:auto;
+	}
 	.best-seller ul li a .content{bottom:0}
+	body.home .custom_notice,body.home .home_slider,body.home .bump-container,body.home .bump-container-next .section-header{
+		display:none;
+	}
+	body.home .bump-container-next{
+		margin-top:0;
+	}
+	body.home .bump-container-next.container {
+		padding:0;
+	}
+	.section-item h3, .section-item h4, .section-item p.text-muted {
+		text-align: center;
+	}
+	.header .logo {
+		margin: 0 40px;
+	}
 }
 .best-seller .price del{
     color: #CECECE!important;
