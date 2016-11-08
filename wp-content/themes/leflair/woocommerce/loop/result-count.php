@@ -36,9 +36,9 @@ if ( ! woocommerce_products_will_display() )
 	$last     = min( $total, $wp_query->get( 'posts_per_page' ) * $paged );
 
 	if ( $total <= $per_page || -1 === $per_page ) {
-		printf( _n( 'Showing the single result', 'Showing all %d results', $total, 'woocommerce' ), $total );
+		printf( _n( 'Có duy nhất <b>1</b> sản phẩm', 'Có tất cả <b>%d</b> sản phẩm', $total, 'woocommerce' ), $total );
 	} else {
-		printf( _nx( 'Showing the single result', 'Showing %1$d&ndash;%2$d of %3$d results', $total, '%1$d = first, %2$d = last, %3$d = total', 'woocommerce' ), $first, $last, $total );
+		printf( _nx( 'Có duy nhất <b>1</b> sản phẩm', 'Hiển thị <b>%1$d&ndash;%2$d</b> trên %3$d sản phẩm', $total, '%1$d = first, %2$d = last, %3$d = total', 'woocommerce' ), $first, $last, $total );
 	}
 	?>
 </p>
