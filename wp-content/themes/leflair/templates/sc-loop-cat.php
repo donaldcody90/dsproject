@@ -2,7 +2,7 @@
 
 $args = array( 'taxonomy' => 'product_cat' );
 $terms = get_terms('product_cat', $args);
-//echo "<pre>"; print_r($terms);
+//echo "<pre>"; print_r($terms); echo "</pre>";
 
 $args_bs = array(
     'post_type' => 'product',
@@ -86,9 +86,9 @@ $loop = new WP_Query( $args_bs );
 					<ul class="bxslider" style="width: 4560px;">
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); 
 							global $product; ?>
-						<li style="width: 285px;">
+						<li>
 							<a href="<?php the_permalink(); ?>">
-								<?php echo woocommerce_get_product_thumbnail(); ?>
+								<?php echo woocommerce_get_product_thumbnail($size = 'shop_single'); ?>
 								<div class="content">
 									<p class="brand"><?php echo get_post_meta($product->id, 'product_trademark', true);?></p>
 									<h3><?php the_title();?></h3>

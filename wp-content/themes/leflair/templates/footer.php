@@ -68,7 +68,7 @@
 		</div>
 		<div class="row text-center" style="text-transform: none;">
 		
-			<p><?php echo get_theme_option('company_name');?> - <?php echo get_theme_option('contact_address');?></p>
+			<div><?php echo get_theme_option('company_name');?> - <span class="hidden-lg"><br></span> <?php echo get_theme_option('contact_address');?></div>
 			<br>
 			<p><?php echo get_theme_option('license');?></p>
 			

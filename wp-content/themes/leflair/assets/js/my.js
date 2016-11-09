@@ -235,10 +235,17 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+	var maxSlideNumber= 4;
+	var slideWidthValue= 285;
+	var windowWidth= $(window).width();
+	if( windowWidth==980 ){
+		maxSlideNumber= 2;
+		slideWidthValue= 350;
+	}
 	$('.best-seller .bxslider').bxSlider({
 		minSlides: 1,
-		maxSlides: 4,
-		slideWidth: 285,
+		maxSlides: maxSlideNumber,
+		slideWidth: slideWidthValue,
 		infiniteLoop: false,
 		pager: false,
 		nextText: '<span class="glyphicon glyphicon-menu-right"></span>',

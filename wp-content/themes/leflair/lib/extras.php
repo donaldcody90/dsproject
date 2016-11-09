@@ -210,8 +210,7 @@ add_action( 'woocommerce_before_add_to_cart_button', 'before_add_to_cart_button'
 add_action( 'woocommerce_after_add_to_cart_button', 'after_add_to_cart_button', 5);
 //add_action( 'woocommerce_before_cart', 'before_cart', 1);
 //add_action( 'woocommerce_after_cart', 'after_cart', 1);
-add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
-add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
+add_action( 'woocommerce_archive_description', 'wcb_show_category_banner_custom', 2 );
 add_action( 'woocommerce_single_product_summary', 'custom_commitment', 40 );
 add_action( 'custom_related_products', 'woocommerce_output_related_products', 10 );
 
@@ -609,7 +608,6 @@ function short_code_register($atts, $content = null) {
     return $output;
 }
 add_shortcode('custom_get_form_register', 'short_code_register');
-
 
 
 

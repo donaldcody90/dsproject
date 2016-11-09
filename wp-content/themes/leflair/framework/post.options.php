@@ -1,14 +1,7 @@
 <?php
 
 $prefix = 'product_';
-$product_fields = array(		
-	array( 
-		'label'	=> 'Header Slider', 
-		'desc'	=> '', 
-		'id'	=> $prefix.'header_slider', 
-		'type'	=> 'select',
-		'options' => $sliders,
-	),
+$product_fields = array(
 	array(
 		'label' => 'Trademark',
 		'desc'	=> '',
@@ -62,25 +55,7 @@ $product_fields = array(
 		'desc'	=> '',
 		'id' 	=> $prefix.'detailed_size',
 		'type'	=> 'editor'
-	),
-	array( 
-		'label'	=> 'Header Image', 
-		'desc'	=> '', 
-		'id'	=> $prefix.'header_image', 
-		'type'	=> 'image',
-	),
-    array( 
-		'label'	=> 'Hidden Page Title', 
-		'desc'	=> '', 
-		'id'	=> $prefix.'hidden_title', 
-		'type'	=> 'checkbox',
-	),
-	array( 
-		'label'	=> 'Sub Title', 
-		'desc'	=> '', 
-		'id'	=> $prefix.'sub_title', 
-		'type'	=> 'editor',
-	),
+	)
 	
 );	
 

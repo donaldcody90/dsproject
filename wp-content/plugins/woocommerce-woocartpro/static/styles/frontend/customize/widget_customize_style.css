@@ -39,7 +39,7 @@ body div.festi-cart-widget-products-content > div.festi-cart-total
     border-color: #ffffff;
     border-radius: 7px;
     background-color: #ffffff;
-    color: #000000;
+    color: #666666;
     font-size: 13px;
     text-align: right;
 }
@@ -108,7 +108,7 @@ body div.festi-cart-widget-products-content > table.festi-cart-list tr td
 }
 body div.festi-cart-widget-products-content > table.festi-cart-list tr.festi-cart-empty
 {
-    color: #111111;
+    color: #5d5c5d;
     padding: 0;
 }
 body div.festi-cart-widget-products-content > table.festi-cart-list tr.festi-cart-empty td.festi-cart-empty
