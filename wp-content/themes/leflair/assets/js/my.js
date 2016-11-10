@@ -235,12 +235,28 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	var maxSlideNumber= 4;
-	var slideWidthValue= 285;
+	var maxSlideNumber;
+	var slideWidthValue;
 	var windowWidth= $(window).width();
-	if( windowWidth==980 ){
+	if( windowWidth>1222 ){
+		maxSlideNumber= 4;
+		slideWidthValue= 285;
+	}
+	if( windowWidth<=1222 && windowWidth>974 ){
+		maxSlideNumber= 3;
+		slideWidthValue= 285;
+	}
+	if( windowWidth<=974 && windowWidth>768 ){
 		maxSlideNumber= 2;
-		slideWidthValue= 350;
+		slideWidthValue= 300;
+	}
+	if( windowWidth<=768 && windowWidth>100 ){
+		maxSlideNumber= 2;
+		slideWidthValue= 250;
+	}
+	if( windowWidth<=100 ){
+		maxSlideNumber= 1;
+		slideWidthValue= 500;
 	}
 	$('.best-seller .bxslider').bxSlider({
 		minSlides: 1,

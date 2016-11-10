@@ -10,7 +10,6 @@
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"><i class="glyphicon glyphicon-menu-hamburger"></i></span>
 				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
 			</span>
 			
 			<div class="collapse navbar-collapse" role="navigation">
