@@ -55,6 +55,12 @@ $product_fields = array(
 		'desc'	=> '',
 		'id' 	=> $prefix.'detailed_size',
 		'type'	=> 'editor'
+	),
+	array(
+		'label' => 'China Link',
+		'desc'	=> 'Link sản phẩm bên trang trung quốc',
+		'id' 	=> $prefix.'china_link',
+		'type'	=> 'text'
 	)
 	
 );	

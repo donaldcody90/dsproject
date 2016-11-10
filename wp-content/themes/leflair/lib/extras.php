@@ -178,6 +178,25 @@ function custom_account_info(){
 function get_form_register_123(){
 	wc_get_template('myaccount/form-register.php');
 }
+function wc_get_account_menu_items_custom() {
+    $items = array(
+        'dashboard'       => __( 'Tổng quan', 'woocommerce' ),
+        'orders'          => __( 'Orders', 'woocommerce' ),
+        'downloads'       => __( 'Downloads', 'woocommerce' ),
+        'edit-address'    => __( 'Address', 'woocommerce' ),
+        'edit-account'    => __( 'Account Details', 'woocommerce' ),
+        'customer-logout' => __( 'Logout', 'woocommerce' ),
+    );
+
+    // Remove empty items.
+    $downloads = WC()->customer->get_downloadable_products();
+
+    if ( ! sizeof( $downloads ) ) {
+        unset( $items['downloads'] );
+    }
+
+    return apply_filters( 'woocommerce_account_menu_items', $items );
+}
 
 
 // Action Hook

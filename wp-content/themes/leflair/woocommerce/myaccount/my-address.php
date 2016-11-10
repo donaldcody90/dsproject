@@ -66,7 +66,7 @@ $col    = 1;
 				$formatted_address = WC()->countries->get_formatted_address( $address );
 
 				if ( ! $formatted_address )
-					_e( 'You have not set up this type of address yet.<br><br><br><br>', 'woocommerce' );
+					_e( 'Bạn chưa thiết lập địa chỉ này.<br><br><br><br>', 'woocommerce' );
 				else
 					echo $formatted_address;
 			?>
