@@ -171,12 +171,15 @@ a:focus, a:hover {
 	.navbar-collapse.in li{
 		width:auto;
 	}
+	.navbar-collapse.in li a:hover{
+		border-bottom: none;
+	}
 	.navbar-nav>li>a {
 		padding: 10px;
 		width:100%;
 	}
 	.navbar-nav>li:hover {
-		padding-bottom: 3px;
+		padding-bottom: 5px;
 	}
 	.navbar-nav>li.open:hover{
 		padding-bottom:0px;
@@ -522,8 +525,11 @@ img {
 .product-grid-item {
     position: relative;
     margin-bottom: 50px;
-	margin-left: -15px;
-	margin-right: -15px;
+}
+@media (min-width:768.01px){
+	.product-grid-item {
+		height:524px!important;
+	}
 }
 
 /*-----------------product--------------------*/
