@@ -180,6 +180,14 @@ $(document).ready(function(){
 	$('.leflair_zoom').zoom();
 });
 
+// Hide variable product default price
+
+$(document).ready(function(){
+	if($('.variations_form').length){
+		$('p.price').addClass('vf-hide');
+	}
+});
+
 // Product information
 
 $(document).ready(function(){
