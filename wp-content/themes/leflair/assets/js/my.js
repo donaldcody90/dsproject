@@ -183,8 +183,8 @@ $(document).ready(function(){
 // Hide variable product default price
 
 $(document).ready(function(){
-	if($('.variations_form').length){
-		$('p.price').addClass('vf-hide');
+	if($('.woocommerce-variation').length){
+		$('p.price').hide();
 	}
 });
 

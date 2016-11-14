@@ -31,7 +31,14 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
 	<?php else : ?>
-		<?php do_action( 'woocommerce_single_variation_custom' ); ?>
+		<?php 
+			/**
+			 * woocommerce_before_single_variation Hook.
+			 * @hooked woocommerce_single_variation - 10
+			 */
+			do_action( 'woocommerce_single_variation_custom' );
+		?>
+		<p class="choose-product-attr-notice vf-hide">Bạn hãy lựa chọn các thuộc tính sản phẩm bên dưới.</p>
 		<div class="variations" cellspacing="0">
 				
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
@@ -61,7 +68,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				/**
 				 * woocommerce_single_variation hook. Used to output the cart button and placeholder for variation data.
 				 * @since 2.4.0
-				 * @hooked woocommerce_single_variation - 10 Empty div for variation data.
+				 * //@hooked woocommerce_single_variation - 10 Empty div for variation data.
 				 * @hooked woocommerce_single_variation_add_to_cart_button - 20 Qty and cart button.
 				 */
 				do_action( 'woocommerce_single_variation' );

@@ -15,6 +15,7 @@ global $product;
 ?>
 <div class="woocommerce-variation-add-to-cart variations_button">
 	<?php if ( ! $product->is_sold_individually() ) : ?>
+		<div>Số lượng: </div>
 		<?php woocommerce_quantity_input( array( 'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 ) ); ?>
 	<?php endif; ?>
 	<button type="submit" class="single_add_to_cart_button button alt">Thêm vào giỏ hàng<?php //echo esc_html( $product->single_add_to_cart_text() ); ?></button>
